@@ -1,0 +1,2 @@
+# CryptingAuto dependencies
+playwright>=1.44.0

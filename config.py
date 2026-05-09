@@ -1,0 +1,69 @@
+"""
+config.py — CryptingAuto configuration.
+
+SECURITY NOTE: Never commit real passwords to version control.
+               Prefer setting TB_USER_n / TB_PASS_n environment variables
+               and letting the loader below pick them up automatically.
+               The hard-coded placeholders here are just examples.
+"""
+
+import os
+
+def _account(index: int, name: str, fallback_user: str, fallback_pass: str) -> dict:
+    """Read credentials from env vars first, fall back to the provided literals."""
+    return {
+        "name": name,
+        "user": os.environ.get(f"TB_USER_{index}", fallback_user),
+        "pass": os.environ.get(f"TB_PASS_{index}", fallback_pass),
+    }
+
+# ---------------------------------------------------------------------------
+# Account roster  (fill in your real credentials OR set the env vars above)
+# ---------------------------------------------------------------------------
+ACCOUNTS = [
+    _account(1, "1020", "linandrew41@gmail.com", "And7ewpwd#!"),
+]
+# ---------------------------------------------------------------------------
+# Bot behaviour
+# ---------------------------------------------------------------------------
+SETTINGS = {
+    # ----- Display -----
+    # False = visible window (recommended while calibrating click positions)
+    # True  = invisible/headless (use after click logic is confirmed accurate)
+    "headless": False,
+    "window_width":  1280,
+    "window_height":  720,
+
+    # ----- 25% zoom screen geometry -----
+    # At 1280×720 the map centre sits exactly here.
+    # Adjust if you use a different window size.
+    "screen_center_x": 640,
+    "screen_center_y": 360,
+
+    # ----- Search filters -----
+    "crypt_types":    ["Common"],   # quality buttons to click
+    "crypt_min_level": 0,
+    "crypt_max_level": 30,
+
+    # ----- 25% zoom pixel-color check -----
+    # Average RGB of the Stone/Blue cluster that a Crypt renders to.
+    # Calibrate these by calling utils.sample_center_color() once the map
+    # is centered on a known Crypt at 25% zoom.
+    "crypt_colors": [
+        (100, 130, 170),   # primary Stone-Blue
+        ( 90, 120, 160),   # darker variant
+        (110, 140, 180),   # lighter variant
+    ],
+    "color_tolerance": 25,   # Euclidean RGB distance threshold
+    "color_sample_size": 10, # side (px) of the sampling square
+
+    # ----- Timing -----
+    "load_wait_ms":          500,   # poll interval while waiting for crypt pixel
+    "color_check_attempts":   10,   # max polls before proceeding anyway
+    "march_sleep_seconds":    60,   # sleep when captain is already marching
+    "stagger_start_seconds":  30,   # delay between consecutive process launches
+
+    # ----- Maintenance -----
+    # Page reload every N crypts flushes WebGL memory that accumulates over time.
+    "reload_every_n_crypts": 20,
+}

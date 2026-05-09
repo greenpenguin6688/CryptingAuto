@@ -1,0 +1,45 @@
+2026/05/08-22:43:57.199 6928 Reusing MANIFEST D:\New folder\CryptingAuto\profiles\1020\Default\Local Storage\leveldb/MANIFEST-000001
+2026/05/08-22:43:57.206 6928 Recovering log #6
+2026/05/08-22:43:57.207 6928 Level-0 table #9: started
+2026/05/08-22:43:57.276 6928 Level-0 table #9: 17628 bytes OK
+2026/05/08-22:43:57.283 6928 Recovering log #8
+2026/05/08-22:43:57.286 6928 Reusing old log D:\New folder\CryptingAuto\profiles\1020\Default\Local Storage\leveldb/000008.log 
+2026/05/08-22:43:57.305 6928 Delete type=0 #6
+2026/05/08-22:43:57.308 547c Compacting 4@0 + 0@1 files
+2026/05/08-22:43:57.377 547c Generated table #10@0: 35 keys, 20853 bytes
+2026/05/08-22:43:57.378 547c Compacted 4@0 + 0@1 files => 20853 bytes
+2026/05/08-22:43:57.416 547c compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/05/08-22:43:57.420 547c Delete type=2 #3
+2026/05/08-22:43:57.420 547c Delete type=2 #4
+2026/05/08-22:43:57.420 547c Delete type=2 #7
+2026/05/08-22:43:57.420 547c Delete type=2 #9
+2026/05/08-22:45:57.899 547c Level-0 table #12: started
+2026/05/08-22:45:57.976 547c Level-0 table #12: 18664 bytes OK
+2026/05/08-22:45:58.006 547c Delete type=0 #8
+2026/05/08-22:46:57.901 547c Level-0 table #14: started
+2026/05/08-22:46:57.991 547c Level-0 table #14: 26431 bytes OK
+2026/05/08-22:46:58.023 547c Delete type=0 #11
+2026/05/08-22:47:57.904 547c Level-0 table #16: started
+2026/05/08-22:47:57.966 547c Level-0 table #16: 34789 bytes OK
+2026/05/08-22:47:57.990 547c Delete type=0 #13
+2026/05/08-22:49:36.936 547c Level-0 table #18: started
+2026/05/08-22:49:36.986 547c Level-0 table #18: 42977 bytes OK
+2026/05/08-22:49:37.006 547c Delete type=0 #15
+2026/05/08-22:49:37.007 547c Compacting 4@0 + 1@1 files
+2026/05/08-22:49:37.046 547c Generated table #19@0: 35 keys, 46440 bytes
+2026/05/08-22:49:37.046 547c Compacted 4@0 + 1@1 files => 46440 bytes
+2026/05/08-22:49:37.064 547c compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/05/08-22:49:37.065 547c Delete type=2 #10
+2026/05/08-22:49:37.065 547c Delete type=2 #12
+2026/05/08-22:49:37.065 547c Delete type=2 #14
+2026/05/08-22:49:37.065 547c Delete type=2 #16
+2026/05/08-22:49:37.065 547c Delete type=2 #18
+2026/05/08-22:52:26.613 547c Level-0 table #21: started
+2026/05/08-22:52:26.676 547c Level-0 table #21: 55189 bytes OK
+2026/05/08-22:52:26.700 547c Delete type=0 #17
+2026/05/08-22:55:32.363 547c Level-0 table #23: started
+2026/05/08-22:55:32.433 547c Level-0 table #23: 60674 bytes OK
+2026/05/08-22:55:32.478 547c Delete type=0 #20
+2026/05/08-22:58:51.693 547c Level-0 table #25: started
+2026/05/08-22:58:51.753 547c Level-0 table #25: 65164 bytes OK
+2026/05/08-22:58:51.775 547c Delete type=0 #22

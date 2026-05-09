@@ -1,0 +1,13 @@
+2026/05/08-22:59:51.914 550 Reusing MANIFEST D:\New folder\CryptingAuto\profiles\1020\Default\IndexedDB\https_totalbattle.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/08-22:59:51.914 550 Recovering log #7
+2026/05/08-22:59:51.915 550 Reusing old log D:\New folder\CryptingAuto\profiles\1020\Default\IndexedDB\https_totalbattle.com_0.indexeddb.leveldb/000007.log 
+2026/05/08-23:00:13.594 43d0 Level-0 table #12: started
+2026/05/08-23:00:13.638 43d0 Level-0 table #12: 98471 bytes OK
+2026/05/08-23:00:13.674 43d0 Delete type=0 #7
+2026/05/08-23:00:13.675 550 Manual compaction at level-0 from '\x00\x08\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x09\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/05/08-23:00:26.021 484c Compacting 1@1 + 1@2 files
+2026/05/08-23:00:26.076 484c Generated table #13@1: 276 keys, 75603 bytes
+2026/05/08-23:00:26.076 484c Compacted 1@1 + 1@2 files => 75603 bytes
+2026/05/08-23:00:26.107 484c compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/05/08-23:00:26.108 484c Delete type=2 #9
+2026/05/08-23:00:26.108 484c Delete type=2 #12

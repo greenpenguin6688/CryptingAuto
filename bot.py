@@ -615,9 +615,9 @@ class CryptBot:
     def _is_tab_green(self, tab_key: str) -> bool:
         """
         Return True if the tab is green (selected).
-        Green tabs: high green channel, green > red by a clear margin.
-        Tan/beige tabs (deselected): red ≈ green, both moderate.
-        We sample a 14×14 patch at the tab centre.
+        Scans a 60×20 pixel region centred on the tab coordinate and counts
+        pixels where the green channel clearly dominates red.  This is robust
+        to the sample point landing on text or a border rather than the fill.
         """
         cx, cy = CANVAS_COORDS[tab_key]
         ox, oy = self._canvas_offset()
@@ -626,19 +626,25 @@ class CryptBot:
         img = self._ocr_screenshot()
         h, w = img.shape[:2]
 
-        r = 7
-        y1, y2 = max(0, py - r), min(h, py + r)
-        x1, x2 = max(0, px - r), min(w, px + r)
+        # Wide horizontal strip across the tab
+        y1, y2 = max(0, py - 10), min(h, py + 10)
+        x1, x2 = max(0, px - 30), min(w, px + 30)
         patch = img[y1:y2, x1:x2]
 
-        avg_r = float(patch[:, :, 0].mean())
-        avg_g = float(patch[:, :, 1].mean())
-        # Green selected: G significantly exceeds R.
-        # Tan deselected: R ≈ G (tan/beige hue, R slightly >= G).
-        is_green = (avg_g - avg_r) > 15
-        logger.debug("[%s] tab '%s' avg R=%.0f G=%.0f → %s",
-                     self.account["name"], tab_key, avg_r, avg_g,
-                     "GREEN(selected)" if is_green else "TAN(deselected)")
+        r_ch = patch[:, :, 0].astype(float)
+        g_ch = patch[:, :, 1].astype(float)
+
+        # Count pixels where green clearly exceeds red (green fill pixels)
+        green_pixels = int(((g_ch - r_ch) > 15).sum())
+        total_pixels = patch.shape[0] * patch.shape[1]
+
+        avg_r = float(r_ch.mean())
+        avg_g = float(g_ch.mean())
+        is_green = green_pixels > (total_pixels * 0.15)   # >15% of patch is green-dominant
+        logger.info("[%s] tab '%s' avg R=%.0f G=%.0f green_px=%d/%d → %s",
+                    self.account["name"], tab_key, avg_r, avg_g,
+                    green_pixels, total_pixels,
+                    "GREEN(selected)" if is_green else "TAN(deselected)")
         return is_green
 
     def _apply_filters(self):

@@ -1,9 +1,17 @@
-2026/05/09-15:11:30.828 4b28 Reusing MANIFEST D:\New folder\CryptingAuto\profiles\1020\Default\Local Storage\leveldb/MANIFEST-000001
-2026/05/09-15:11:30.837 4b28 Recovering log #328
-2026/05/09-15:11:30.838 4b28 Level-0 table #331: started
-2026/05/09-15:11:30.921 4b28 Level-0 table #331: 28033 bytes OK
-2026/05/09-15:11:30.921 4b28 Recovering log #330
-2026/05/09-15:11:30.922 4b28 Level-0 table #332: started
-2026/05/09-15:11:31.005 4b28 Level-0 table #332: 30952 bytes OK
-2026/05/09-15:11:31.046 4b28 Delete type=0 #328
-2026/05/09-15:11:31.047 4b28 Delete type=0 #330
+2026/05/09-16:02:40.962 6254 Reusing MANIFEST D:\New folder\CryptingAuto\profiles\1020\Default\Local Storage\leveldb/MANIFEST-000001
+2026/05/09-16:02:40.968 6254 Recovering log #357
+2026/05/09-16:02:40.968 6254 Level-0 table #360: started
+2026/05/09-16:02:41.030 6254 Level-0 table #360: 15768 bytes OK
+2026/05/09-16:02:41.030 6254 Recovering log #359
+2026/05/09-16:02:41.033 6254 Reusing old log D:\New folder\CryptingAuto\profiles\1020\Default\Local Storage\leveldb/000359.log 
+2026/05/09-16:02:41.110 6254 Delete type=0 #357
+2026/05/09-16:02:41.114 6254 Compacting 5@0 + 1@1 files
+2026/05/09-16:02:41.188 6254 Generated table #361@0: 58 keys, 25752 bytes
+2026/05/09-16:02:41.188 6254 Compacted 5@0 + 1@1 files => 25752 bytes
+2026/05/09-16:02:41.223 6254 compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/05/09-16:02:41.224 6254 Delete type=2 #349
+2026/05/09-16:02:41.225 6254 Delete type=2 #351
+2026/05/09-16:02:41.225 6254 Delete type=2 #353
+2026/05/09-16:02:41.225 6254 Delete type=2 #355
+2026/05/09-16:02:41.225 6254 Delete type=2 #358
+2026/05/09-16:02:41.225 6254 Delete type=2 #360

@@ -4569,3 +4569,102 @@ playwright._impl._errors.TargetClosedError: Target page, context or browser has 
 2026-05-09 15:16:04,247 [ERROR] 400 Future exception was never retrieved
 future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
 playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 15:57:16,642 [INFO] 16432 [1020] Navigating to https://totalbattle.com
+2026-05-09 15:57:20,410 [INFO] 16432 [1020] Map already loaded — no login required.
+2026-05-09 15:57:20,411 [INFO] 16432 [1020] Waiting for game loading screen to finish...
+2026-05-09 15:57:41,557 [INFO] 16432 [1020] Waiting for map canvas...
+2026-05-09 15:57:45,085 [INFO] 16432 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 15:57:46,511 [INFO] 16432 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 15:57:47,325 [INFO] 16432 [1020] Map ready.
+2026-05-09 16:01:29,289 [INFO] 26504 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 16:01:31,404 [INFO] 26504 [1020] Navigating to https://totalbattle.com
+2026-05-09 16:01:34,898 [INFO] 26504 [1020] Map already loaded — no login required.
+2026-05-09 16:01:34,899 [INFO] 26504 [1020] Waiting for game loading screen to finish...
+2026-05-09 16:02:06,347 [INFO] 26504 [1020] Waiting for map canvas...
+2026-05-09 16:02:09,864 [INFO] 26504 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 16:02:11,220 [INFO] 26504 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 16:02:12,037 [INFO] 26504 [1020] Map ready.
+2026-05-09 16:02:12,038 [INFO] 26504 [1020] Crypt loop started.
+2026-05-09 16:02:12,066 [INFO] 26504 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 16:02:21,569 [INFO] 26504 [1020] Loading OCR model — first run may download models…
+2026-05-09 16:02:24,689 [INFO] 26504 [1020] OCR model ready.
+2026-05-09 16:02:26,228 [WARNING] 26504 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 16:02:26,233 [INFO] 26504 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 16:02:28,291 [INFO] 26504 [1020] tab 'tab_common' avg R=247 G=227 → TAN(deselected)
+2026-05-09 16:02:28,292 [INFO] 26504 [1020] Selecting tab 'Common'.
+2026-05-09 16:02:30,874 [WARNING] 26504 [1020] OCR missed 'Common' — coord fallback 'tab_common'
+2026-05-09 16:02:30,880 [INFO] 26504 [1020] click 'tab_common' → canvas(1134,363) + offset(0,43) = page(1134,406)
+2026-05-09 16:02:32,204 [INFO] 26504 [1020] tab 'tab_rare' avg R=135 G=107 → TAN(deselected)
+2026-05-09 16:02:33,267 [INFO] 26504 [1020] tab 'tab_epic' avg R=133 G=122 → TAN(deselected)
+2026-05-09 16:02:33,851 [INFO] 26504 [1020] Interrupted by user.
+2026-05-09 16:02:36,795 [ERROR] 26504 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 16:02:36,924 [ERROR] 26504 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 16:02:39,546 [INFO] 18528 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 16:02:41,439 [INFO] 18528 [1020] Navigating to https://totalbattle.com
+2026-05-09 16:02:45,030 [INFO] 18528 [1020] Map already loaded — no login required.
+2026-05-09 16:02:45,031 [INFO] 18528 [1020] Waiting for game loading screen to finish...
+2026-05-09 16:02:58,305 [INFO] 18528 [1020] Waiting for map canvas...
+2026-05-09 16:03:01,925 [INFO] 18528 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 16:03:02,903 [INFO] 18528 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 16:03:03,716 [INFO] 18528 [1020] Map ready.
+2026-05-09 16:03:03,716 [INFO] 18528 [1020] Crypt loop started.
+2026-05-09 16:03:03,728 [INFO] 18528 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 16:03:12,929 [INFO] 18528 [1020] Loading OCR model — first run may download models…
+2026-05-09 16:03:16,531 [INFO] 18528 [1020] OCR model ready.
+2026-05-09 16:03:18,090 [WARNING] 18528 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 16:03:18,097 [INFO] 18528 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 16:03:20,161 [INFO] 18528 [1020] tab 'tab_common' avg R=242 G=217 → TAN(deselected)
+2026-05-09 16:03:20,162 [INFO] 18528 [1020] Selecting tab 'Common'.
+2026-05-09 16:03:22,550 [WARNING] 18528 [1020] OCR missed 'Common' — coord fallback 'tab_common'
+2026-05-09 16:03:22,561 [INFO] 18528 [1020] click 'tab_common' → canvas(1134,363) + offset(0,43) = page(1134,406)
+2026-05-09 16:03:23,727 [INFO] 18528 [1020] tab 'tab_rare' avg R=246 G=226 → TAN(deselected)
+2026-05-09 16:03:24,467 [INFO] 18528 [1020] tab 'tab_epic' avg R=133 G=122 → TAN(deselected)
+2026-05-09 16:03:25,183 [INFO] 18528 [1020] tab 'tab_arenas' avg R=137 G=139 → TAN(deselected)
+2026-05-09 16:03:25,934 [INFO] 18528 [1020] tab 'tab_others' avg R=245 G=227 → TAN(deselected)
+2026-05-09 16:03:25,944 [INFO] 18528 [1020] Dragging left slider handle → (1404, 461).
+2026-05-09 16:03:26,652 [INFO] 18528 [1020] Dragging right slider handle → (1521, 463).
+2026-05-09 16:03:30,858 [WARNING] 18528 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-09 16:03:30,866 [INFO] 18528 [1020] click 'second_result_go' → canvas(1588,699) + offset(0,43) = page(1588,742)
+2026-05-09 16:03:33,913 [INFO] 18528 [1020] click 'crypt_location' → canvas(1301,611) + offset(0,43) = page(1301,654)
+2026-05-09 16:03:37,525 [WARNING] 18528 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-09 16:03:37,529 [INFO] 18528 [1020] click 'crypt_popup_explore' → canvas(1537,939) + offset(0,43) = page(1537,982)
+2026-05-09 16:03:39,083 [INFO] 18528 [1020] Cycle #1 complete.
+2026-05-09 16:03:41,916 [INFO] 18528 [1020] Interrupted by user.
+2026-05-09 16:07:41,088 [INFO] 22756 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 16:07:42,847 [INFO] 22756 [1020] Navigating to https://totalbattle.com
+2026-05-09 16:07:46,291 [INFO] 22756 [1020] Map already loaded — no login required.
+2026-05-09 16:07:46,305 [INFO] 22756 [1020] Waiting for game loading screen to finish...
+2026-05-09 16:08:00,038 [INFO] 22756 [1020] Waiting for map canvas...
+2026-05-09 16:08:03,698 [INFO] 22756 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 16:08:04,670 [INFO] 22756 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 16:08:05,484 [INFO] 22756 [1020] Map ready.
+2026-05-09 16:08:05,484 [INFO] 22756 [1020] Crypt loop started.
+2026-05-09 16:08:05,497 [INFO] 22756 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 16:08:15,034 [INFO] 22756 [1020] Loading OCR model — first run may download models…
+2026-05-09 16:08:18,371 [INFO] 22756 [1020] OCR model ready.
+2026-05-09 16:08:19,922 [WARNING] 22756 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 16:08:19,929 [INFO] 22756 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 16:08:21,931 [INFO] 22756 [1020] tab 'tab_common' avg R=246 G=227 green_px=0/1200 → TAN(deselected)
+2026-05-09 16:08:21,931 [INFO] 22756 [1020] Selecting tab 'Common'.
+2026-05-09 16:08:23,821 [WARNING] 22756 [1020] OCR missed 'Common' — coord fallback 'tab_common'
+2026-05-09 16:08:23,827 [INFO] 22756 [1020] click 'tab_common' → canvas(1134,363) + offset(0,43) = page(1134,406)
+2026-05-09 16:08:25,110 [INFO] 22756 [1020] tab 'tab_rare' avg R=229 G=205 green_px=0/1200 → TAN(deselected)
+2026-05-09 16:08:25,907 [INFO] 22756 [1020] tab 'tab_epic' avg R=148 G=119 green_px=0/1200 → TAN(deselected)
+2026-05-09 16:08:26,820 [INFO] 22756 [1020] tab 'tab_arenas' avg R=173 G=172 green_px=4/1200 → TAN(deselected)
+2026-05-09 16:08:27,620 [INFO] 22756 [1020] tab 'tab_others' avg R=138 G=144 green_px=580/1200 → GREEN(selected)
+2026-05-09 16:08:27,620 [INFO] 22756 [1020] Deselecting tab 'Others'.
+2026-05-09 16:08:29,997 [WARNING] 22756 [1020] OCR missed 'Others' — coord fallback 'tab_others'
+2026-05-09 16:08:30,003 [INFO] 22756 [1020] click 'tab_others' → canvas(1193,406) + offset(0,43) = page(1193,449)
+2026-05-09 16:08:30,445 [INFO] 22756 [1020] Dragging left slider handle → (1404, 461).
+2026-05-09 16:08:31,165 [INFO] 22756 [1020] Dragging right slider handle → (1521, 463).
+2026-05-09 16:08:35,650 [WARNING] 22756 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-09 16:08:35,661 [INFO] 22756 [1020] click 'second_result_go' → canvas(1588,699) + offset(0,43) = page(1588,742)
+2026-05-09 16:08:38,766 [INFO] 22756 [1020] click 'crypt_location' → canvas(1301,611) + offset(0,43) = page(1301,654)
+2026-05-09 16:08:42,455 [WARNING] 22756 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-09 16:08:42,460 [INFO] 22756 [1020] click 'crypt_popup_explore' → canvas(1537,939) + offset(0,43) = page(1537,982)
+2026-05-09 16:08:44,011 [INFO] 22756 [1020] Cycle #1 complete.
+2026-05-09 16:08:45,950 [INFO] 22756 [1020] Interrupted by user.

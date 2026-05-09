@@ -1,7 +1,5 @@
-2026/05/09-11:41:54.369 1964 Reusing MANIFEST D:\New folder\CryptingAuto\profiles\1020\Default\IndexedDB\https_totalbattle.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/05/09-11:41:54.369 1964 Recovering log #51
-2026/05/09-11:41:54.370 1964 Reusing old log D:\New folder\CryptingAuto\profiles\1020\Default\IndexedDB\https_totalbattle.com_0.indexeddb.leveldb/000051.log 
-2026/05/09-11:42:15.433 67e8 Level-0 table #56: started
-2026/05/09-11:42:15.495 67e8 Level-0 table #56: 96509 bytes OK
-2026/05/09-11:42:15.535 67e8 Delete type=0 #51
-2026/05/09-11:42:15.536 1964 Manual compaction at level-0 from '\x00\x13\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x14\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/05/09-15:14:10.901 1194 Reusing MANIFEST D:\New folder\CryptingAuto\profiles\1020\Default\IndexedDB\https_totalbattle.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/09-15:14:10.902 1194 Recovering log #140
+2026/05/09-15:14:10.902 1194 Reusing old log D:\New folder\CryptingAuto\profiles\1020\Default\IndexedDB\https_totalbattle.com_0.indexeddb.leveldb/000140.log 
+2026/05/09-15:14:10.903 1194 Delete type=2 #138
+2026/05/09-15:14:10.903 1194 Delete type=2 #141

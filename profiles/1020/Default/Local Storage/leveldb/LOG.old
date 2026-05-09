@@ -1,9 +1,9 @@
-2026/05/09-11:41:49.650 6184 Reusing MANIFEST D:\New folder\CryptingAuto\profiles\1020\Default\Local Storage\leveldb/MANIFEST-000001
-2026/05/09-11:41:49.657 6184 Recovering log #151
-2026/05/09-11:41:49.657 6184 Level-0 table #155: started
-2026/05/09-11:41:49.721 6184 Level-0 table #155: 23149 bytes OK
-2026/05/09-11:41:49.722 6184 Recovering log #154
-2026/05/09-11:41:49.722 6184 Level-0 table #156: started
-2026/05/09-11:41:49.770 6184 Level-0 table #156: 23504 bytes OK
-2026/05/09-11:41:49.802 6184 Delete type=0 #151
-2026/05/09-11:41:49.802 6184 Delete type=0 #154
+2026/05/09-15:11:30.828 4b28 Reusing MANIFEST D:\New folder\CryptingAuto\profiles\1020\Default\Local Storage\leveldb/MANIFEST-000001
+2026/05/09-15:11:30.837 4b28 Recovering log #328
+2026/05/09-15:11:30.838 4b28 Level-0 table #331: started
+2026/05/09-15:11:30.921 4b28 Level-0 table #331: 28033 bytes OK
+2026/05/09-15:11:30.921 4b28 Recovering log #330
+2026/05/09-15:11:30.922 4b28 Level-0 table #332: started
+2026/05/09-15:11:31.005 4b28 Level-0 table #332: 30952 bytes OK
+2026/05/09-15:11:31.046 4b28 Delete type=0 #328
+2026/05/09-15:11:31.047 4b28 Delete type=0 #330

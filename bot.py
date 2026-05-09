@@ -7,10 +7,12 @@ the game page and locate the real class names / data-attributes for
 each UI element listed in SELECTORS.
 """
 
+import io
 import time
 import logging
 import math
 from pathlib import Path
+import numpy as np
 from playwright.sync_api import (
     sync_playwright,
     TimeoutError as PlaywrightTimeoutError,
@@ -44,36 +46,35 @@ SELECTORS = {
 # ---------------------------------------------------------------------------
 CANVAS_COORDS = {
     # HUD button that opens the Watchtower window
-    "watchtower_btn":     (693, 944),
+    "watchtower_btn":     (926, 1083),
 
     # Left sidebar inside the Watchtower window
-    "crypts_and_arenas":  (700, 506),
+    "crypts_and_arenas":  (996, 506),
 
     # Quality filter tab buttons (top of the Crypts panel).
     # *** These are estimated — calibrate by hovering over each tab ***
-    "tab_common":   (875, 396),
-    "tab_rare":     (990, 396),
-    "tab_epic":     (1133, 396),
-    "tab_arenas":   (1279, 396),
-    "tab_others":   (910, 429),
+    "tab_common":   (1134, 363),
+    "tab_rare":     (1276, 361),
+    "tab_epic":     (1468, 361),
+    "tab_arenas":   (1613, 361),
+    "tab_others":   (1193, 406),
 
-    # Level range slider.
-    # Left handle is dragged to this target; right handle to its target.
-    "slider_left_target":  (1080, 463),
-    "slider_right_target": (1207, 345),
-    # Approximate far-left / far-right of the slider track (drag start points)
-    "slider_track_left":   (889, 350),
-    "slider_track_right":  (1293, 350),
+    # Level range slider — measured with DevTools undocked.
+    # Drag start: current handle positions. Drag end: desired target positions.
+    "slider_track_left":   (1166, 454),   # left handle current position
+    "slider_track_right":  (1694, 453),   # right handle current position
+    "slider_left_target":  (1404, 461),   # where to drag left handle to
+    "slider_right_target": (1521, 463),   # where to drag right handle to
 
     # "Go" button next to the SECOND result in the filtered list
-    "second_result_go":    (1217, 655),
+    "second_result_go":    (1588, 699),
 
     
-    "crypt_location": (977, 587),
+    "crypt_location": (1301, 611),
 
     # # "Explore" button in the crypt detail popup that appears on the map
     # after pressing Escape from the purchase/info overlay
-    "crypt_popup_explore": (1156, 837),
+    "crypt_popup_explore": (1537, 939),
 }
 
 # Ordered list of all quality tabs — order must match left-to-right layout
@@ -159,6 +160,8 @@ def is_captain_busy(page) -> bool:
 class CryptBot:
     """Manages one browser profile and runs the continuous crypt-farming loop."""
 
+    _ocr_reader = None  # shared across all instances; loaded once
+
     def __init__(self, account: dict, settings: dict):
         self.account     = account
         self.settings    = settings
@@ -184,9 +187,9 @@ class CryptBot:
             args=[
                 "--start-maximized",
                 "--disable-features=IsolateOrigins,site-per-process",
+                "--force-device-scale-factor=1",
             ],
             no_viewport=True,
-            device_scale_factor=1,
         )
 
         self.page = self.context.new_page()
@@ -408,6 +411,178 @@ class CryptBot:
         except Exception:
             pass
 
+    # ------------------------------------------------------------------
+    # OCR helpers
+    # ------------------------------------------------------------------
+
+    def _get_ocr_reader(self):
+        """Lazily load EasyOCR (downloads ~100 MB of models on first run)."""
+        if CryptBot._ocr_reader is None:
+            import easyocr
+            logger.info("[%s] Loading OCR model — first run may download models…", self.account["name"])
+            CryptBot._ocr_reader = easyocr.Reader(["en"], gpu=False, verbose=False)
+            logger.info("[%s] OCR model ready.", self.account["name"])
+        return CryptBot._ocr_reader
+
+    def _ocr_screenshot(self) -> np.ndarray:
+        """Capture a full-page screenshot and return it as a numpy RGB array."""
+        from PIL import Image
+        png = self.page.screenshot()
+        img = Image.open(io.BytesIO(png)).convert("RGB")
+        return np.array(img)
+
+    # ------------------------------------------------------------------
+    # Image template matching
+    # ------------------------------------------------------------------
+
+    _TEMPLATES_DIR = Path("./templates")
+
+    def _image_find(self, template_name: str,
+                    threshold: float = 0.80,
+                    region: tuple[int, int, int, int] | None = None) -> tuple[int, int] | None:
+        """
+        Search the current screenshot for `template_name` (a PNG file inside
+        the templates/ folder) using multi-scale normalised cross-correlation.
+
+        Returns the (x, y) centre of the best match when confidence >= threshold,
+        or None if no match is found.
+        """
+        import cv2
+        tpl_path = self._TEMPLATES_DIR / template_name
+        if not tpl_path.exists():
+            logger.warning("[%s] Template not found: %s", self.account["name"], tpl_path)
+            return None
+
+        screenshot = self._ocr_screenshot()                       # RGB numpy
+        ox, oy = 0, 0
+        if region:
+            rx, ry, rw, rh = region
+            screenshot = screenshot[ry:ry+rh, rx:rx+rw]
+            ox, oy = rx, ry
+        screen_bgr = cv2.cvtColor(screenshot, cv2.COLOR_RGB2BGR)
+        tpl_bgr    = cv2.imread(str(tpl_path))
+        if tpl_bgr is None:
+            logger.error("[%s] Could not read template: %s", self.account["name"], tpl_path)
+            return None
+
+        th, tw = tpl_bgr.shape[:2]
+        sh, sw = screen_bgr.shape[:2]
+
+        best_val, best_loc, best_scale = -1.0, (0, 0), 1.0
+        # Try a range of scales in case the browser zoom differs from template capture
+        for scale in [1.0, 0.9, 0.8, 1.1, 1.2]:
+            rw, rh = int(tw * scale), int(th * scale)
+            if rw > sw or rh > sh:
+                continue
+            tpl_scaled = cv2.resize(tpl_bgr, (rw, rh))
+            result = cv2.matchTemplate(screen_bgr, tpl_scaled,
+                                       cv2.TM_CCOEFF_NORMED)
+            _, val, _, loc = cv2.minMaxLoc(result)
+            if val > best_val:
+                best_val, best_loc, best_scale = val, loc, scale
+
+        if best_val < threshold:
+            # Save a debug crop so we can compare to the template visually
+            debug_path = self._TEMPLATES_DIR / f"_debug_{template_name}"
+            tpl_h, tpl_w = tpl_bgr.shape[:2]
+            # Crop 3× the template size around the best match location for context
+            pad_x, pad_y = tpl_w, tpl_h
+            bx, by = best_loc
+            x1 = max(0, bx - pad_x)
+            y1 = max(0, by - pad_y)
+            x2 = min(screen_bgr.shape[1], bx + tpl_w + pad_x)
+            y2 = min(screen_bgr.shape[0], by + tpl_h + pad_y)
+            crop = screen_bgr[y1:y2, x1:x2]
+            cv2.imwrite(str(debug_path), crop)
+            logger.warning("[%s] Template '%s' not matched (best=%.2f < %.2f scale=%.1f) — debug crop saved to %s",
+                           self.account["name"], template_name, best_val, threshold, best_scale, debug_path)
+            return None
+
+        rw, rh = int(tw * best_scale), int(th * best_scale)
+        cx = best_loc[0] + rw // 2 + ox
+        cy = best_loc[1] + rh // 2 + oy
+        logger.info("[%s] Template '%s' matched at (%d,%d) conf=%.2f scale=%.1f",
+                    self.account["name"], template_name, cx, cy, best_val, best_scale)
+        return cx, cy
+
+    def _image_click(self, template_name: str, wait_ms: int = 600,
+                     threshold: float = 0.80,
+                     fallback_key: str | None = None,
+                     region: tuple[int, int, int, int] | None = None):
+        """
+        Click the centre of the best template match.
+        Falls back to a canvas coordinate key if the image is not found.
+        """
+        pos = self._image_find(template_name, threshold=threshold, region=region)
+        if pos:
+            x, y = pos
+            logger.info("[%s] image_click '%s' → (%d, %d)",
+                        self.account["name"], template_name, x, y)
+            self.page.mouse.click(x, y)
+        elif fallback_key:
+            logger.warning("[%s] image_click missed '%s' — coord fallback '%s'",
+                           self.account["name"], template_name, fallback_key)
+            self._canvas_click(fallback_key, wait_ms=0)
+        else:
+            logger.error("[%s] image_click could not find '%s' — skipping.",
+                         self.account["name"], template_name)
+        if wait_ms:
+            self.page.wait_for_timeout(wait_ms)
+
+    def _ocr_find_all(self, text: str,
+                      region: tuple[int, int, int, int] | None = None
+                      ) -> list[tuple[int, int]]:
+        """
+        Return viewport (x, y) centre-points for every occurrence of `text`.
+        `region` is an optional (x, y, w, h) crop in viewport pixels — pass this
+        to limit the scan area and make OCR ~10× faster.
+        Minimum confidence threshold: 0.25.
+        """
+        reader = self._get_ocr_reader()
+        img    = self._ocr_screenshot()          # full RGB numpy array
+
+        ox, oy = 0, 0
+        if region:
+            rx, ry, rw, rh = region
+            img = img[ry:ry + rh, rx:rx + rw]
+            ox, oy = rx, ry                      # offset to map back to viewport
+
+        results = reader.readtext(img, detail=1)
+        needle  = text.strip().lower()
+        hits    = []
+        for (bbox, detected, conf) in results:
+            if conf >= 0.25 and needle in detected.strip().lower():
+                xs = [p[0] for p in bbox]
+                ys = [p[1] for p in bbox]
+                hits.append((int(sum(xs) / len(xs)) + ox,
+                             int(sum(ys) / len(ys)) + oy))
+        hits.sort(key=lambda p: (p[1], p[0]))
+        logger.debug("[%s] OCR '%s' → %d match(es): %s", self.account["name"], text, len(hits), hits)
+        return hits
+
+    def _ocr_click(self, text: str, wait_ms: int = 600, index: int = 0,
+                   fallback_key: str | None = None,
+                   region: tuple[int, int, int, int] | None = None):
+        """
+        Find `text` via OCR and click the `index`-th match (0 = first).
+        Falls back to a canvas coordinate key when OCR finds nothing.
+        """
+        hits = self._ocr_find_all(text, region=region)
+        if len(hits) > index:
+            x, y = hits[index]
+            logger.info("[%s] OCR click '%s'[%d] → (%d, %d)",
+                        self.account["name"], text, index, x, y)
+            self.page.mouse.click(x, y)
+        elif fallback_key:
+            logger.warning("[%s] OCR missed '%s' — coord fallback '%s'",
+                           self.account["name"], text, fallback_key)
+            self._canvas_click(fallback_key, wait_ms=0)
+        else:
+            logger.error("[%s] OCR could not find '%s' (index=%d) — skipping.",
+                         self.account["name"], text, index)
+        if wait_ms:
+            self.page.wait_for_timeout(wait_ms)
+
     def _canvas_offset(self) -> tuple[int, int]:
         """Return the (left, top) viewport offset of the game canvas."""
         rect = self.page.evaluate(
@@ -430,50 +605,95 @@ class CryptBot:
     def _open_watchtower(self):
         """Click the Watchtower HUD icon then select 'Crypts and Arenas'."""
         logger.debug("[%s] Opening Watchtower.", self.account["name"])
+        self.page.bring_to_front()
         self._canvas_click("watchtower_btn", wait_ms=1_200)
         logger.debug("[%s] Clicking 'Crypts and Arenas'.", self.account["name"])
-        self._canvas_click("crypts_and_arenas", wait_ms=800)
+        # Sidebar is centered around page(700, 549) — crop tightly around it
+        self._ocr_click("Crypts", wait_ms=800, fallback_key="crypts_and_arenas",
+                        region=(560, 460, 320, 180))
+
+    def _is_tab_green(self, tab_key: str) -> bool:
+        """
+        Return True if the tab is green (selected).
+        Green tabs: high green channel, green > red by a clear margin.
+        Tan/beige tabs (deselected): red ≈ green, both moderate.
+        We sample a 14×14 patch at the tab centre.
+        """
+        cx, cy = CANVAS_COORDS[tab_key]
+        ox, oy = self._canvas_offset()
+        px, py = cx + ox, cy + oy
+
+        img = self._ocr_screenshot()
+        h, w = img.shape[:2]
+
+        r = 7
+        y1, y2 = max(0, py - r), min(h, py + r)
+        x1, x2 = max(0, px - r), min(w, px + r)
+        patch = img[y1:y2, x1:x2]
+
+        avg_r = float(patch[:, :, 0].mean())
+        avg_g = float(patch[:, :, 1].mean())
+        # Green selected: G significantly exceeds R.
+        # Tan deselected: R ≈ G (tan/beige hue, R slightly >= G).
+        is_green = (avg_g - avg_r) > 15
+        logger.debug("[%s] tab '%s' avg R=%.0f G=%.0f → %s",
+                     self.account["name"], tab_key, avg_r, avg_g,
+                     "GREEN(selected)" if is_green else "TAN(deselected)")
+        return is_green
 
     def _apply_filters(self):
         """
-        Select only the quality tabs listed in settings['crypt_types'].
+        Set each quality tab to match settings['crypt_types'].
 
-        Assumption: when the Crypts panel first opens all tabs are selected
-        (shown green).  We click every tab that is NOT wanted to deselect it,
-        leaving only the desired tabs active.
+        Green tab  = selected (included in search).
+        Blank tab  = deselected (excluded).
 
-        Then drag the level-range slider handles to the target positions.
+        We read the current state of every tab via pixel colour and click only
+        when the state needs to change.  This handles both a fresh panel (all
+        tabs green) and a panel that remembers the previous session's state.
         """
         logger.debug("[%s] Applying search filters.", self.account["name"])
+
+        # Let the panel fully render before sampling colours
+        self.page.wait_for_timeout(400)
 
         wanted = {t.capitalize() for t in self.settings["crypt_types"]}
 
         for tab in ALL_QUALITY_TABS:
-            if tab not in wanted:
-                coord_key = f"tab_{tab.lower()}"
-                logger.debug("[%s] Deselecting tab '%s'.", self.account["name"], tab)
-                self._canvas_click(coord_key, wait_ms=300)
+            tab_key = f"tab_{tab.lower()}"
+            should_be_selected = tab in wanted
+            currently_selected = self._is_tab_green(tab_key)
 
-        # Drag left slider handle to target position
+            if should_be_selected == currently_selected:
+                logger.debug("[%s] Tab '%s' already in correct state — skipping.", self.account["name"], tab)
+                continue
+
+            action = "selecting" if should_be_selected else "deselecting"
+            logger.info("[%s] %s tab '%s'.", self.account["name"], action.capitalize(), tab)
+            self._ocr_click(tab, wait_ms=400, fallback_key=tab_key,
+                            region=(820, 340, 900, 160))
+
+        # Drag level-range slider handles to the target positions.
+        # Coordinates are all within the filter panel — safe, won't hit the sidebar.
         ox, oy = self._canvas_offset()
-        lx, ly = CANVAS_COORDS["slider_track_left"]
-        tx, ty = CANVAS_COORDS["slider_left_target"]
-        logger.debug("[%s] Setting left level slider → (%d, %d).", self.account["name"], tx, ty)
-        self.page.mouse.move(lx + ox, ly + oy)
+
+        lhx, lhy = CANVAS_COORDS["slider_track_left"]
+        tx, ty   = CANVAS_COORDS["slider_left_target"]
+        logger.info("[%s] Dragging left slider handle → (%d, %d).", self.account["name"], tx, ty)
+        self.page.mouse.move(lhx + ox, lhy + oy)
         self.page.mouse.down()
-        self.page.mouse.move(tx + ox, ty + oy, steps=15)
+        self.page.mouse.move(tx + ox, ty + oy, steps=20)
         self.page.mouse.up()
         self.page.wait_for_timeout(300)
 
-        # Drag right slider handle to target position
-        rx, ry = CANVAS_COORDS["slider_track_right"]
+        rhx, rhy = CANVAS_COORDS["slider_track_right"]
         tx2, ty2 = CANVAS_COORDS["slider_right_target"]
-        logger.debug("[%s] Setting right level slider → (%d, %d).", self.account["name"], tx2, ty2)
-        self.page.mouse.move(rx + ox, ry + oy)
+        logger.info("[%s] Dragging right slider handle → (%d, %d).", self.account["name"], tx2, ty2)
+        self.page.mouse.move(rhx + ox, rhy + oy)
         self.page.mouse.down()
-        self.page.mouse.move(tx2 + ox, ty2 + oy, steps=15)
+        self.page.mouse.move(tx2 + ox, ty2 + oy, steps=20)
         self.page.mouse.up()
-        self.page.wait_for_timeout(500)
+        self.page.wait_for_timeout(400)
 
     def _pick_second_result(self) -> bool:
         """
@@ -485,7 +705,10 @@ class CryptBot:
         logger.debug("[%s] Clicking 'Go' on second result.", self.account["name"])
         # Allow the filtered list to populate
         self.page.wait_for_timeout(1_500)
-        self._canvas_click("second_result_go", wait_ms=1_000)
+        # index=1 → second "Go" button in the results list
+        # Results list Go buttons — page x≈1217, y≈698 for first result
+        self._ocr_click("Go", wait_ms=1_000, index=1, fallback_key="second_result_go",
+                        region=(1100, 580, 300, 350))
         return True
 
     # ------------------------------------------------------------------
@@ -541,10 +764,12 @@ class CryptBot:
           3. Wait for the popup to appear, then click Explore.
           4. Press Escape once more to clear any remaining popup.
         """
-        # Step 1 — dismiss purchase/info overlay
+        # Step 1 — dismiss purchase/info overlay that appears after clicking Go.
+        # Wait a moment for it to fully render before pressing Escape.
+        self.page.wait_for_timeout(800)
         logger.debug("[%s] Pressing Escape to dismiss purchase overlay.", self.account["name"])
         self.page.keyboard.press("Escape")
-        self.page.wait_for_timeout(900)
+        self.page.wait_for_timeout(1_200)
 
         # Step 2 — click the crypt on the map to open the detail popup
         logger.debug("[%s] Clicking crypt on map.", self.account["name"])
@@ -552,7 +777,9 @@ class CryptBot:
 
         # Step 3 — click Explore in the crypt detail popup
         logger.debug("[%s] Clicking Explore in crypt popup.", self.account["name"])
-        self._canvas_click("crypt_popup_explore", wait_ms=800)
+        # Explore button — page(1156, 880)
+        self._ocr_click("Explore", wait_ms=800, fallback_key="crypt_popup_explore",
+                        region=(950, 800, 400, 150))
 
         # Step 4 — dismiss any remaining popup
         logger.debug("[%s] Pressing Escape to clear any remaining popup.", self.account["name"])

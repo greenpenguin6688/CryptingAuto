@@ -1,3 +1,13 @@
-2026/05/09-11:42:52.355 fdc Reusing MANIFEST D:\New folder\CryptingAuto\profiles\1020\Default\IndexedDB\https_totalbattle.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/05/09-11:42:52.356 fdc Recovering log #55
-2026/05/09-11:42:52.356 fdc Reusing old log D:\New folder\CryptingAuto\profiles\1020\Default\IndexedDB\https_totalbattle.com_0.indexeddb.leveldb/000055.log 
+2026/05/09-15:14:13.517 1194 Reusing MANIFEST D:\New folder\CryptingAuto\profiles\1020\Default\IndexedDB\https_totalbattle.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/09-15:14:13.517 1194 Recovering log #140
+2026/05/09-15:14:13.518 1194 Reusing old log D:\New folder\CryptingAuto\profiles\1020\Default\IndexedDB\https_totalbattle.com_0.indexeddb.leveldb/000140.log 
+2026/05/09-15:14:34.389 5b10 Level-0 table #145: started
+2026/05/09-15:14:34.444 5b10 Level-0 table #145: 111769 bytes OK
+2026/05/09-15:14:34.491 5b10 Delete type=0 #140
+2026/05/09-15:14:34.491 1194 Manual compaction at level-0 from '\x00+\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00,\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/05/09-15:14:56.133 590c Compacting 1@1 + 1@2 files
+2026/05/09-15:14:56.214 590c Generated table #146@1: 1165 keys, 145316 bytes
+2026/05/09-15:14:56.214 590c Compacted 1@1 + 1@2 files => 145316 bytes
+2026/05/09-15:14:56.243 590c compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/05/09-15:14:56.243 590c Delete type=2 #142
+2026/05/09-15:14:56.244 590c Delete type=2 #145

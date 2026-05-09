@@ -6,6 +6,9 @@ Usage
 Single kingdom (good for calibrating selectors):
     python main.py --single Kingdom1
 
+Calibration mode (opens browser, does nothing — measure coordinates freely):
+    python main.py --calibrate 1020
+
 All 6 kingdoms, visible windows (default):
     python main.py
 
@@ -130,6 +133,10 @@ def main():
         help="Run only one kingdom by name (useful for testing selectors).",
     )
     group.add_argument(
+        "--calibrate", metavar="KINGDOM",
+        help="Open the browser and wait — use to measure coordinates without the bot clicking.",
+    )
+    group.add_argument(
         "--sample", metavar="KINGDOM",
         help="Colour-calibration mode: print centre-pixel RGB every 2 s.",
     )
@@ -138,6 +145,30 @@ def main():
         help="Override config.py and force headless mode for all instances.",
     )
     args = parser.parse_args()
+
+    # ── Calibration mode ─────────────────────────────────────────────────
+    if args.calibrate:
+        account = next((a for a in ACCOUNTS if a["name"] == args.calibrate), None)
+        if account is None:
+            logger.error("Unknown account '%s'.", args.calibrate)
+            sys.exit(1)
+        bot = CryptBot(account, copy.deepcopy(SETTINGS))
+        bot.start()
+        print("\n[calibrate] Browser is open. Measure coordinates freely.")
+        print("            Paste this in DevTools Console (undocked window):")
+        print("            document.getElementById('unityCanvas').addEventListener('click', e => {")
+        print("              const r = e.target.getBoundingClientRect();")
+        print("              console.log('canvas:', Math.round(e.clientX-r.left), Math.round(e.clientY-r.top), '| page:', Math.round(e.clientX), Math.round(e.clientY));")
+        print("            });")
+        print("\n            Press Ctrl+C when done.\n")
+        try:
+            while True:
+                time.sleep(1)
+        except KeyboardInterrupt:
+            pass
+        finally:
+            bot.stop()
+        return
 
     # ── Colour calibration ───────────────────────────────────────────────
     if args.sample:

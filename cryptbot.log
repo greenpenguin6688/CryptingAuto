@@ -1099,3 +1099,885 @@ playwright._impl._errors.TargetClosedError: Target page, context or browser has 
 2026-05-08 23:00:50,134 [ERROR] 5704 Future exception was never retrieved
 future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
 playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 10:22:17,042 [INFO] 25640 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 10:22:27,404 [INFO] 25640 [1020] Navigating to https://totalbattle.com
+2026-05-09 10:22:31,559 [INFO] 25640 [1020] Map already loaded — no login required.
+2026-05-09 10:22:31,560 [INFO] 25640 [1020] Waiting for game loading screen to finish...
+2026-05-09 10:22:46,763 [INFO] 25640 [1020] Waiting for map canvas...
+2026-05-09 10:22:50,392 [INFO] 25640 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 10:22:51,356 [INFO] 25640 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 10:22:52,159 [INFO] 25640 [1020] Map ready.
+2026-05-09 10:22:52,160 [INFO] 25640 [1020] Crypt loop started.
+2026-05-09 10:23:32,202 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:24:47,281 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:26:02,368 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:27:17,530 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:28:32,670 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:29:47,761 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:31:02,883 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:32:18,288 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:33:33,429 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:34:48,497 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:36:03,554 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:37:18,604 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:38:33,697 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:39:48,768 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:41:03,812 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:42:18,897 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:43:33,963 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:44:49,018 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:46:04,087 [ERROR] 25640 [1020] Timeout: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("[data-id=\"watchtower-btn\"], .watchtower-icon, .great-watchtower")
+ — recovering.
+2026-05-09 10:46:59,753 [INFO] 25640 [1020] Interrupted by user.
+2026-05-09 10:49:32,707 [ERROR] 25640 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 10:49:32,718 [ERROR] 25640 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 10:49:34,241 [INFO] 18372 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 10:49:36,588 [INFO] 18372 [1020] Navigating to https://totalbattle.com
+2026-05-09 10:49:40,680 [INFO] 18372 [1020] Looking for 'Log in' link by text...
+2026-05-09 10:49:40,697 [INFO] 18372 [1020] Clicked 'Log In' — waiting for email input.
+2026-05-09 10:49:40,907 [INFO] 18372 [1020] Interrupted by user.
+2026-05-09 10:49:46,842 [ERROR] 18372 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 10:49:46,855 [ERROR] 18372 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 10:50:33,713 [INFO] 22064 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 10:50:35,604 [INFO] 22064 [1020] Navigating to https://totalbattle.com
+2026-05-09 10:50:38,832 [INFO] 22064 [1020] Looking for 'Log in' link by text...
+2026-05-09 10:50:38,854 [INFO] 22064 [1020] Clicked 'Log In' — waiting for email input.
+2026-05-09 10:50:40,395 [INFO] 22064 [1020] Filling login form.
+2026-05-09 10:50:41,273 [INFO] 22064 [1020] Login submitted — waiting for map to load.
+2026-05-09 10:50:44,276 [INFO] 22064 [1020] Waiting for game loading screen to finish...
+2026-05-09 10:50:58,584 [INFO] 22064 [1020] Waiting for map canvas...
+2026-05-09 10:51:02,189 [INFO] 22064 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 10:51:03,114 [INFO] 22064 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 10:51:03,928 [INFO] 22064 [1020] Map ready.
+2026-05-09 10:51:03,928 [INFO] 22064 [1020] Crypt loop started.
+2026-05-09 10:51:14,675 [INFO] 22064 [1020] Cycle #1 complete.
+2026-05-09 10:51:30,124 [INFO] 22064 [1020] Cycle #2 complete.
+2026-05-09 10:51:43,790 [INFO] 22064 [1020] Interrupted by user.
+2026-05-09 10:51:50,673 [ERROR] 22064 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 10:51:50,681 [ERROR] 22064 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 10:51:52,154 [INFO] 964 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 10:51:53,869 [INFO] 964 [1020] Navigating to https://totalbattle.com
+2026-05-09 10:51:57,244 [INFO] 964 [1020] Map already loaded — no login required.
+2026-05-09 10:51:57,257 [INFO] 964 [1020] Waiting for game loading screen to finish...
+2026-05-09 10:52:17,194 [INFO] 964 [1020] Waiting for map canvas...
+2026-05-09 10:52:21,020 [INFO] 964 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 10:52:22,122 [INFO] 964 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 10:52:22,926 [INFO] 964 [1020] Map ready.
+2026-05-09 10:52:22,927 [INFO] 964 [1020] Crypt loop started.
+2026-05-09 10:52:36,908 [INFO] 964 [1020] Cycle #1 complete.
+2026-05-09 10:52:52,408 [INFO] 964 [1020] Cycle #2 complete.
+2026-05-09 10:53:08,556 [INFO] 964 [1020] Cycle #3 complete.
+2026-05-09 10:53:24,321 [INFO] 964 [1020] Cycle #4 complete.
+2026-05-09 10:53:40,700 [INFO] 964 [1020] Cycle #5 complete.
+2026-05-09 10:53:56,097 [INFO] 964 [1020] Cycle #6 complete.
+2026-05-09 10:54:11,479 [INFO] 964 [1020] Cycle #7 complete.
+2026-05-09 10:54:26,894 [INFO] 964 [1020] Cycle #8 complete.
+2026-05-09 10:54:42,318 [INFO] 964 [1020] Cycle #9 complete.
+2026-05-09 10:54:57,703 [INFO] 964 [1020] Cycle #10 complete.
+2026-05-09 10:55:13,301 [INFO] 964 [1020] Cycle #11 complete.
+2026-05-09 10:55:28,187 [ERROR] 964 [1020] Unexpected error — recovering.
+Traceback (most recent call last):
+  File "D:\New folder\CryptingAuto\bot.py", line 369, in run_loop
+    self._explore_crypt()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "D:\New folder\CryptingAuto\bot.py", line 543, in _explore_crypt
+    self.page.wait_for_timeout(700)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\sync_api\_generated.py", line 11879, in wait_for_timeout
+    self._sync(self._impl_obj.wait_for_timeout(timeout=timeout))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_page.py", line 1113, in wait_for_timeout
+    await self._main_frame.wait_for_timeout(timeout)
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_frame.py", line 862, in wait_for_timeout
+    await self._channel.send("waitForTimeout", None, {"waitTimeout": timeout})
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-05-09 10:55:28,199 [ERROR] 964 [1020] Fatal error in worker.
+Traceback (most recent call last):
+  File "D:\New folder\CryptingAuto\main.py", line 61, in _run_account
+    bot.run_loop()
+    ~~~~~~~~~~~~^^
+  File "D:\New folder\CryptingAuto\bot.py", line 390, in run_loop
+    self._dismiss_overlays(count=2)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\New folder\CryptingAuto\bot.py", line 551, in _dismiss_overlays
+    self.page.keyboard.press("Escape")
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\sync_api\_generated.py", line 1491, in press
+    self._sync(self._impl_obj.press(key=key, delay=delay))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_input.py", line 38, in press
+    await self._channel.send("keyboardPress", None, locals_to_params(locals()))
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Keyboard.press: Target page, context or browser has been closed
+2026-05-09 11:04:11,534 [INFO] 25604 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 11:04:14,939 [INFO] 25604 [1020] Navigating to https://totalbattle.com
+2026-05-09 11:04:18,171 [INFO] 25604 [1020] Interrupted by user.
+2026-05-09 11:04:25,362 [ERROR] 25604 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 11:04:25,380 [ERROR] 25604 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 11:04:26,872 [INFO] 6368 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 11:04:28,736 [INFO] 6368 [1020] Navigating to https://totalbattle.com
+2026-05-09 11:04:32,177 [INFO] 6368 [1020] Looking for 'Log in' link by text...
+2026-05-09 11:04:32,194 [INFO] 6368 [1020] Clicked 'Log In' — waiting for email input.
+2026-05-09 11:04:33,731 [INFO] 6368 [1020] Filling login form.
+2026-05-09 11:04:34,604 [INFO] 6368 [1020] Login submitted — waiting for map to load.
+2026-05-09 11:04:37,609 [INFO] 6368 [1020] Waiting for game loading screen to finish...
+2026-05-09 11:04:51,894 [INFO] 6368 [1020] Waiting for map canvas...
+2026-05-09 11:04:55,502 [INFO] 6368 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 11:04:56,469 [INFO] 6368 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 11:04:57,279 [INFO] 6368 [1020] Map ready.
+2026-05-09 11:04:57,279 [INFO] 6368 [1020] Crypt loop started.
+2026-05-09 11:05:09,758 [INFO] 6368 [1020] Cycle #1 complete.
+2026-05-09 11:05:26,470 [INFO] 6368 [1020] Cycle #2 complete.
+2026-05-09 11:05:43,258 [INFO] 6368 [1020] Cycle #3 complete.
+2026-05-09 11:06:01,443 [INFO] 6368 [1020] Cycle #4 complete.
+2026-05-09 11:06:18,695 [INFO] 6368 [1020] Cycle #5 complete.
+2026-05-09 11:06:36,388 [INFO] 6368 [1020] Cycle #6 complete.
+2026-05-09 11:06:54,209 [INFO] 6368 [1020] Cycle #7 complete.
+2026-05-09 11:07:05,026 [INFO] 6368 [1020] Interrupted by user.
+2026-05-09 11:07:06,725 [ERROR] 6368 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 11:07:06,736 [ERROR] 6368 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 11:07:07,963 [INFO] 23204 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 11:07:09,710 [INFO] 23204 [1020] Navigating to https://totalbattle.com
+2026-05-09 11:07:13,129 [INFO] 23204 [1020] Map already loaded — no login required.
+2026-05-09 11:07:13,129 [INFO] 23204 [1020] Waiting for game loading screen to finish...
+2026-05-09 11:07:27,047 [INFO] 23204 [1020] Waiting for map canvas...
+2026-05-09 11:07:30,650 [INFO] 23204 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 11:07:31,632 [INFO] 23204 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 11:07:32,453 [INFO] 23204 [1020] Map ready.
+2026-05-09 11:07:32,453 [INFO] 23204 [1020] Crypt loop started.
+2026-05-09 11:07:44,761 [INFO] 23204 [1020] Cycle #1 complete.
+2026-05-09 11:08:01,540 [INFO] 23204 [1020] Cycle #2 complete.
+2026-05-09 11:08:18,284 [INFO] 23204 [1020] Cycle #3 complete.
+2026-05-09 11:08:35,001 [INFO] 23204 [1020] Cycle #4 complete.
+2026-05-09 11:08:51,733 [INFO] 23204 [1020] Cycle #5 complete.
+2026-05-09 11:09:08,474 [INFO] 23204 [1020] Cycle #6 complete.
+2026-05-09 11:09:25,168 [INFO] 23204 [1020] Cycle #7 complete.
+2026-05-09 11:09:42,051 [INFO] 23204 [1020] Cycle #8 complete.
+2026-05-09 11:09:59,192 [INFO] 23204 [1020] Cycle #9 complete.
+2026-05-09 11:10:16,161 [INFO] 23204 [1020] Cycle #10 complete.
+2026-05-09 11:10:33,068 [INFO] 23204 [1020] Cycle #11 complete.
+2026-05-09 11:10:50,972 [INFO] 23204 [1020] Cycle #12 complete.
+2026-05-09 11:11:08,059 [INFO] 23204 [1020] Cycle #13 complete.
+2026-05-09 11:11:25,053 [INFO] 23204 [1020] Cycle #14 complete.
+2026-05-09 11:11:41,732 [INFO] 23204 [1020] Cycle #15 complete.
+2026-05-09 11:11:58,418 [INFO] 23204 [1020] Cycle #16 complete.
+2026-05-09 11:12:15,123 [INFO] 23204 [1020] Cycle #17 complete.
+2026-05-09 11:12:31,892 [INFO] 23204 [1020] Cycle #18 complete.
+2026-05-09 11:12:39,953 [INFO] 23204 [1020] Interrupted by user.
+2026-05-09 11:12:43,649 [ERROR] 23204 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 11:12:43,659 [ERROR] 23204 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 11:12:45,096 [INFO] 19204 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 11:12:46,726 [INFO] 19204 [1020] Navigating to https://totalbattle.com
+2026-05-09 11:12:50,559 [INFO] 19204 [1020] Map already loaded — no login required.
+2026-05-09 11:12:50,559 [INFO] 19204 [1020] Waiting for game loading screen to finish...
+2026-05-09 11:13:04,187 [INFO] 19204 [1020] Waiting for map canvas...
+2026-05-09 11:13:07,791 [INFO] 19204 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 11:13:08,770 [INFO] 19204 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 11:13:09,582 [INFO] 19204 [1020] Map ready.
+2026-05-09 11:13:09,583 [INFO] 19204 [1020] Crypt loop started.
+2026-05-09 11:13:22,020 [INFO] 19204 [1020] Cycle #1 complete.
+2026-05-09 11:13:38,753 [INFO] 19204 [1020] Cycle #2 complete.
+2026-05-09 11:13:55,592 [INFO] 19204 [1020] Cycle #3 complete.
+2026-05-09 11:14:12,349 [INFO] 19204 [1020] Cycle #4 complete.
+2026-05-09 11:14:29,125 [INFO] 19204 [1020] Cycle #5 complete.
+2026-05-09 11:14:45,945 [INFO] 19204 [1020] Cycle #6 complete.
+2026-05-09 11:15:02,660 [INFO] 19204 [1020] Cycle #7 complete.
+2026-05-09 11:15:19,513 [INFO] 19204 [1020] Cycle #8 complete.
+2026-05-09 11:15:36,843 [INFO] 19204 [1020] Cycle #9 complete.
+2026-05-09 11:15:53,812 [INFO] 19204 [1020] Cycle #10 complete.
+2026-05-09 11:16:11,225 [INFO] 19204 [1020] Cycle #11 complete.
+2026-05-09 11:16:28,124 [INFO] 19204 [1020] Cycle #12 complete.
+2026-05-09 11:16:44,959 [INFO] 19204 [1020] Cycle #13 complete.
+2026-05-09 11:17:02,218 [INFO] 19204 [1020] Cycle #14 complete.
+2026-05-09 11:17:19,487 [INFO] 19204 [1020] Cycle #15 complete.
+2026-05-09 11:17:36,643 [INFO] 19204 [1020] Cycle #16 complete.
+2026-05-09 11:17:54,209 [INFO] 19204 [1020] Cycle #17 complete.
+2026-05-09 11:18:11,110 [INFO] 19204 [1020] Cycle #18 complete.
+2026-05-09 11:18:28,540 [INFO] 19204 [1020] Cycle #19 complete.
+2026-05-09 11:18:30,968 [INFO] 19204 [1020] Interrupted by user.
+2026-05-09 11:19:47,038 [INFO] 14964 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 11:19:48,754 [INFO] 14964 [1020] Navigating to https://totalbattle.com
+2026-05-09 11:19:52,267 [INFO] 14964 [1020] Map already loaded — no login required.
+2026-05-09 11:19:52,268 [INFO] 14964 [1020] Waiting for game loading screen to finish...
+2026-05-09 11:20:05,880 [INFO] 14964 [1020] Waiting for map canvas...
+2026-05-09 11:20:09,486 [INFO] 14964 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 11:20:10,455 [INFO] 14964 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 11:20:11,269 [INFO] 14964 [1020] Map ready.
+2026-05-09 11:20:11,270 [INFO] 14964 [1020] Crypt loop started.
+2026-05-09 11:20:11,299 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:20:12,557 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:20:13,512 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:20:13,894 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:20:14,244 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:20:14,607 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:20:18,073 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:20:20,015 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:20:21,260 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:20:22,833 [INFO] 14964 [1020] Cycle #1 complete.
+2026-05-09 11:20:27,856 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:20:29,094 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:20:29,957 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:20:30,307 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:20:30,649 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:20:30,995 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:20:34,380 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:20:36,339 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:20:37,590 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:20:39,116 [INFO] 14964 [1020] Cycle #2 complete.
+2026-05-09 11:20:44,131 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:20:45,379 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:20:46,241 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:20:46,609 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:20:47,006 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:20:47,377 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:20:51,969 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:20:54,023 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:20:55,274 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:20:56,925 [INFO] 14964 [1020] Cycle #3 complete.
+2026-05-09 11:21:01,977 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:21:03,240 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:21:04,080 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:21:04,424 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:21:04,765 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:21:05,100 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:21:08,505 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:21:10,477 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:21:11,725 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:21:13,320 [INFO] 14964 [1020] Cycle #4 complete.
+2026-05-09 11:21:18,341 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:21:19,573 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:21:20,424 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:21:20,757 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:21:21,095 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:21:21,443 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:21:24,790 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:21:26,746 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:21:28,009 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:21:29,558 [INFO] 14964 [1020] Cycle #5 complete.
+2026-05-09 11:21:34,579 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:21:35,823 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:21:36,667 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:21:37,012 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:21:37,367 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:21:37,698 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:21:41,099 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:21:43,046 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:21:44,292 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:21:45,830 [INFO] 14964 [1020] Cycle #6 complete.
+2026-05-09 11:21:50,847 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:21:52,083 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:21:52,923 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:21:53,263 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:21:53,596 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:21:53,944 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:21:57,315 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:21:59,272 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:22:00,512 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:22:02,077 [INFO] 14964 [1020] Cycle #7 complete.
+2026-05-09 11:22:07,094 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:22:08,330 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:22:09,174 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:22:09,505 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:22:09,840 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:22:10,172 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:22:13,562 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:22:15,522 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:22:16,763 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:22:18,322 [INFO] 14964 [1020] Cycle #8 complete.
+2026-05-09 11:22:23,339 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:22:24,572 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:22:25,417 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:22:25,756 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:22:26,088 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:22:26,422 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:22:29,760 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:22:31,699 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:22:32,941 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:22:34,486 [INFO] 14964 [1020] Cycle #9 complete.
+2026-05-09 11:22:39,506 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:22:40,740 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:22:41,801 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:22:42,315 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:22:42,877 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:22:43,505 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:22:47,066 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:22:49,013 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:22:50,274 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:22:51,825 [INFO] 14964 [1020] Cycle #10 complete.
+2026-05-09 11:22:56,876 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:22:58,379 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:22:59,311 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:22:59,657 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:22:59,993 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:23:00,375 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:23:04,107 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:23:06,062 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:23:07,307 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:23:08,855 [INFO] 14964 [1020] Cycle #11 complete.
+2026-05-09 11:23:13,878 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:23:15,122 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:23:15,966 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:23:16,308 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:23:16,653 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:23:16,993 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:23:20,406 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:23:22,372 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:23:23,608 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:23:25,137 [INFO] 14964 [1020] Cycle #12 complete.
+2026-05-09 11:23:30,156 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:23:31,389 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:23:32,253 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:23:32,594 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:23:32,958 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:23:33,307 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:23:36,875 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:23:38,839 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:23:40,096 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:23:41,678 [INFO] 14964 [1020] Cycle #13 complete.
+2026-05-09 11:23:46,699 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:23:47,972 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:23:48,825 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:23:49,162 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:23:49,510 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:23:49,840 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:23:53,373 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:23:55,340 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:23:56,574 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:23:58,105 [INFO] 14964 [1020] Cycle #14 complete.
+2026-05-09 11:24:03,121 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:24:04,347 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:24:05,194 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:24:05,540 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:24:05,872 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:24:06,205 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:24:09,605 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:24:11,555 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:24:12,791 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:24:14,334 [INFO] 14964 [1020] Cycle #15 complete.
+2026-05-09 11:24:19,359 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:24:20,605 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:24:21,446 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:24:21,790 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:24:22,124 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:24:22,456 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:24:25,829 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:24:27,790 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:24:29,027 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:24:30,574 [INFO] 14964 [1020] Cycle #16 complete.
+2026-05-09 11:24:35,591 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:24:36,833 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:24:37,674 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:24:38,015 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:24:38,361 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:24:38,706 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:24:42,087 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:24:44,032 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:24:45,274 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:24:46,819 [INFO] 14964 [1020] Cycle #17 complete.
+2026-05-09 11:24:51,838 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:24:53,071 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:24:53,912 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:24:54,257 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:24:54,590 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:24:54,922 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:24:58,309 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:25:00,275 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:25:01,559 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:25:03,111 [INFO] 14964 [1020] Cycle #18 complete.
+2026-05-09 11:25:08,128 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:25:09,362 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:25:10,207 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:25:10,538 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:25:10,872 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:25:11,205 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:25:14,562 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:25:16,521 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:25:17,761 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:25:19,309 [INFO] 14964 [1020] Cycle #19 complete.
+2026-05-09 11:25:24,327 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:25:25,562 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:25:26,407 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:25:26,740 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:25:27,079 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:25:27,413 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:25:30,827 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:25:32,809 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:25:34,068 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:25:35,624 [INFO] 14964 [1020] Cycle #20 complete.
+2026-05-09 11:25:40,625 [INFO] 14964 [1020] Reloading page (WebGL cache flush).
+2026-05-09 11:25:41,537 [INFO] 14964 [1020] Waiting for game loading screen to finish...
+2026-05-09 11:25:58,946 [INFO] 14964 [1020] Waiting for map canvas...
+2026-05-09 11:26:02,604 [INFO] 14964 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 11:26:03,588 [INFO] 14964 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 11:26:04,400 [INFO] 14964 [1020] Map ready.
+2026-05-09 11:26:04,423 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:26:05,664 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:26:06,509 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:26:06,860 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:26:07,269 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:26:07,623 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:26:11,272 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:26:13,240 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:26:14,507 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:26:16,057 [INFO] 14964 [1020] Cycle #21 complete.
+2026-05-09 11:26:21,090 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:26:22,340 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:26:23,191 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:26:23,524 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:26:23,876 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:26:24,229 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:26:28,195 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:26:30,160 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:26:31,408 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:26:32,952 [INFO] 14964 [1020] Cycle #22 complete.
+2026-05-09 11:26:37,973 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:26:39,211 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:26:40,074 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:26:40,424 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:26:40,775 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:26:41,112 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:26:44,497 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:26:46,474 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:26:47,725 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:26:49,256 [INFO] 14964 [1020] Cycle #23 complete.
+2026-05-09 11:26:54,277 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:26:55,524 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:26:56,375 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:26:56,708 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:26:57,041 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:26:57,374 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:27:00,807 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:27:02,760 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:27:04,008 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:27:05,693 [INFO] 14964 [1020] Cycle #24 complete.
+2026-05-09 11:27:10,714 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:27:11,968 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:27:12,817 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:27:13,160 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:27:13,511 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:27:13,857 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:27:17,311 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:27:19,272 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:27:20,523 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:27:22,072 [INFO] 14964 [1020] Cycle #25 complete.
+2026-05-09 11:27:27,090 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:27:28,325 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:27:29,174 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:27:29,522 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:27:29,866 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:27:30,223 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:27:33,646 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:27:35,607 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:27:36,857 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:27:38,396 [INFO] 14964 [1020] Cycle #26 complete.
+2026-05-09 11:27:43,422 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:27:44,668 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:27:45,513 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:27:45,862 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:27:46,207 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:27:46,529 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:27:49,956 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:27:51,922 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:27:53,165 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:27:54,724 [INFO] 14964 [1020] Cycle #27 complete.
+2026-05-09 11:27:59,744 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:28:00,992 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:28:01,891 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:28:02,230 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:28:02,574 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:28:02,913 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:28:06,395 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:28:08,362 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:28:09,609 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:28:11,169 [INFO] 14964 [1020] Cycle #28 complete.
+2026-05-09 11:28:16,188 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:28:17,441 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:28:18,290 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:28:18,629 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:28:18,975 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:28:19,306 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:28:22,731 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:28:24,691 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:28:25,958 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:28:27,504 [INFO] 14964 [1020] Cycle #29 complete.
+2026-05-09 11:28:32,527 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:28:33,775 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:28:34,624 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:28:34,973 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:28:35,312 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:28:35,662 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:28:39,205 [INFO] 14964 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,698)  canvas_size(2560x1226)
+2026-05-09 11:28:41,173 [INFO] 14964 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,630)  canvas_size(2560x1226)
+2026-05-09 11:28:42,428 [INFO] 14964 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,880)  canvas_size(2560x1226)
+2026-05-09 11:28:43,978 [INFO] 14964 [1020] Cycle #30 complete.
+2026-05-09 11:28:49,012 [INFO] 14964 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,987)  canvas_size(2560x1226)
+2026-05-09 11:28:50,258 [INFO] 14964 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,549)  canvas_size(2560x1226)
+2026-05-09 11:28:51,107 [INFO] 14964 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,439)  canvas_size(2560x1226)
+2026-05-09 11:28:51,478 [INFO] 14964 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,439)  canvas_size(2560x1226)
+2026-05-09 11:28:51,827 [INFO] 14964 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,439)  canvas_size(2560x1226)
+2026-05-09 11:28:52,175 [INFO] 14964 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,472)  canvas_size(2560x1226)
+2026-05-09 11:28:53,682 [INFO] 14964 [1020] Interrupted by user.
+2026-05-09 11:28:55,140 [ERROR] 14964 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 11:28:55,151 [ERROR] 14964 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 11:28:56,106 [INFO] 27192 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 11:28:57,838 [INFO] 27192 [1020] Navigating to https://totalbattle.com
+2026-05-09 11:29:01,443 [INFO] 27192 [1020] Map already loaded — no login required.
+2026-05-09 11:29:01,443 [INFO] 27192 [1020] Waiting for game loading screen to finish...
+2026-05-09 11:29:15,293 [INFO] 27192 [1020] Waiting for map canvas...
+2026-05-09 11:29:18,917 [INFO] 27192 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 11:29:19,882 [INFO] 27192 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 11:29:20,701 [INFO] 27192 [1020] Map ready.
+2026-05-09 11:29:20,703 [INFO] 27192 [1020] Crypt loop started.
+2026-05-09 11:29:20,724 [INFO] 27192 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:29:21,973 [INFO] 27192 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:29:22,806 [INFO] 27192 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:29:23,249 [INFO] 27192 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:29:23,611 [INFO] 27192 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:29:23,962 [INFO] 27192 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:29:27,378 [INFO] 27192 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:29:29,339 [INFO] 27192 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:29:30,582 [INFO] 27192 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,837)  canvas_size(2560x1226)
+2026-05-09 11:29:32,128 [INFO] 27192 [1020] Cycle #1 complete.
+2026-05-09 11:29:37,156 [INFO] 27192 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:29:38,389 [INFO] 27192 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:29:39,229 [INFO] 27192 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:29:39,589 [INFO] 27192 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:29:39,923 [INFO] 27192 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:29:40,256 [INFO] 27192 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:29:43,631 [INFO] 27192 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:29:45,588 [INFO] 27192 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:29:46,823 [INFO] 27192 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,837)  canvas_size(2560x1226)
+2026-05-09 11:29:48,368 [INFO] 27192 [1020] Cycle #2 complete.
+2026-05-09 11:29:53,388 [INFO] 27192 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:29:54,629 [INFO] 27192 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:29:55,481 [INFO] 27192 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:29:55,823 [INFO] 27192 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:29:56,173 [INFO] 27192 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:29:56,515 [INFO] 27192 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:30:00,030 [INFO] 27192 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:30:02,081 [INFO] 27192 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:30:03,323 [INFO] 27192 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,837)  canvas_size(2560x1226)
+2026-05-09 11:30:04,849 [INFO] 27192 [1020] Cycle #3 complete.
+2026-05-09 11:30:09,865 [INFO] 27192 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:30:11,095 [INFO] 27192 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:30:11,943 [INFO] 27192 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:30:12,310 [INFO] 27192 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:30:12,659 [INFO] 27192 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:30:12,995 [INFO] 27192 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:30:16,472 [INFO] 27192 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:30:18,423 [INFO] 27192 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:30:19,753 [INFO] 27192 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,837)  canvas_size(2560x1226)
+2026-05-09 11:30:21,324 [INFO] 27192 [1020] Cycle #4 complete.
+2026-05-09 11:30:26,345 [INFO] 27192 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:30:27,626 [INFO] 27192 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:30:28,473 [INFO] 27192 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:30:28,814 [INFO] 27192 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:30:29,158 [INFO] 27192 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:30:29,506 [INFO] 27192 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:30:33,472 [INFO] 27192 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:30:35,428 [INFO] 27192 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:30:36,662 [INFO] 27192 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,837)  canvas_size(2560x1226)
+2026-05-09 11:30:38,203 [INFO] 27192 [1020] Cycle #5 complete.
+2026-05-09 11:30:43,224 [INFO] 27192 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:30:44,474 [INFO] 27192 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:30:45,324 [INFO] 27192 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:30:45,673 [INFO] 27192 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:30:46,028 [INFO] 27192 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:30:46,395 [INFO] 27192 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:30:49,843 [INFO] 27192 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:30:51,806 [INFO] 27192 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:30:53,062 [INFO] 27192 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,837)  canvas_size(2560x1226)
+2026-05-09 11:30:54,640 [INFO] 27192 [1020] Cycle #6 complete.
+2026-05-09 11:30:59,662 [INFO] 27192 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:31:00,913 [INFO] 27192 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:31:01,841 [INFO] 27192 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:31:02,179 [INFO] 27192 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:31:02,512 [INFO] 27192 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:31:02,864 [INFO] 27192 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:31:06,205 [INFO] 27192 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:31:08,173 [INFO] 27192 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:31:09,411 [INFO] 27192 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,837)  canvas_size(2560x1226)
+2026-05-09 11:31:10,951 [INFO] 27192 [1020] Cycle #7 complete.
+2026-05-09 11:31:15,966 [INFO] 27192 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:31:17,212 [INFO] 27192 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:31:18,055 [INFO] 27192 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:31:18,390 [INFO] 27192 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:31:18,723 [INFO] 27192 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:31:19,064 [INFO] 27192 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:31:22,443 [INFO] 27192 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:31:24,424 [INFO] 27192 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:31:25,674 [INFO] 27192 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,837)  canvas_size(2560x1226)
+2026-05-09 11:31:27,203 [INFO] 27192 [1020] Cycle #8 complete.
+2026-05-09 11:31:32,223 [INFO] 27192 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:31:33,465 [INFO] 27192 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:31:34,317 [INFO] 27192 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:31:34,662 [INFO] 27192 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:31:34,995 [INFO] 27192 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:31:35,334 [INFO] 27192 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:31:38,716 [INFO] 27192 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:31:40,678 [INFO] 27192 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:31:41,914 [INFO] 27192 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,837)  canvas_size(2560x1226)
+2026-05-09 11:31:42,260 [INFO] 27192 [1020] Interrupted by user.
+2026-05-09 11:39:25,259 [ERROR] 27192 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 11:39:25,271 [ERROR] 27192 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 11:39:26,228 [INFO] 22832 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 11:39:27,792 [INFO] 22832 [1020] Navigating to https://totalbattle.com
+2026-05-09 11:39:31,306 [INFO] 22832 [1020] Map already loaded — no login required.
+2026-05-09 11:39:31,311 [INFO] 22832 [1020] Waiting for game loading screen to finish...
+2026-05-09 11:39:45,109 [INFO] 22832 [1020] Waiting for map canvas...
+2026-05-09 11:39:48,721 [INFO] 22832 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 11:39:49,712 [INFO] 22832 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 11:39:50,533 [INFO] 22832 [1020] Map ready.
+2026-05-09 11:39:50,542 [INFO] 22832 [1020] Crypt loop started.
+2026-05-09 11:39:50,576 [INFO] 22832 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:39:51,839 [INFO] 22832 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:39:52,718 [INFO] 22832 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:39:53,072 [INFO] 22832 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:39:53,408 [INFO] 22832 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:39:53,777 [INFO] 22832 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:39:57,396 [INFO] 22832 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:39:59,373 [INFO] 22832 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:40:00,629 [INFO] 22832 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,837)  canvas_size(2560x1226)
+2026-05-09 11:40:02,193 [INFO] 22832 [1020] Cycle #1 complete.
+2026-05-09 11:40:07,223 [INFO] 22832 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:40:08,455 [INFO] 22832 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:40:09,289 [INFO] 22832 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:40:09,639 [INFO] 22832 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:40:09,974 [INFO] 22832 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:40:10,307 [INFO] 22832 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:40:13,706 [INFO] 22832 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:40:15,672 [INFO] 22832 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:40:16,909 [INFO] 22832 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,837)  canvas_size(2560x1226)
+2026-05-09 11:40:18,451 [INFO] 22832 [1020] Cycle #2 complete.
+2026-05-09 11:40:23,473 [INFO] 22832 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:40:24,706 [INFO] 22832 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:40:25,540 [INFO] 22832 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:40:25,878 [INFO] 22832 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:40:26,229 [INFO] 22832 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:40:26,577 [INFO] 22832 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:40:29,990 [INFO] 22832 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:40:31,955 [INFO] 22832 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:40:33,194 [INFO] 22832 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,837)  canvas_size(2560x1226)
+2026-05-09 11:40:34,757 [INFO] 22832 [1020] Cycle #3 complete.
+2026-05-09 11:40:39,781 [INFO] 22832 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:40:41,446 [INFO] 22832 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:40:42,452 [INFO] 22832 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:40:42,806 [INFO] 22832 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:40:43,156 [INFO] 22832 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:40:43,608 [INFO] 22832 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:40:47,444 [INFO] 22832 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:40:49,429 [INFO] 22832 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:40:50,677 [INFO] 22832 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,837)  canvas_size(2560x1226)
+2026-05-09 11:40:52,215 [INFO] 22832 [1020] Cycle #4 complete.
+2026-05-09 11:40:57,240 [INFO] 22832 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:40:58,491 [INFO] 22832 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:40:59,329 [INFO] 22832 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:40:59,689 [INFO] 22832 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:41:00,041 [INFO] 22832 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:41:00,390 [INFO] 22832 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:41:03,809 [INFO] 22832 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:41:05,870 [INFO] 22832 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:41:07,161 [INFO] 22832 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,837)  canvas_size(2560x1226)
+2026-05-09 11:41:08,739 [INFO] 22832 [1020] Cycle #5 complete.
+2026-05-09 11:41:13,778 [INFO] 22832 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:41:15,078 [INFO] 22832 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:41:15,938 [INFO] 22832 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:41:16,290 [INFO] 22832 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:41:16,640 [INFO] 22832 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:41:16,991 [INFO] 22832 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:41:20,423 [INFO] 22832 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:41:22,379 [INFO] 22832 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:41:23,623 [INFO] 22832 [1020] canvas_click 'crypt_popup_explore' → canvas(1156,837)  bbox(0,43)  page(1156,837)  canvas_size(2560x1226)
+2026-05-09 11:41:25,153 [INFO] 22832 [1020] Cycle #6 complete.
+2026-05-09 11:41:30,181 [INFO] 22832 [1020] canvas_click 'watchtower_btn' → canvas(693,944)  bbox(0,43)  page(693,944)  canvas_size(2560x1226)
+2026-05-09 11:41:31,448 [INFO] 22832 [1020] canvas_click 'crypts_and_arenas' → canvas(700,506)  bbox(0,43)  page(700,506)  canvas_size(2560x1226)
+2026-05-09 11:41:32,731 [INFO] 22832 [1020] canvas_click 'tab_rare' → canvas(990,396)  bbox(0,43)  page(990,396)  canvas_size(2560x1226)
+2026-05-09 11:41:33,422 [INFO] 22832 [1020] canvas_click 'tab_epic' → canvas(1133,396)  bbox(0,43)  page(1133,396)  canvas_size(2560x1226)
+2026-05-09 11:41:33,924 [INFO] 22832 [1020] canvas_click 'tab_arenas' → canvas(1279,396)  bbox(0,43)  page(1279,396)  canvas_size(2560x1226)
+2026-05-09 11:41:34,408 [INFO] 22832 [1020] canvas_click 'tab_others' → canvas(910,429)  bbox(0,43)  page(910,429)  canvas_size(2560x1226)
+2026-05-09 11:41:38,723 [INFO] 22832 [1020] canvas_click 'second_result_go' → canvas(1217,655)  bbox(0,43)  page(1217,655)  canvas_size(2560x1226)
+2026-05-09 11:41:40,677 [INFO] 22832 [1020] canvas_click 'crypt_location' → canvas(977,587)  bbox(0,43)  page(977,587)  canvas_size(2560x1226)
+2026-05-09 11:41:41,859 [INFO] 22832 [1020] Interrupted by user.
+2026-05-09 11:41:45,737 [ERROR] 22832 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 11:41:45,744 [ERROR] 22832 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 11:41:48,488 [INFO] 24388 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 11:41:50,147 [INFO] 24388 [1020] Navigating to https://totalbattle.com
+2026-05-09 11:41:53,854 [INFO] 24388 [1020] Map already loaded — no login required.
+2026-05-09 11:41:53,862 [INFO] 24388 [1020] Waiting for game loading screen to finish...
+2026-05-09 11:42:07,791 [INFO] 24388 [1020] Waiting for map canvas...
+2026-05-09 11:42:11,392 [INFO] 24388 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 11:42:12,387 [INFO] 24388 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 11:42:13,190 [INFO] 24388 [1020] Map ready.
+2026-05-09 11:42:13,190 [INFO] 24388 [1020] Crypt loop started.
+2026-05-09 11:42:13,191 [INFO] 24388 [1020] click 'watchtower_btn' → (693, 944)
+2026-05-09 11:42:14,415 [INFO] 24388 [1020] click 'crypts_and_arenas' → (700, 506)
+2026-05-09 11:42:15,234 [INFO] 24388 [1020] click 'tab_rare' → (990, 396)
+2026-05-09 11:42:15,560 [INFO] 24388 [1020] click 'tab_epic' → (1133, 396)
+2026-05-09 11:42:15,890 [INFO] 24388 [1020] click 'tab_arenas' → (1279, 396)
+2026-05-09 11:42:16,216 [INFO] 24388 [1020] click 'tab_others' → (910, 429)
+2026-05-09 11:42:19,599 [INFO] 24388 [1020] click 'second_result_go' → (1217, 655)
+2026-05-09 11:42:21,565 [INFO] 24388 [1020] click 'crypt_location' → (977, 587)
+2026-05-09 11:42:22,791 [INFO] 24388 [1020] click 'crypt_popup_explore' → (1156, 837)
+2026-05-09 11:42:24,356 [INFO] 24388 [1020] Cycle #1 complete.
+2026-05-09 11:42:29,357 [INFO] 24388 [1020] click 'watchtower_btn' → (693, 944)
+2026-05-09 11:42:30,575 [INFO] 24388 [1020] click 'crypts_and_arenas' → (700, 506)
+2026-05-09 11:42:31,399 [INFO] 24388 [1020] click 'tab_rare' → (990, 396)
+2026-05-09 11:42:31,732 [INFO] 24388 [1020] click 'tab_epic' → (1133, 396)
+2026-05-09 11:42:32,050 [INFO] 24388 [1020] click 'tab_arenas' → (1279, 396)
+2026-05-09 11:42:32,369 [INFO] 24388 [1020] click 'tab_others' → (910, 429)
+2026-05-09 11:42:33,861 [INFO] 24388 [1020] Interrupted by user.
+2026-05-09 11:42:47,737 [ERROR] 24388 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 11:42:47,745 [ERROR] 24388 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 11:42:49,030 [INFO] 11876 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 11:42:50,718 [INFO] 11876 [1020] Navigating to https://totalbattle.com
+2026-05-09 11:42:52,621 [ERROR] 11876 [1020] Fatal error in worker.
+Traceback (most recent call last):
+  File "D:\New folder\CryptingAuto\main.py", line 60, in _run_account
+    bot.start()
+    ~~~~~~~~~^^
+  File "D:\New folder\CryptingAuto\bot.py", line 195, in start
+    self._handle_login_if_needed()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\New folder\CryptingAuto\bot.py", line 219, in _handle_login_if_needed
+    self.page.wait_for_timeout(2_000)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\sync_api\_generated.py", line 11879, in wait_for_timeout
+    self._sync(self._impl_obj.wait_for_timeout(timeout=timeout))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_page.py", line 1113, in wait_for_timeout
+    await self._main_frame.wait_for_timeout(timeout)
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_frame.py", line 862, in wait_for_timeout
+    await self._channel.send("waitForTimeout", None, {"waitTimeout": timeout})
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-05-09 12:00:25,491 [INFO] 14800 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 12:00:32,540 [INFO] 14800 [1020] Interrupted by user.
+2026-05-09 12:00:32,551 [ERROR] 14800 Task was destroyed but it is pending!
+task: <Task pending name='Task-3' coro=<Connection.run.<locals>.init() done, defined at C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py:309> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[ProtocolCallback.__init__.<locals>.cb() at C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py:230]>

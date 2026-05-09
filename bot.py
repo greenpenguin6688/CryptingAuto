@@ -21,52 +21,63 @@ logger = logging.getLogger(__name__)
 GAME_URL = "https://totalbattle.com"
 
 # ---------------------------------------------------------------------------
-# CSS / XPath selectors — calibrate these against the live game UI
+# CSS selectors — only used for the HTML login page (pre-canvas)
 # ---------------------------------------------------------------------------
 SELECTORS = {
-    # Login — step 1: "Log In" link in the top-right header nav
-    "login_nav_btn":     '.header__login, .header-login, a[href*="login"]',
-
-    # Login — step 2: the email+password form (shown after clicking the nav link)
-    # Scoped to #login popup to avoid matching the registration form's email field
-    "login_email":       '#login input[name="email"]',
-    "login_password":    '#login input[name="password"]',  # scoped to login popup
-    "login_submit":      '#login [data-handler="login_form_handler"]',  # scoped to login popup
-
-    # Map canvas (used for pixel sampling)
-    "canvas":            "canvas",
-
-    # Watchtower / Great Watchtower search button in the HUD
-    "search_btn":        '[data-id="watchtower-btn"], .watchtower-icon, .great-watchtower',
-
-    # Tabs inside the search window
-    "crypts_tab":        '[data-tab="crypts"], .crypts-tab, .tab-crypt',
-
-    # Quality filter toggles
-    "quality_rare":      '[data-quality="rare"],  .quality-rare,  .filter-rare',
-    "quality_epic":      '[data-quality="epic"],  .quality-epic,  .filter-epic',
-
-    # Level range inputs
-    "level_min_input":   '.filter-level-min input, input[name="minLevel"]',
-    "level_max_input":   '.filter-level-max input, input[name="maxLevel"]',
-
-    # "Search" execute button and result list
-    "search_execute":    '.search-execute-btn, [data-action="search"], .btn-search',
-    "first_result":      '.search-result-item:first-child, .result-list li:first-child',
-
-    # Object interaction popup (appears after clicking the crypt on the map)
-    "explore_btn":       '.explore-btn, [data-action="explore"], .btn-explore',
-
-    # Captain / army selection → final march confirmation
-    "march_final_btn":   '.march-confirm-btn, [data-action="march"], .btn-march-confirm',
-
-    # March-slot indicator in the HUD (top bar)
-    "march_slot":        '.march-slot, .captain-slot',
-    "march_slot_busy":   '.march-slot.busy, .captain-slot.active, .march-slot--occupied',
-
-    # Generic close / dismiss
-    "close_popup":       '.close-btn, .popup-close, .modal-close, .btn-close',
+    "login_email":    '#login input[name="email"]',
+    "login_password": '#login input[name="password"]',
+    "login_submit":   '#login [data-handler="login_form_handler"]',
+    "canvas":         "canvas",
 }
+
+# ---------------------------------------------------------------------------
+# Canvas pixel coordinates for all in-game UI interactions.
+# The game runs in a Unity WebGL canvas (#unityCanvas) so every click
+# must be expressed as (x, y) relative to the canvas element.
+#
+# To calibrate: open DevTools Console and paste:
+#   document.getElementById('unityCanvas').addEventListener('click', e => {
+#     const r = e.target.getBoundingClientRect();
+#     console.log(`x=${Math.round(e.clientX-r.left)}, y=${Math.round(e.clientY-r.top)}`);
+#   });
+# then click the element you want to locate.
+# ---------------------------------------------------------------------------
+CANVAS_COORDS = {
+    # HUD button that opens the Watchtower window
+    "watchtower_btn":     (693, 944),
+
+    # Left sidebar inside the Watchtower window
+    "crypts_and_arenas":  (700, 506),
+
+    # Quality filter tab buttons (top of the Crypts panel).
+    # *** These are estimated — calibrate by hovering over each tab ***
+    "tab_common":   (875, 396),
+    "tab_rare":     (990, 396),
+    "tab_epic":     (1133, 396),
+    "tab_arenas":   (1279, 396),
+    "tab_others":   (910, 429),
+
+    # Level range slider.
+    # Left handle is dragged to this target; right handle to its target.
+    "slider_left_target":  (1080, 463),
+    "slider_right_target": (1207, 345),
+    # Approximate far-left / far-right of the slider track (drag start points)
+    "slider_track_left":   (889, 350),
+    "slider_track_right":  (1293, 350),
+
+    # "Go" button next to the SECOND result in the filtered list
+    "second_result_go":    (1217, 655),
+
+    
+    "crypt_location": (977, 587),
+
+    # # "Explore" button in the crypt detail popup that appears on the map
+    # after pressing Escape from the purchase/info overlay
+    "crypt_popup_explore": (1156, 837),
+}
+
+# Ordered list of all quality tabs — order must match left-to-right layout
+ALL_QUALITY_TABS = ["Common", "Rare", "Epic", "Arenas", "Others"]
 
 
 # ---------------------------------------------------------------------------
@@ -171,13 +182,11 @@ class CryptBot:
             user_data_dir=str(profile_path),
             headless=self.settings["headless"],
             args=[
-                f"--window-size={self.settings['window_width']},{self.settings['window_height']}",
+                "--start-maximized",
                 "--disable-features=IsolateOrigins,site-per-process",
             ],
-            viewport={
-                "width":  self.settings["window_width"],
-                "height": self.settings["window_height"],
-            },
+            no_viewport=True,
+            device_scale_factor=1,
         )
 
         self.page = self.context.new_page()
@@ -345,38 +354,31 @@ class CryptBot:
     # ------------------------------------------------------------------
 
     def run_loop(self):
+        """
+        Main loop:
+          1. Open Watchtower → Crypts and Arenas
+          2. Apply quality-tab and level-slider filters
+          3. Click 'Go' on the second result
+          4. Press Escape to dismiss the purchase/info overlay
+          5. Click Explore in the crypt popup to send the captain
+          6. Press Escape to clear any remaining popup
+          7. Repeat
+        """
         logger.info("[%s] Crypt loop started.", self.account["name"])
         while True:
             try:
-                # ── Check if captain is already out ────────────────────
-                if is_captain_busy(self.page):
-                    logger.info(
-                        "[%s] Captain marching — sleeping %ds.",
-                        self.account["name"],
-                        self.settings["march_sleep_seconds"],
-                    )
-                    time.sleep(self.settings["march_sleep_seconds"])
-                    continue
-
-                # ── One full crypt cycle ────────────────────────────────
-                self._dismiss_any_popup()
                 self._open_watchtower()
                 self._apply_filters()
-
-                if not self._jump_to_first_result():
-                    logger.warning("[%s] No results — retrying in 30s.", self.account["name"])
-                    self._dismiss_any_popup()
-                    time.sleep(30)
-                    continue
-
-                self._wait_for_crypt_at_center()
-                self._click_map_center()
-                self._do_solo_march()
+                self._pick_second_result()
+                self._explore_crypt()
 
                 self.crypt_count += 1
-                logger.info("[%s] Crypt dispatched (#%d).", self.account["name"], self.crypt_count)
+                logger.info("[%s] Cycle #%d complete.", self.account["name"], self.crypt_count)
 
-                # ── Periodic page reload to clear WebGL bloat ───────────
+                # Brief pause between cycles
+                time.sleep(self.settings.get("cycle_sleep_seconds", 5))
+
+                # Periodic page reload to clear WebGL memory
                 if self.crypt_count % self.settings["reload_every_n_crypts"] == 0:
                     logger.info("[%s] Reloading page (WebGL cache flush).", self.account["name"])
                     self.page.reload(timeout=90_000)
@@ -384,11 +386,12 @@ class CryptBot:
 
             except PlaywrightTimeoutError as exc:
                 logger.error("[%s] Timeout: %s — recovering.", self.account["name"], exc)
-                self._dismiss_any_popup()
+                self._dismiss_overlays(count=2)
                 time.sleep(5)
 
             except Exception:
                 logger.exception("[%s] Unexpected error — recovering.", self.account["name"])
+                self._dismiss_overlays(count=2)
                 time.sleep(10)
 
     # ------------------------------------------------------------------
@@ -405,49 +408,84 @@ class CryptBot:
         except Exception:
             pass
 
+    def _canvas_offset(self) -> tuple[int, int]:
+        """Return the (left, top) viewport offset of the game canvas."""
+        rect = self.page.evaluate(
+            "() => { const r = document.querySelector('canvas').getBoundingClientRect(); "
+            "return {left: r.left, top: r.top}; }"
+        )
+        return int(rect["left"]), int(rect["top"])
+
+    def _canvas_click(self, coord_key: str, wait_ms: int = 600):
+        """Convert canvas-relative coords to viewport coords and click."""
+        cx, cy = CANVAS_COORDS[coord_key]
+        ox, oy = self._canvas_offset()
+        x, y = cx + ox, cy + oy
+        logger.info("[%s] click '%s' → canvas(%d,%d) + offset(%d,%d) = page(%d,%d)",
+                    self.account["name"], coord_key, cx, cy, ox, oy, x, y)
+        self.page.mouse.click(x, y)
+        if wait_ms:
+            self.page.wait_for_timeout(wait_ms)
+
     def _open_watchtower(self):
-        """Click the search icon and navigate to the Crypts tab."""
+        """Click the Watchtower HUD icon then select 'Crypts and Arenas'."""
         logger.debug("[%s] Opening Watchtower.", self.account["name"])
-        self.page.click(SELECTORS["search_btn"], timeout=10_000)
-        self.page.wait_for_timeout(1_000)
-        self.page.click(SELECTORS["crypts_tab"],  timeout=10_000)
-        self.page.wait_for_timeout(600)
+        self._canvas_click("watchtower_btn", wait_ms=1_200)
+        logger.debug("[%s] Clicking 'Crypts and Arenas'.", self.account["name"])
+        self._canvas_click("crypts_and_arenas", wait_ms=800)
 
     def _apply_filters(self):
-        """Toggle quality buttons and set min/max level inputs."""
+        """
+        Select only the quality tabs listed in settings['crypt_types'].
+
+        Assumption: when the Crypts panel first opens all tabs are selected
+        (shown green).  We click every tab that is NOT wanted to deselect it,
+        leaving only the desired tabs active.
+
+        Then drag the level-range slider handles to the target positions.
+        """
         logger.debug("[%s] Applying search filters.", self.account["name"])
 
-        for quality in self.settings["crypt_types"]:
-            sel = SELECTORS.get(f"quality_{quality.lower()}")
-            if sel:
-                try:
-                    self.page.click(sel, timeout=5_000)
-                except PlaywrightTimeoutError:
-                    logger.warning("[%s] Quality button '%s' not found.", self.account["name"], quality)
+        wanted = {t.capitalize() for t in self.settings["crypt_types"]}
 
-        for key, value in [
-            ("level_min_input", self.settings["crypt_min_level"]),
-            ("level_max_input", self.settings["crypt_max_level"]),
-        ]:
-            try:
-                self.page.fill(SELECTORS[key], str(value), timeout=5_000)
-            except PlaywrightTimeoutError:
-                logger.warning("[%s] Level input '%s' not found.", self.account["name"], key)
+        for tab in ALL_QUALITY_TABS:
+            if tab not in wanted:
+                coord_key = f"tab_{tab.lower()}"
+                logger.debug("[%s] Deselecting tab '%s'.", self.account["name"], tab)
+                self._canvas_click(coord_key, wait_ms=300)
 
-    def _jump_to_first_result(self) -> bool:
+        # Drag left slider handle to target position
+        ox, oy = self._canvas_offset()
+        lx, ly = CANVAS_COORDS["slider_track_left"]
+        tx, ty = CANVAS_COORDS["slider_left_target"]
+        logger.debug("[%s] Setting left level slider → (%d, %d).", self.account["name"], tx, ty)
+        self.page.mouse.move(lx + ox, ly + oy)
+        self.page.mouse.down()
+        self.page.mouse.move(tx + ox, ty + oy, steps=15)
+        self.page.mouse.up()
+        self.page.wait_for_timeout(300)
+
+        # Drag right slider handle to target position
+        rx, ry = CANVAS_COORDS["slider_track_right"]
+        tx2, ty2 = CANVAS_COORDS["slider_right_target"]
+        logger.debug("[%s] Setting right level slider → (%d, %d).", self.account["name"], tx2, ty2)
+        self.page.mouse.move(rx + ox, ry + oy)
+        self.page.mouse.down()
+        self.page.mouse.move(tx2 + ox, ty2 + oy, steps=15)
+        self.page.mouse.up()
+        self.page.wait_for_timeout(500)
+
+    def _pick_second_result(self) -> bool:
         """
-        Execute the search and click the first result to teleport the camera.
-        Returns False when the result list is empty.
+        Click the 'Go' button next to the second result in the filtered list.
+        Returns False if the click position is unreachable (no results visible).
+        After clicking, the game shows a purchase/confirmation overlay — the
+        caller is responsible for dismissing it with Escape.
         """
-        self.page.click(SELECTORS["search_execute"], timeout=10_000)
-        self.page.wait_for_timeout(2_500)   # wait for server response + animation
-
-        result = self.page.query_selector(SELECTORS["first_result"])
-        if result is None:
-            return False
-
-        result.click()
-        self.page.wait_for_timeout(2_000)   # camera fly-in animation
+        logger.debug("[%s] Clicking 'Go' on second result.", self.account["name"])
+        # Allow the filtered list to populate
+        self.page.wait_for_timeout(1_500)
+        self._canvas_click("second_result_go", wait_ms=1_000)
         return True
 
     # ------------------------------------------------------------------
@@ -495,38 +533,37 @@ class CryptBot:
     # Solo march (Captain only, no troops)
     # ------------------------------------------------------------------
 
-    def _do_solo_march(self):
+    def _explore_crypt(self):
         """
-        Handle the two-step Explore popup:
-          1. Click "Explore" in the object popup.
-          2. Skip troop sliders entirely.
-          3. Click the final "March" / "Confirm" button.
+        After clicking 'Go' on a crypt result:
+          1. Press Escape to dismiss the purchase/info overlay.
+          2. Click the crypt on the map to open the detail popup.
+          3. Wait for the popup to appear, then click Explore.
+          4. Press Escape once more to clear any remaining popup.
         """
-        # Step 1 — open the Explore / Send Captain panel
-        self.page.wait_for_selector(SELECTORS["explore_btn"], timeout=10_000)
-        self.page.click(SELECTORS["explore_btn"])
-        self.page.wait_for_timeout(1_000)
+        # Step 1 — dismiss purchase/info overlay
+        logger.debug("[%s] Pressing Escape to dismiss purchase overlay.", self.account["name"])
+        self.page.keyboard.press("Escape")
+        self.page.wait_for_timeout(900)
 
-        # Step 2 — wait until the march button is enabled (captain is ready)
-        try:
-            self.page.wait_for_selector(
-                SELECTORS["march_final_btn"],
-                state="attached",
-                timeout=10_000,
-            )
-        except PlaywrightTimeoutError:
-            logger.warning("[%s] March button never appeared — skipping.", self.account["name"])
-            self._dismiss_any_popup()
-            return
+        # Step 2 — click the crypt on the map to open the detail popup
+        logger.debug("[%s] Clicking crypt on map.", self.account["name"])
+        self._canvas_click("crypt_location", wait_ms=1_200)
 
-        march_btn = self.page.query_selector(SELECTORS["march_final_btn"])
-        if march_btn and march_btn.is_enabled():
-            march_btn.click()
-            self.page.wait_for_timeout(800)
-            logger.debug("[%s] Captain dispatched.", self.account["name"])
-        else:
-            logger.warning(
-                "[%s] March button present but disabled — captain may be busy.",
-                self.account["name"],
-            )
-            self._dismiss_any_popup()
+        # Step 3 — click Explore in the crypt detail popup
+        logger.debug("[%s] Clicking Explore in crypt popup.", self.account["name"])
+        self._canvas_click("crypt_popup_explore", wait_ms=800)
+
+        # Step 4 — dismiss any remaining popup
+        logger.debug("[%s] Pressing Escape to clear any remaining popup.", self.account["name"])
+        self.page.keyboard.press("Escape")
+        self.page.wait_for_timeout(700)
+
+    def _dismiss_overlays(self, count: int = 1):
+        """
+        Press Escape `count` times. Used in error-recovery paths.
+        """
+        for i in range(count):
+            logger.debug("[%s] Pressing Escape (%d/%d).", self.account["name"], i + 1, count)
+            self.page.keyboard.press("Escape")
+            self.page.wait_for_timeout(700)

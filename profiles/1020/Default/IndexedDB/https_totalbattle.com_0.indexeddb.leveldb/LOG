@@ -1,11 +1,13 @@
-2026/05/09-16:07:46.994 61b4 Reusing MANIFEST D:\New folder\CryptingAuto\profiles\1020\Default\IndexedDB\https_totalbattle.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/05/09-16:07:46.994 61b4 Recovering log #156
-2026/05/09-16:07:46.995 61b4 Reusing old log D:\New folder\CryptingAuto\profiles\1020\Default\IndexedDB\https_totalbattle.com_0.indexeddb.leveldb/000156.log 
-2026/05/09-16:08:07.600 4ac0 Level-0 table #161: started
-2026/05/09-16:08:07.663 4ac0 Level-0 table #161: 108320 bytes OK
-2026/05/09-16:08:07.696 4ac0 Delete type=0 #156
-2026/05/09-16:08:07.696 61b4 Manual compaction at level-0 from '\x00/\x00\x00\x00' @ 72057594037927935 : 1 .. '\x000\x00\x00\x00' @ 0 : 0; will stop at (end)
-2026/05/09-16:08:23.853 6b2c Compacting 1@1 + 1@2 files
-2026/05/09-16:08:23.951 6b2c Generated table #162@1: 1259 keys, 152897 bytes
-2026/05/09-16:08:23.951 6b2c Compacted 1@1 + 1@2 files => 152897 bytes
-2026/05/09-16:08:23.974 6b2c compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/05/09-23:05:14.875 2ae0 Reusing MANIFEST D:\New folder\CryptingAuto\profiles\1020\Default\IndexedDB\https_totalbattle.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/09-23:05:14.875 2ae0 Recovering log #212
+2026/05/09-23:05:14.876 2ae0 Reusing old log D:\New folder\CryptingAuto\profiles\1020\Default\IndexedDB\https_totalbattle.com_0.indexeddb.leveldb/000212.log 
+2026/05/09-23:05:36.555 43d0 Level-0 table #217: started
+2026/05/09-23:05:36.626 43d0 Level-0 table #217: 115241 bytes OK
+2026/05/09-23:05:36.648 43d0 Delete type=0 #212
+2026/05/09-23:05:36.649 2ae0 Manual compaction at level-0 from '\x00>\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00?\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/05/09-23:05:55.845 6108 Compacting 1@1 + 1@2 files
+2026/05/09-23:05:55.929 6108 Generated table #218@1: 1663 keys, 185120 bytes
+2026/05/09-23:05:55.929 6108 Compacted 1@1 + 1@2 files => 185120 bytes
+2026/05/09-23:05:55.954 6108 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/05/09-23:05:55.955 6108 Delete type=2 #214
+2026/05/09-23:05:55.955 6108 Delete type=2 #217

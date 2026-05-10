@@ -69,6 +69,11 @@ CANVAS_COORDS = {
     # "Go" button next to the SECOND result in the filtered list
     "second_result_go":    (1588, 699),
 
+    # March speedup controls in the top HUD bar
+    "march_speedup_btn":   (1608, 54),    # "Speed up" button beside March (Carter)
+    # "Use" button for the 50% speedup (first entry in the Speedups popup)
+    "speedup_use_btn":     (1552, 495),
+
     
     "crypt_location": (1301, 611),
 
@@ -364,28 +369,35 @@ class CryptBot:
           3. Click 'Go' on the second result
           4. Press Escape to dismiss the purchase/info overlay
           5. Click Explore in the crypt popup to send the captain
-          6. Press Escape to clear any remaining popup
-          7. Repeat
+          6. Speed up the march 5× with the 50% speedup
+          7. Wait for March (Carter) to disappear from the HUD
+          8. Repeat
         """
         logger.info("[%s] Crypt loop started.", self.account["name"])
+        filters_applied = False
         while True:
             try:
                 self._open_watchtower()
-                self._apply_filters()
+                # Apply filters only once per session (or after a page reload).
+                if not filters_applied:
+                    self._apply_filters()
+                    filters_applied = True
+                else:
+                    logger.info("[%s] Filters already set — skipping.", self.account["name"])
                 self._pick_second_result()
                 self._explore_crypt()
+                self._speedup_march(times=5)
+                self._wait_for_march_end()
 
                 self.crypt_count += 1
                 logger.info("[%s] Cycle #%d complete.", self.account["name"], self.crypt_count)
-
-                # Brief pause between cycles
-                time.sleep(self.settings.get("cycle_sleep_seconds", 5))
 
                 # Periodic page reload to clear WebGL memory
                 if self.crypt_count % self.settings["reload_every_n_crypts"] == 0:
                     logger.info("[%s] Reloading page (WebGL cache flush).", self.account["name"])
                     self.page.reload(timeout=90_000)
                     self._wait_for_map()
+                    filters_applied = False  # re-apply after reload
 
             except PlaywrightTimeoutError as exc:
                 logger.error("[%s] Timeout: %s — recovering.", self.account["name"], exc)
@@ -612,37 +624,56 @@ class CryptBot:
         self._ocr_click("Crypts", wait_ms=800, fallback_key="crypts_and_arenas",
                         region=(560, 460, 320, 180))
 
-    def _is_tab_green(self, tab_key: str) -> bool:
+    def _save_tab_debug_screenshot(self, img: np.ndarray):
+        """
+        Save an annotated screenshot showing exactly where tab sampling boxes
+        are drawn.  Check templates/_debug_tabs.png after a run to verify
+        the coordinates are landing on the actual tab buttons.
+        """
+        from PIL import Image, ImageDraw
+        pil = Image.fromarray(img)
+        draw = ImageDraw.Draw(pil)
+        ox, oy = self._canvas_offset()
+        for tab in ALL_QUALITY_TABS:
+            tab_key = f"tab_{tab.lower()}"
+            cx, cy = CANVAS_COORDS[tab_key]
+            px, py = cx + ox, cy + oy
+            # Draw the sampling box (60×40)
+            draw.rectangle([px-30, py-20, px+30, py+20], outline=(255, 0, 0), width=2)
+            draw.text((px-30, py-32), tab_key, fill=(255, 0, 0))
+        out = self._TEMPLATES_DIR / "_debug_tabs.png"
+        pil.save(str(out))
+        logger.info("[%s] Tab debug screenshot saved to %s", self.account["name"], out)
+
+    def _is_tab_green(self, tab_key: str, img: np.ndarray) -> bool:
         """
         Return True if the tab is green (selected).
-        Scans a 60×20 pixel region centred on the tab coordinate and counts
-        pixels where the green channel clearly dominates red.  This is robust
-        to the sample point landing on text or a border rather than the fill.
+        Accepts a pre-captured screenshot so all tabs share one screenshot.
+        Scans a 60×40 px region.  A tab is green if >10% of its pixels have
+        G − R > 15 (the game’s selected-tab green vs tan hue).
         """
         cx, cy = CANVAS_COORDS[tab_key]
         ox, oy = self._canvas_offset()
         px, py = cx + ox, cy + oy
 
-        img = self._ocr_screenshot()
         h, w = img.shape[:2]
-
-        # Wide horizontal strip across the tab
-        y1, y2 = max(0, py - 10), min(h, py + 10)
+        y1, y2 = max(0, py - 20), min(h, py + 20)
         x1, x2 = max(0, px - 30), min(w, px + 30)
         patch = img[y1:y2, x1:x2]
 
         r_ch = patch[:, :, 0].astype(float)
         g_ch = patch[:, :, 1].astype(float)
+        b_ch = patch[:, :, 2].astype(float)
 
-        # Count pixels where green clearly exceeds red (green fill pixels)
         green_pixels = int(((g_ch - r_ch) > 15).sum())
         total_pixels = patch.shape[0] * patch.shape[1]
-
         avg_r = float(r_ch.mean())
         avg_g = float(g_ch.mean())
-        is_green = green_pixels > (total_pixels * 0.15)   # >15% of patch is green-dominant
-        logger.info("[%s] tab '%s' avg R=%.0f G=%.0f green_px=%d/%d → %s",
-                    self.account["name"], tab_key, avg_r, avg_g,
+        avg_b = float(b_ch.mean())
+        is_green = green_pixels > (total_pixels * 0.10)
+        logger.info("[%s] tab '%s' avg R=%.0f G=%.0f B=%.0f green_px=%d/%d → %s",
+                    self.account["name"], tab_key,
+                    avg_r, avg_g, avg_b,
                     green_pixels, total_pixels,
                     "GREEN(selected)" if is_green else "TAN(deselected)")
         return is_green
@@ -651,32 +682,31 @@ class CryptBot:
         """
         Set each quality tab to match settings['crypt_types'].
 
-        Green tab  = selected (included in search).
-        Blank tab  = deselected (excluded).
+        The game remembers UI state persistently: if a tab was green in your last
+        session, it stays green.
 
-        We read the current state of every tab via pixel colour and click only
-        when the state needs to change.  This handles both a fresh panel (all
-        tabs green) and a panel that remembers the previous session's state.
+        We MUST click tabs to toggle them to the right state. Since the state
+        is unknown, we read the pixels to check if it's currently green.
         """
         logger.debug("[%s] Applying search filters.", self.account["name"])
-
-        # Let the panel fully render before sampling colours
-        self.page.wait_for_timeout(400)
+        self.page.wait_for_timeout(800)
 
         wanted = {t.capitalize() for t in self.settings["crypt_types"]}
+        img = self._ocr_screenshot()
 
         for tab in ALL_QUALITY_TABS:
             tab_key = f"tab_{tab.lower()}"
             should_be_selected = tab in wanted
-            currently_selected = self._is_tab_green(tab_key)
+            currently_selected = self._is_tab_green(tab_key, img)
 
             if should_be_selected == currently_selected:
-                logger.debug("[%s] Tab '%s' already in correct state — skipping.", self.account["name"], tab)
+                logger.info("[%s] Tab '%s' already in correct state — skipping.", self.account["name"], tab)
                 continue
 
-            action = "selecting" if should_be_selected else "deselecting"
-            logger.info("[%s] %s tab '%s'.", self.account["name"], action.capitalize(), tab)
-            self._ocr_click(tab, wait_ms=400, fallback_key=tab_key,
+            action = "Selecting" if should_be_selected else "Deselecting"
+            logger.info("[%s] %s tab '%s' (was %s).", self.account["name"], action, tab,
+                        "green" if currently_selected else "tan")
+            self._ocr_click(tab, wait_ms=500, fallback_key=tab_key,
                             region=(820, 340, 900, 160))
 
         # Drag level-range slider handles to the target positions.
@@ -791,6 +821,50 @@ class CryptBot:
         logger.debug("[%s] Pressing Escape to clear any remaining popup.", self.account["name"])
         self.page.keyboard.press("Escape")
         self.page.wait_for_timeout(700)
+
+    def _speedup_march(self, times: int = 5):
+        """
+        Open the Speed up popup for March (Carter) and click 'Use' on the
+        50% speedup `times` times, then close the popup.
+        """
+        # Wait for the march to register and UI to show Carter
+        logger.info("[%s] Waiting for March (Carter) to register in UI...", self.account["name"])
+        self.page.wait_for_timeout(3_000)
+
+        # Click the Speed up button in the top HUD bar directly using coordinates
+        logger.info("[%s] Clicking Speed up button.", self.account["name"])
+        self._canvas_click("march_speedup_btn", wait_ms=1_500)
+
+        # Click Use (50% speedup, first entry) the requested number of times
+        for i in range(times):
+            logger.info("[%s] Speedup click %d/%d.", self.account["name"], i + 1, times)
+            self._canvas_click("speedup_use_btn", wait_ms=700)
+
+        # Close the popup
+        logger.info("[%s] Closing speedup popup.", self.account["name"])
+        self.page.keyboard.press("Escape")
+        self.page.wait_for_timeout(700)
+
+    def _wait_for_march_end(self, poll_ms: int = 5_000, timeout_s: int = 600):
+        """
+        Poll the top HUD bar via OCR until 'Carter' is no longer visible,
+        meaning the march has returned.  Times out after `timeout_s` seconds.
+        The HUD bar is a thin strip at the very top of the viewport.
+        """
+        logger.info("[%s] Waiting for March (Carter) to finish...", self.account["name"])
+        deadline = time.time() + timeout_s
+        while time.time() < deadline:
+            hits = self._ocr_find_all("Carter", region=(500, 40, 700, 60))
+            if not hits:
+                logger.info("[%s] March (Carter) gone — ready for next cycle.", self.account["name"])
+                return
+            remaining = int(deadline - time.time())
+            logger.info("[%s] Still marching (Carter visible) — %ds until timeout.",
+                        self.account["name"], remaining)
+            self.page.wait_for_timeout(poll_ms)
+
+        logger.warning("[%s] March wait timed out after %ds — proceeding anyway.",
+                       self.account["name"], timeout_s)
 
     def _dismiss_overlays(self, count: int = 1):
         """

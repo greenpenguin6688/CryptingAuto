@@ -4668,3 +4668,779 @@ playwright._impl._errors.TargetClosedError: Target page, context or browser has 
 2026-05-09 16:08:42,460 [INFO] 22756 [1020] click 'crypt_popup_explore' → canvas(1537,939) + offset(0,43) = page(1537,982)
 2026-05-09 16:08:44,011 [INFO] 22756 [1020] Cycle #1 complete.
 2026-05-09 16:08:45,950 [INFO] 22756 [1020] Interrupted by user.
+2026-05-09 16:12:19,916 [INFO] 10788 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 16:12:21,624 [INFO] 10788 [1020] Navigating to https://totalbattle.com
+2026-05-09 16:12:25,261 [INFO] 10788 [1020] Map already loaded — no login required.
+2026-05-09 16:12:25,261 [INFO] 10788 [1020] Waiting for game loading screen to finish...
+2026-05-09 16:12:50,681 [INFO] 10788 [1020] Waiting for map canvas...
+2026-05-09 16:12:54,477 [INFO] 10788 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 16:12:55,417 [INFO] 10788 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 16:12:56,230 [INFO] 10788 [1020] Map ready.
+2026-05-09 16:12:56,230 [INFO] 10788 [1020] Crypt loop started.
+2026-05-09 16:12:56,268 [INFO] 10788 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 16:13:05,641 [INFO] 10788 [1020] Loading OCR model — first run may download models…
+2026-05-09 16:13:09,659 [INFO] 10788 [1020] OCR model ready.
+2026-05-09 16:13:12,220 [WARNING] 10788 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 16:13:12,232 [INFO] 10788 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 16:13:14,353 [INFO] 10788 [1020] tab 'tab_common' avg R=229 G=213 green_px=0/1200 → TAN(deselected)
+2026-05-09 16:13:14,354 [INFO] 10788 [1020] Selecting tab 'Common'.
+2026-05-09 16:13:17,649 [WARNING] 10788 [1020] OCR missed 'Common' — coord fallback 'tab_common'
+2026-05-09 16:13:17,673 [INFO] 10788 [1020] click 'tab_common' → canvas(1134,363) + offset(0,43) = page(1134,406)
+2026-05-09 16:13:19,007 [INFO] 10788 [1020] tab 'tab_rare' avg R=229 G=211 green_px=0/1200 → TAN(deselected)
+2026-05-09 16:13:19,917 [INFO] 10788 [1020] tab 'tab_epic' avg R=148 G=118 green_px=0/1200 → TAN(deselected)
+2026-05-09 16:13:20,921 [INFO] 10788 [1020] tab 'tab_arenas' avg R=173 G=172 green_px=4/1200 → TAN(deselected)
+2026-05-09 16:13:21,948 [INFO] 10788 [1020] tab 'tab_others' avg R=234 G=218 green_px=0/1200 → TAN(deselected)
+2026-05-09 16:13:21,963 [INFO] 10788 [1020] Dragging left slider handle → (1404, 461).
+2026-05-09 16:13:23,050 [INFO] 10788 [1020] Dragging right slider handle → (1521, 463).
+2026-05-09 16:13:28,137 [WARNING] 10788 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-09 16:13:28,146 [INFO] 10788 [1020] click 'second_result_go' → canvas(1588,699) + offset(0,43) = page(1588,742)
+2026-05-09 16:13:31,196 [INFO] 10788 [1020] click 'crypt_location' → canvas(1301,611) + offset(0,43) = page(1301,654)
+2026-05-09 16:13:33,953 [INFO] 10788 [1020] Interrupted by user.
+2026-05-09 16:13:40,664 [INFO] 27592 [1020] Navigating to https://totalbattle.com
+2026-05-09 16:13:44,442 [INFO] 27592 [1020] Map already loaded — no login required.
+2026-05-09 16:13:44,443 [INFO] 27592 [1020] Waiting for game loading screen to finish...
+2026-05-09 16:14:08,259 [INFO] 27592 [1020] Waiting for map canvas...
+2026-05-09 16:14:11,794 [INFO] 27592 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 16:14:13,274 [INFO] 27592 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 16:14:14,091 [INFO] 27592 [1020] Map ready.
+2026-05-09 16:22:03,364 [INFO] 22080 [1020] Navigating to https://totalbattle.com
+2026-05-09 16:22:06,999 [INFO] 22080 [1020] Map already loaded — no login required.
+2026-05-09 16:22:07,006 [INFO] 22080 [1020] Waiting for game loading screen to finish...
+2026-05-09 16:22:21,808 [INFO] 22080 [1020] Waiting for map canvas...
+2026-05-09 16:22:25,445 [INFO] 22080 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 16:22:26,500 [INFO] 22080 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 16:22:27,308 [INFO] 22080 [1020] Map ready.
+2026-05-09 16:29:59,286 [INFO] 25020 [1020] Navigating to https://totalbattle.com
+2026-05-09 16:30:02,818 [INFO] 25020 [1020] Map already loaded — no login required.
+2026-05-09 16:30:02,830 [INFO] 25020 [1020] Waiting for game loading screen to finish...
+2026-05-09 16:30:16,433 [INFO] 25020 [1020] Waiting for map canvas...
+2026-05-09 16:30:20,033 [INFO] 25020 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 16:30:20,985 [INFO] 25020 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 16:30:21,802 [INFO] 25020 [1020] Map ready.
+2026-05-09 16:30:57,896 [INFO] 12744 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 16:30:59,493 [INFO] 12744 [1020] Navigating to https://totalbattle.com
+2026-05-09 16:31:03,281 [INFO] 12744 [1020] Map already loaded — no login required.
+2026-05-09 16:31:03,304 [INFO] 12744 [1020] Waiting for game loading screen to finish...
+2026-05-09 16:31:16,919 [INFO] 12744 [1020] Waiting for map canvas...
+2026-05-09 16:31:20,531 [INFO] 12744 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 16:31:21,503 [INFO] 12744 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 16:31:22,314 [INFO] 12744 [1020] Map ready.
+2026-05-09 16:31:22,314 [INFO] 12744 [1020] Crypt loop started.
+2026-05-09 16:31:22,328 [INFO] 12744 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 16:31:32,745 [INFO] 12744 [1020] Loading OCR model — first run may download models…
+2026-05-09 16:31:35,972 [INFO] 12744 [1020] OCR model ready.
+2026-05-09 16:31:37,644 [WARNING] 12744 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 16:31:37,649 [INFO] 12744 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 16:31:39,696 [INFO] 12744 [1020] tab 'tab_common' avg R=241 G=215 green_px=0/1200 → TAN(deselected)
+2026-05-09 16:31:39,696 [INFO] 12744 [1020] Selecting tab 'Common'.
+2026-05-09 16:31:42,176 [WARNING] 12744 [1020] OCR missed 'Common' — coord fallback 'tab_common'
+2026-05-09 16:31:42,181 [INFO] 12744 [1020] click 'tab_common' → canvas(1134,363) + offset(0,43) = page(1134,406)
+2026-05-09 16:31:43,363 [INFO] 12744 [1020] tab 'tab_rare' avg R=246 G=227 green_px=0/1200 → TAN(deselected)
+2026-05-09 16:31:44,085 [INFO] 12744 [1020] tab 'tab_epic' avg R=148 G=119 green_px=0/1200 → TAN(deselected)
+2026-05-09 16:31:44,842 [INFO] 12744 [1020] tab 'tab_arenas' avg R=173 G=172 green_px=4/1200 → TAN(deselected)
+2026-05-09 16:31:45,594 [INFO] 12744 [1020] tab 'tab_others' avg R=245 G=227 green_px=0/1200 → TAN(deselected)
+2026-05-09 16:31:45,599 [INFO] 12744 [1020] Dragging left slider handle → (1404, 461).
+2026-05-09 16:31:46,288 [INFO] 12744 [1020] Dragging right slider handle → (1521, 463).
+2026-05-09 16:31:51,171 [WARNING] 12744 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-09 16:31:51,177 [INFO] 12744 [1020] click 'second_result_go' → canvas(1588,699) + offset(0,43) = page(1588,742)
+2026-05-09 16:31:54,266 [INFO] 12744 [1020] click 'crypt_location' → canvas(1301,611) + offset(0,43) = page(1301,654)
+2026-05-09 16:31:57,637 [WARNING] 12744 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-09 16:31:57,642 [INFO] 12744 [1020] click 'crypt_popup_explore' → canvas(1537,939) + offset(0,43) = page(1537,982)
+2026-05-09 16:31:59,181 [INFO] 12744 [1020] Opening march speedup popup.
+2026-05-09 16:31:59,185 [INFO] 12744 [1020] click 'march_speedup_btn' → canvas(1789,56) + offset(0,43) = page(1789,99)
+2026-05-09 16:32:00,209 [INFO] 12744 [1020] Speedup click 1/5.
+2026-05-09 16:32:00,214 [INFO] 12744 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:32:00,840 [INFO] 12744 [1020] Speedup click 2/5.
+2026-05-09 16:32:00,845 [INFO] 12744 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:32:01,474 [INFO] 12744 [1020] Speedup click 3/5.
+2026-05-09 16:32:01,479 [INFO] 12744 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:32:02,107 [INFO] 12744 [1020] Speedup click 4/5.
+2026-05-09 16:32:02,112 [INFO] 12744 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:32:02,733 [INFO] 12744 [1020] Speedup click 5/5.
+2026-05-09 16:32:02,746 [INFO] 12744 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:32:03,363 [INFO] 12744 [1020] Closing speedup popup.
+2026-05-09 16:32:04,073 [INFO] 12744 [1020] Waiting for March (Carter) to finish...
+2026-05-09 16:32:06,170 [INFO] 12744 [1020] Still marching (Carter visible) — 597s until timeout.
+2026-05-09 16:32:09,065 [INFO] 12744 [1020] Interrupted by user.
+2026-05-09 16:41:30,157 [ERROR] 12744 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 16:41:30,273 [ERROR] 12744 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 16:41:32,411 [INFO] 22260 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 16:41:34,315 [INFO] 22260 [1020] Navigating to https://totalbattle.com
+2026-05-09 16:41:37,790 [INFO] 22260 [1020] Map already loaded — no login required.
+2026-05-09 16:41:37,803 [INFO] 22260 [1020] Waiting for game loading screen to finish...
+2026-05-09 16:41:51,564 [INFO] 22260 [1020] Waiting for map canvas...
+2026-05-09 16:41:55,228 [INFO] 22260 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 16:41:56,224 [INFO] 22260 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 16:41:57,037 [INFO] 22260 [1020] Map ready.
+2026-05-09 16:41:57,037 [INFO] 22260 [1020] Crypt loop started.
+2026-05-09 16:41:57,048 [INFO] 22260 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 16:42:05,293 [INFO] 22260 [1020] Interrupted by user.
+2026-05-09 16:42:43,795 [INFO] 24928 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 16:42:45,598 [INFO] 24928 [1020] Navigating to https://totalbattle.com
+2026-05-09 16:42:49,299 [INFO] 24928 [1020] Map already loaded — no login required.
+2026-05-09 16:42:49,299 [INFO] 24928 [1020] Waiting for game loading screen to finish...
+2026-05-09 16:43:03,065 [INFO] 24928 [1020] Waiting for map canvas...
+2026-05-09 16:43:06,723 [INFO] 24928 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 16:43:07,609 [INFO] 24928 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 16:43:08,422 [INFO] 24928 [1020] Map ready.
+2026-05-09 16:43:08,423 [INFO] 24928 [1020] Crypt loop started.
+2026-05-09 16:43:08,506 [INFO] 24928 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 16:43:15,136 [INFO] 24928 [1020] Loading OCR model — first run may download models…
+2026-05-09 16:43:17,576 [INFO] 24928 [1020] OCR model ready.
+2026-05-09 16:43:21,820 [WARNING] 24928 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 16:43:21,824 [INFO] 24928 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 16:43:26,586 [INFO] 24928 [1020] Tab debug screenshot saved to templates\_debug_tabs.png
+2026-05-09 16:43:26,590 [INFO] 24928 [1020] tab 'tab_common' avg R=146 G=131 B=129 green_px=447/2400 → GREEN(selected)
+2026-05-09 16:43:26,595 [INFO] 24928 [1020] tab 'tab_rare' avg R=116 G=116 B=104 green_px=1204/2400 → GREEN(selected)
+2026-05-09 16:43:26,595 [INFO] 24928 [1020] Deselecting tab 'Rare'.
+2026-05-09 16:43:31,587 [WARNING] 24928 [1020] OCR missed 'Rare' — coord fallback 'tab_rare'
+2026-05-09 16:43:31,591 [INFO] 24928 [1020] click 'tab_rare' → canvas(1276,361) + offset(0,43) = page(1276,404)
+2026-05-09 16:43:32,018 [INFO] 24928 [1020] tab 'tab_epic' avg R=117 G=130 B=124 green_px=636/2400 → GREEN(selected)
+2026-05-09 16:43:32,018 [INFO] 24928 [1020] Deselecting tab 'Epic'.
+2026-05-09 16:43:36,451 [WARNING] 24928 [1020] OCR missed 'Epic' — coord fallback 'tab_epic'
+2026-05-09 16:43:36,454 [INFO] 24928 [1020] click 'tab_epic' → canvas(1468,361) + offset(0,43) = page(1468,404)
+2026-05-09 16:43:36,878 [INFO] 24928 [1020] tab 'tab_arenas' avg R=99 G=106 B=96 green_px=1501/2400 → GREEN(selected)
+2026-05-09 16:43:36,878 [INFO] 24928 [1020] Deselecting tab 'Arenas'.
+2026-05-09 16:43:39,657 [WARNING] 24928 [1020] OCR missed 'Arenas' — coord fallback 'tab_arenas'
+2026-05-09 16:43:39,660 [INFO] 24928 [1020] click 'tab_arenas' → canvas(1613,361) + offset(0,43) = page(1613,404)
+2026-05-09 16:43:40,075 [INFO] 24928 [1020] tab 'tab_others' avg R=117 G=106 B=93 green_px=164/2400 → TAN(deselected)
+2026-05-09 16:43:40,079 [INFO] 24928 [1020] Dragging left slider handle → (1404, 461).
+2026-05-09 16:44:00,952 [INFO] 24928 [1020] Dragging right slider handle → (1521, 463).
+2026-05-09 16:44:26,615 [WARNING] 24928 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-09 16:44:26,619 [INFO] 24928 [1020] click 'second_result_go' → canvas(1588,699) + offset(0,43) = page(1588,742)
+2026-05-09 16:44:29,668 [INFO] 24928 [1020] click 'crypt_location' → canvas(1301,611) + offset(0,43) = page(1301,654)
+2026-05-09 16:44:33,348 [WARNING] 24928 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-09 16:44:33,352 [INFO] 24928 [1020] click 'crypt_popup_explore' → canvas(1537,939) + offset(0,43) = page(1537,982)
+2026-05-09 16:44:34,884 [INFO] 24928 [1020] Opening march speedup popup.
+2026-05-09 16:44:34,888 [INFO] 24928 [1020] click 'march_speedup_btn' → canvas(1789,56) + offset(0,43) = page(1789,99)
+2026-05-09 16:44:35,915 [INFO] 24928 [1020] Speedup click 1/5.
+2026-05-09 16:44:35,939 [INFO] 24928 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:44:36,557 [INFO] 24928 [1020] Speedup click 2/5.
+2026-05-09 16:44:36,561 [INFO] 24928 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:44:37,182 [INFO] 24928 [1020] Speedup click 3/5.
+2026-05-09 16:44:37,186 [INFO] 24928 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:44:37,802 [INFO] 24928 [1020] Speedup click 4/5.
+2026-05-09 16:44:37,806 [INFO] 24928 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:44:38,429 [INFO] 24928 [1020] Speedup click 5/5.
+2026-05-09 16:44:38,433 [INFO] 24928 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:44:39,054 [INFO] 24928 [1020] Closing speedup popup.
+2026-05-09 16:44:39,771 [INFO] 24928 [1020] Waiting for March (Carter) to finish...
+2026-05-09 16:44:42,625 [INFO] 24928 [1020] Still marching (Carter visible) — 597s until timeout.
+2026-05-09 16:44:50,798 [INFO] 24928 [1020] Still marching (Carter visible) — 588s until timeout.
+2026-05-09 16:44:59,012 [INFO] 24928 [1020] Still marching (Carter visible) — 580s until timeout.
+2026-05-09 16:45:07,187 [INFO] 24928 [1020] Still marching (Carter visible) — 572s until timeout.
+2026-05-09 16:45:16,203 [INFO] 24928 [1020] Still marching (Carter visible) — 563s until timeout.
+2026-05-09 16:45:24,719 [INFO] 24928 [1020] Still marching (Carter visible) — 555s until timeout.
+2026-05-09 16:45:32,557 [INFO] 24928 [1020] Still marching (Carter visible) — 547s until timeout.
+2026-05-09 16:45:40,563 [INFO] 24928 [1020] Still marching (Carter visible) — 539s until timeout.
+2026-05-09 16:45:48,839 [INFO] 24928 [1020] Still marching (Carter visible) — 530s until timeout.
+2026-05-09 16:45:57,004 [INFO] 24928 [1020] Still marching (Carter visible) — 522s until timeout.
+2026-05-09 16:46:05,120 [INFO] 24928 [1020] Still marching (Carter visible) — 514s until timeout.
+2026-05-09 16:46:13,188 [INFO] 24928 [1020] Still marching (Carter visible) — 506s until timeout.
+2026-05-09 16:46:21,366 [INFO] 24928 [1020] Still marching (Carter visible) — 498s until timeout.
+2026-05-09 16:46:30,421 [INFO] 24928 [1020] Still marching (Carter visible) — 489s until timeout.
+2026-05-09 16:46:39,651 [INFO] 24928 [1020] Still marching (Carter visible) — 480s until timeout.
+2026-05-09 16:46:47,678 [INFO] 24928 [1020] Still marching (Carter visible) — 472s until timeout.
+2026-05-09 16:46:57,058 [INFO] 24928 [1020] Still marching (Carter visible) — 462s until timeout.
+2026-05-09 16:47:05,313 [INFO] 24928 [1020] Still marching (Carter visible) — 454s until timeout.
+2026-05-09 16:47:13,278 [INFO] 24928 [1020] Still marching (Carter visible) — 446s until timeout.
+2026-05-09 16:47:21,476 [INFO] 24928 [1020] Still marching (Carter visible) — 438s until timeout.
+2026-05-09 16:47:31,552 [INFO] 24928 [1020] Still marching (Carter visible) — 428s until timeout.
+2026-05-09 16:47:39,565 [INFO] 24928 [1020] Still marching (Carter visible) — 420s until timeout.
+2026-05-09 16:47:48,628 [INFO] 24928 [1020] Still marching (Carter visible) — 411s until timeout.
+2026-05-09 16:47:56,867 [INFO] 24928 [1020] Still marching (Carter visible) — 402s until timeout.
+2026-05-09 16:48:07,227 [INFO] 24928 [1020] Still marching (Carter visible) — 392s until timeout.
+2026-05-09 16:48:17,837 [INFO] 24928 [1020] Still marching (Carter visible) — 381s until timeout.
+2026-05-09 16:48:29,102 [INFO] 24928 [1020] Still marching (Carter visible) — 370s until timeout.
+2026-05-09 16:48:37,120 [INFO] 24928 [1020] Still marching (Carter visible) — 362s until timeout.
+2026-05-09 16:48:45,058 [INFO] 24928 [1020] Still marching (Carter visible) — 354s until timeout.
+2026-05-09 16:48:55,303 [INFO] 24928 [1020] Still marching (Carter visible) — 344s until timeout.
+2026-05-09 16:49:03,546 [INFO] 24928 [1020] Still marching (Carter visible) — 336s until timeout.
+2026-05-09 16:49:11,631 [INFO] 24928 [1020] Still marching (Carter visible) — 328s until timeout.
+2026-05-09 16:49:19,989 [INFO] 24928 [1020] Still marching (Carter visible) — 319s until timeout.
+2026-05-09 16:49:27,881 [INFO] 24928 [1020] Still marching (Carter visible) — 311s until timeout.
+2026-05-09 16:49:35,894 [INFO] 24928 [1020] Still marching (Carter visible) — 303s until timeout.
+2026-05-09 16:49:44,063 [INFO] 24928 [1020] Still marching (Carter visible) — 295s until timeout.
+2026-05-09 16:49:52,168 [INFO] 24928 [1020] Still marching (Carter visible) — 287s until timeout.
+2026-05-09 16:50:00,459 [INFO] 24928 [1020] Still marching (Carter visible) — 279s until timeout.
+2026-05-09 16:50:08,521 [INFO] 24928 [1020] Still marching (Carter visible) — 271s until timeout.
+2026-05-09 16:50:16,647 [INFO] 24928 [1020] Still marching (Carter visible) — 263s until timeout.
+2026-05-09 16:50:25,028 [INFO] 24928 [1020] Still marching (Carter visible) — 254s until timeout.
+2026-05-09 16:50:32,984 [INFO] 24928 [1020] Still marching (Carter visible) — 246s until timeout.
+2026-05-09 16:50:41,122 [INFO] 24928 [1020] Still marching (Carter visible) — 238s until timeout.
+2026-05-09 16:50:49,252 [INFO] 24928 [1020] Still marching (Carter visible) — 230s until timeout.
+2026-05-09 16:50:58,300 [INFO] 24928 [1020] Still marching (Carter visible) — 221s until timeout.
+2026-05-09 16:51:06,440 [INFO] 24928 [1020] Still marching (Carter visible) — 213s until timeout.
+2026-05-09 16:51:14,562 [INFO] 24928 [1020] Still marching (Carter visible) — 205s until timeout.
+2026-05-09 16:51:22,675 [INFO] 24928 [1020] Still marching (Carter visible) — 197s until timeout.
+2026-05-09 16:51:31,012 [INFO] 24928 [1020] Still marching (Carter visible) — 188s until timeout.
+2026-05-09 16:51:39,090 [INFO] 24928 [1020] Still marching (Carter visible) — 180s until timeout.
+2026-05-09 16:51:47,124 [INFO] 24928 [1020] Still marching (Carter visible) — 172s until timeout.
+2026-05-09 16:51:57,249 [INFO] 24928 [1020] Still marching (Carter visible) — 162s until timeout.
+2026-05-09 16:52:05,481 [INFO] 24928 [1020] Still marching (Carter visible) — 154s until timeout.
+2026-05-09 16:52:15,564 [INFO] 24928 [1020] Still marching (Carter visible) — 144s until timeout.
+2026-05-09 16:52:23,712 [INFO] 24928 [1020] Still marching (Carter visible) — 136s until timeout.
+2026-05-09 16:52:31,824 [INFO] 24928 [1020] Still marching (Carter visible) — 127s until timeout.
+2026-05-09 16:52:39,976 [INFO] 24928 [1020] Still marching (Carter visible) — 119s until timeout.
+2026-05-09 16:52:48,101 [INFO] 24928 [1020] Still marching (Carter visible) — 111s until timeout.
+2026-05-09 16:52:56,183 [INFO] 24928 [1020] Still marching (Carter visible) — 103s until timeout.
+2026-05-09 16:53:04,345 [INFO] 24928 [1020] Still marching (Carter visible) — 95s until timeout.
+2026-05-09 16:53:12,454 [INFO] 24928 [1020] Still marching (Carter visible) — 87s until timeout.
+2026-05-09 16:53:22,583 [INFO] 24928 [1020] Still marching (Carter visible) — 77s until timeout.
+2026-05-09 16:53:30,711 [INFO] 24928 [1020] Still marching (Carter visible) — 69s until timeout.
+2026-05-09 16:53:38,856 [INFO] 24928 [1020] Still marching (Carter visible) — 60s until timeout.
+2026-05-09 16:53:47,050 [INFO] 24928 [1020] Still marching (Carter visible) — 52s until timeout.
+2026-05-09 16:53:56,107 [INFO] 24928 [1020] Still marching (Carter visible) — 43s until timeout.
+2026-05-09 16:54:04,259 [INFO] 24928 [1020] Still marching (Carter visible) — 35s until timeout.
+2026-05-09 16:54:12,274 [INFO] 24928 [1020] March (Carter) gone — ready for next cycle.
+2026-05-09 16:54:12,274 [INFO] 24928 [1020] Cycle #1 complete.
+2026-05-09 16:54:12,380 [INFO] 24928 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 16:54:15,031 [WARNING] 24928 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 16:54:15,045 [INFO] 24928 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 16:54:18,483 [INFO] 24928 [1020] Tab debug screenshot saved to templates\_debug_tabs.png
+2026-05-09 16:54:18,493 [INFO] 24928 [1020] tab 'tab_common' avg R=240 G=216 B=178 green_px=0/2400 → TAN(deselected)
+2026-05-09 16:54:18,493 [INFO] 24928 [1020] Selecting tab 'Common'.
+2026-05-09 16:54:21,264 [WARNING] 24928 [1020] OCR missed 'Common' — coord fallback 'tab_common'
+2026-05-09 16:54:21,276 [INFO] 24928 [1020] click 'tab_common' → canvas(1134,363) + offset(0,43) = page(1134,406)
+2026-05-09 16:54:21,709 [INFO] 24928 [1020] tab 'tab_rare' avg R=230 G=207 B=176 green_px=0/2400 → TAN(deselected)
+2026-05-09 16:54:21,714 [INFO] 24928 [1020] tab 'tab_epic' avg R=153 G=118 B=104 green_px=0/2400 → TAN(deselected)
+2026-05-09 16:54:21,727 [INFO] 24928 [1020] tab 'tab_arenas' avg R=178 G=174 B=121 green_px=8/2400 → TAN(deselected)
+2026-05-09 16:54:21,732 [INFO] 24928 [1020] tab 'tab_others' avg R=145 G=148 B=101 green_px=1106/2400 → GREEN(selected)
+2026-05-09 16:54:21,736 [INFO] 24928 [1020] Deselecting tab 'Others'.
+2026-05-09 16:54:23,646 [WARNING] 24928 [1020] OCR missed 'Others' — coord fallback 'tab_others'
+2026-05-09 16:54:23,657 [INFO] 24928 [1020] click 'tab_others' → canvas(1193,406) + offset(0,43) = page(1193,449)
+2026-05-09 16:54:24,078 [INFO] 24928 [1020] Dragging left slider handle → (1404, 461).
+2026-05-09 16:54:24,753 [INFO] 24928 [1020] Dragging right slider handle → (1521, 463).
+2026-05-09 16:54:28,926 [WARNING] 24928 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-09 16:54:28,931 [INFO] 24928 [1020] click 'second_result_go' → canvas(1588,699) + offset(0,43) = page(1588,742)
+2026-05-09 16:54:32,008 [INFO] 24928 [1020] click 'crypt_location' → canvas(1301,611) + offset(0,43) = page(1301,654)
+2026-05-09 16:54:35,712 [WARNING] 24928 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-09 16:54:35,716 [INFO] 24928 [1020] click 'crypt_popup_explore' → canvas(1537,939) + offset(0,43) = page(1537,982)
+2026-05-09 16:54:37,289 [INFO] 24928 [1020] Opening march speedup popup.
+2026-05-09 16:54:37,294 [INFO] 24928 [1020] click 'march_speedup_btn' → canvas(1789,56) + offset(0,43) = page(1789,99)
+2026-05-09 16:54:38,311 [INFO] 24928 [1020] Speedup click 1/5.
+2026-05-09 16:54:38,315 [INFO] 24928 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:54:38,946 [INFO] 24928 [1020] Speedup click 2/5.
+2026-05-09 16:54:38,960 [INFO] 24928 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:54:39,579 [INFO] 24928 [1020] Speedup click 3/5.
+2026-05-09 16:54:39,583 [INFO] 24928 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:54:40,214 [INFO] 24928 [1020] Speedup click 4/5.
+2026-05-09 16:54:40,227 [INFO] 24928 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:54:40,847 [INFO] 24928 [1020] Speedup click 5/5.
+2026-05-09 16:54:40,861 [INFO] 24928 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:54:41,478 [INFO] 24928 [1020] Closing speedup popup.
+2026-05-09 16:54:42,202 [INFO] 24928 [1020] Waiting for March (Carter) to finish...
+2026-05-09 16:54:44,065 [INFO] 24928 [1020] March (Carter) gone — ready for next cycle.
+2026-05-09 16:54:44,065 [INFO] 24928 [1020] Cycle #2 complete.
+2026-05-09 16:54:44,073 [INFO] 24928 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 16:54:46,558 [WARNING] 24928 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 16:54:46,563 [INFO] 24928 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 16:54:49,952 [INFO] 24928 [1020] Tab debug screenshot saved to templates\_debug_tabs.png
+2026-05-09 16:54:49,961 [INFO] 24928 [1020] tab 'tab_common' avg R=245 G=226 B=196 green_px=0/2400 → TAN(deselected)
+2026-05-09 16:54:49,961 [INFO] 24928 [1020] Selecting tab 'Common'.
+2026-05-09 16:54:51,943 [WARNING] 24928 [1020] OCR missed 'Common' — coord fallback 'tab_common'
+2026-05-09 16:54:51,948 [INFO] 24928 [1020] click 'tab_common' → canvas(1134,363) + offset(0,43) = page(1134,406)
+2026-05-09 16:54:52,377 [INFO] 24928 [1020] tab 'tab_rare' avg R=246 G=227 B=196 green_px=0/2400 → TAN(deselected)
+2026-05-09 16:54:52,381 [INFO] 24928 [1020] tab 'tab_epic' avg R=153 G=118 B=104 green_px=0/2400 → TAN(deselected)
+2026-05-09 16:54:52,395 [INFO] 24928 [1020] tab 'tab_arenas' avg R=178 G=174 B=121 green_px=8/2400 → TAN(deselected)
+2026-05-09 16:54:52,400 [INFO] 24928 [1020] tab 'tab_others' avg R=245 G=227 B=198 green_px=0/2400 → TAN(deselected)
+2026-05-09 16:54:52,413 [INFO] 24928 [1020] Dragging left slider handle → (1404, 461).
+2026-05-09 16:54:53,115 [INFO] 24928 [1020] Dragging right slider handle → (1521, 463).
+2026-05-09 16:54:57,720 [WARNING] 24928 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-09 16:54:57,726 [INFO] 24928 [1020] click 'second_result_go' → canvas(1588,699) + offset(0,43) = page(1588,742)
+2026-05-09 16:55:00,825 [INFO] 24928 [1020] click 'crypt_location' → canvas(1301,611) + offset(0,43) = page(1301,654)
+2026-05-09 16:55:04,147 [WARNING] 24928 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-09 16:55:04,158 [INFO] 24928 [1020] click 'crypt_popup_explore' → canvas(1537,939) + offset(0,43) = page(1537,982)
+2026-05-09 16:55:05,707 [INFO] 24928 [1020] Opening march speedup popup.
+2026-05-09 16:55:05,712 [INFO] 24928 [1020] click 'march_speedup_btn' → canvas(1789,56) + offset(0,43) = page(1789,99)
+2026-05-09 16:55:06,732 [INFO] 24928 [1020] Speedup click 1/5.
+2026-05-09 16:55:06,743 [INFO] 24928 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:55:07,361 [INFO] 24928 [1020] Speedup click 2/5.
+2026-05-09 16:55:07,365 [INFO] 24928 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:55:07,991 [INFO] 24928 [1020] Speedup click 3/5.
+2026-05-09 16:55:07,996 [INFO] 24928 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:55:08,622 [INFO] 24928 [1020] Speedup click 4/5.
+2026-05-09 16:55:08,627 [INFO] 24928 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:55:09,242 [INFO] 24928 [1020] Speedup click 5/5.
+2026-05-09 16:55:09,247 [INFO] 24928 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 16:55:09,872 [INFO] 24928 [1020] Closing speedup popup.
+2026-05-09 16:55:10,589 [INFO] 24928 [1020] Waiting for March (Carter) to finish...
+2026-05-09 16:55:12,880 [INFO] 24928 [1020] Still marching (Carter visible) — 597s until timeout.
+2026-05-09 16:55:20,546 [INFO] 24928 [1020] Still marching (Carter visible) — 590s until timeout.
+2026-05-09 16:55:28,030 [INFO] 24928 [1020] Still marching (Carter visible) — 582s until timeout.
+2026-05-09 16:55:35,302 [INFO] 24928 [1020] Still marching (Carter visible) — 575s until timeout.
+2026-05-09 16:55:42,478 [INFO] 24928 [1020] Still marching (Carter visible) — 568s until timeout.
+2026-05-09 16:55:49,730 [INFO] 24928 [1020] Still marching (Carter visible) — 560s until timeout.
+2026-05-09 16:55:57,174 [INFO] 24928 [1020] Still marching (Carter visible) — 553s until timeout.
+2026-05-09 16:56:04,498 [INFO] 24928 [1020] Still marching (Carter visible) — 546s until timeout.
+2026-05-09 16:56:11,864 [INFO] 24928 [1020] Still marching (Carter visible) — 538s until timeout.
+2026-05-09 16:56:19,112 [INFO] 24928 [1020] Still marching (Carter visible) — 531s until timeout.
+2026-05-09 16:56:26,329 [INFO] 24928 [1020] Still marching (Carter visible) — 524s until timeout.
+2026-05-09 16:56:33,921 [INFO] 24928 [1020] Still marching (Carter visible) — 516s until timeout.
+2026-05-09 16:56:41,173 [INFO] 24928 [1020] Still marching (Carter visible) — 509s until timeout.
+2026-05-09 16:56:48,406 [INFO] 24928 [1020] Still marching (Carter visible) — 502s until timeout.
+2026-05-09 16:56:55,686 [INFO] 24928 [1020] Still marching (Carter visible) — 494s until timeout.
+2026-05-09 16:57:03,219 [INFO] 24928 [1020] Still marching (Carter visible) — 487s until timeout.
+2026-05-09 16:57:10,561 [INFO] 24928 [1020] Still marching (Carter visible) — 480s until timeout.
+2026-05-09 16:57:17,836 [INFO] 24928 [1020] Still marching (Carter visible) — 472s until timeout.
+2026-05-09 16:57:25,324 [INFO] 24928 [1020] Still marching (Carter visible) — 465s until timeout.
+2026-05-09 16:57:32,552 [INFO] 24928 [1020] Still marching (Carter visible) — 458s until timeout.
+2026-05-09 16:57:39,832 [INFO] 24928 [1020] Still marching (Carter visible) — 450s until timeout.
+2026-05-09 16:57:47,205 [INFO] 24928 [1020] Still marching (Carter visible) — 443s until timeout.
+2026-05-09 16:57:54,399 [INFO] 24928 [1020] Still marching (Carter visible) — 436s until timeout.
+2026-05-09 16:58:01,726 [INFO] 24928 [1020] Still marching (Carter visible) — 428s until timeout.
+2026-05-09 16:58:09,422 [INFO] 24928 [1020] Still marching (Carter visible) — 421s until timeout.
+2026-05-09 16:58:16,679 [INFO] 24928 [1020] Still marching (Carter visible) — 413s until timeout.
+2026-05-09 16:58:24,014 [INFO] 24928 [1020] Still marching (Carter visible) — 406s until timeout.
+2026-05-09 16:58:31,380 [INFO] 24928 [1020] Still marching (Carter visible) — 399s until timeout.
+2026-05-09 16:58:38,640 [INFO] 24928 [1020] Still marching (Carter visible) — 391s until timeout.
+2026-05-09 16:58:46,063 [INFO] 24928 [1020] Still marching (Carter visible) — 384s until timeout.
+2026-05-09 16:58:53,423 [INFO] 24928 [1020] Still marching (Carter visible) — 377s until timeout.
+2026-05-09 16:59:00,757 [INFO] 24928 [1020] Still marching (Carter visible) — 369s until timeout.
+2026-05-09 16:59:08,046 [INFO] 24928 [1020] Still marching (Carter visible) — 362s until timeout.
+2026-05-09 16:59:15,610 [INFO] 24928 [1020] Still marching (Carter visible) — 354s until timeout.
+2026-05-09 16:59:22,981 [INFO] 24928 [1020] Still marching (Carter visible) — 347s until timeout.
+2026-05-09 16:59:30,309 [INFO] 24928 [1020] Still marching (Carter visible) — 340s until timeout.
+2026-05-09 16:59:37,634 [INFO] 24928 [1020] Still marching (Carter visible) — 332s until timeout.
+2026-05-09 16:59:45,057 [INFO] 24928 [1020] Still marching (Carter visible) — 325s until timeout.
+2026-05-09 16:59:52,335 [INFO] 24928 [1020] Still marching (Carter visible) — 318s until timeout.
+2026-05-09 17:00:00,082 [INFO] 24928 [1020] Still marching (Carter visible) — 310s until timeout.
+2026-05-09 17:00:07,331 [INFO] 24928 [1020] Still marching (Carter visible) — 303s until timeout.
+2026-05-09 17:00:08,349 [INFO] 24928 [1020] Interrupted by user.
+2026-05-09 17:03:20,211 [ERROR] 24928 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 17:03:20,365 [ERROR] 24928 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 17:03:23,238 [INFO] 16896 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 17:03:25,137 [INFO] 16896 [1020] Navigating to https://totalbattle.com
+2026-05-09 17:03:28,847 [INFO] 16896 [1020] Map already loaded — no login required.
+2026-05-09 17:03:28,863 [INFO] 16896 [1020] Waiting for game loading screen to finish...
+2026-05-09 17:03:51,107 [INFO] 16896 [1020] Waiting for map canvas...
+2026-05-09 17:03:54,634 [INFO] 16896 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 17:03:55,522 [INFO] 16896 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 17:03:56,326 [INFO] 16896 [1020] Map ready.
+2026-05-09 17:03:56,326 [INFO] 16896 [1020] Crypt loop started.
+2026-05-09 17:03:56,602 [INFO] 16896 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 17:04:06,200 [INFO] 16896 [1020] Loading OCR model — first run may download models…
+2026-05-09 17:04:09,348 [INFO] 16896 [1020] OCR model ready.
+2026-05-09 17:04:11,084 [WARNING] 16896 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 17:04:11,092 [INFO] 16896 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 17:04:15,231 [INFO] 16896 [1020] Tab debug screenshot saved to templates\_debug_tabs.png
+2026-05-09 17:04:15,252 [INFO] 16896 [1020] tab 'tab_common' avg R=243 G=223 B=193 green_px=0/2400 → TAN(deselected)
+2026-05-09 17:04:15,278 [INFO] 16896 [1020] Selecting tab 'Common'.
+2026-05-09 17:04:18,058 [WARNING] 16896 [1020] OCR missed 'Common' — coord fallback 'tab_common'
+2026-05-09 17:04:18,064 [INFO] 16896 [1020] click 'tab_common' → canvas(1134,363) + offset(0,43) = page(1134,406)
+2026-05-09 17:04:18,496 [INFO] 16896 [1020] tab 'tab_rare' avg R=122 G=102 B=86 green_px=0/2400 → TAN(deselected)
+2026-05-09 17:04:18,500 [INFO] 16896 [1020] tab 'tab_epic' avg R=153 G=118 B=104 green_px=0/2400 → TAN(deselected)
+2026-05-09 17:04:18,511 [INFO] 16896 [1020] tab 'tab_arenas' avg R=178 G=174 B=121 green_px=8/2400 → TAN(deselected)
+2026-05-09 17:04:18,515 [INFO] 16896 [1020] tab 'tab_others' avg R=219 G=195 B=164 green_px=0/2400 → TAN(deselected)
+2026-05-09 17:04:18,547 [INFO] 16896 [1020] Dragging left slider handle → (1404, 461).
+2026-05-09 17:04:19,553 [INFO] 16896 [1020] Dragging right slider handle → (1521, 463).
+2026-05-09 17:04:25,055 [INFO] 16896 [1020] OCR click 'Go'[1] → (1217, 707)
+2026-05-09 17:04:28,118 [INFO] 16896 [1020] click 'crypt_location' → canvas(1301,611) + offset(0,43) = page(1301,654)
+2026-05-09 17:04:32,430 [WARNING] 16896 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-09 17:04:32,459 [INFO] 16896 [1020] click 'crypt_popup_explore' → canvas(1537,939) + offset(0,43) = page(1537,982)
+2026-05-09 17:04:34,021 [INFO] 16896 [1020] Waiting for March (Carter) bar to appear...
+2026-05-09 17:04:39,392 [INFO] 16896 [1020] March (Carter) bar detected — opening speedup.
+2026-05-09 17:04:39,392 [INFO] 16896 [1020] Clicking Speed up button.
+2026-05-09 17:04:39,407 [INFO] 16896 [1020] click 'march_speedup_btn' → canvas(1789,56) + offset(0,43) = page(1789,99)
+2026-05-09 17:04:40,628 [INFO] 16896 [1020] Speedup click 1/5.
+2026-05-09 17:04:40,633 [INFO] 16896 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 17:04:41,356 [INFO] 16896 [1020] Speedup click 2/5.
+2026-05-09 17:04:41,362 [INFO] 16896 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 17:04:42,088 [INFO] 16896 [1020] Speedup click 3/5.
+2026-05-09 17:04:42,095 [INFO] 16896 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 17:04:42,810 [INFO] 16896 [1020] Speedup click 4/5.
+2026-05-09 17:04:42,814 [INFO] 16896 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 17:04:43,548 [INFO] 16896 [1020] Speedup click 5/5.
+2026-05-09 17:04:43,561 [INFO] 16896 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 17:04:44,276 [INFO] 16896 [1020] Closing speedup popup.
+2026-05-09 17:04:44,988 [INFO] 16896 [1020] Waiting for March (Carter) to finish...
+2026-05-09 17:04:47,588 [INFO] 16896 [1020] Still marching (Carter visible) — 597s until timeout.
+2026-05-09 17:05:00,239 [INFO] 16896 [1020] Still marching (Carter visible) — 584s until timeout.
+2026-05-09 17:05:08,911 [INFO] 16896 [1020] Still marching (Carter visible) — 576s until timeout.
+2026-05-09 17:05:17,107 [INFO] 16896 [1020] Still marching (Carter visible) — 567s until timeout.
+2026-05-09 17:05:29,853 [INFO] 16896 [1020] Still marching (Carter visible) — 555s until timeout.
+2026-05-09 17:05:38,569 [INFO] 16896 [1020] Still marching (Carter visible) — 546s until timeout.
+2026-05-09 17:05:48,998 [INFO] 16896 [1020] Still marching (Carter visible) — 535s until timeout.
+2026-05-09 17:05:57,411 [INFO] 16896 [1020] March (Carter) gone — ready for next cycle.
+2026-05-09 17:05:57,411 [INFO] 16896 [1020] Cycle #1 complete.
+2026-05-09 17:05:57,456 [INFO] 16896 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 17:06:02,565 [WARNING] 16896 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 17:06:02,600 [INFO] 16896 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 17:06:07,126 [INFO] 16896 [1020] Tab debug screenshot saved to templates\_debug_tabs.png
+2026-05-09 17:06:07,187 [INFO] 16896 [1020] tab 'tab_common' avg R=240 G=216 B=178 green_px=0/2400 → TAN(deselected)
+2026-05-09 17:06:07,195 [INFO] 16896 [1020] Selecting tab 'Common'.
+2026-05-09 17:06:13,850 [WARNING] 16896 [1020] OCR missed 'Common' — coord fallback 'tab_common'
+2026-05-09 17:06:13,909 [INFO] 16896 [1020] click 'tab_common' → canvas(1134,363) + offset(0,43) = page(1134,406)
+2026-05-09 17:06:14,376 [INFO] 16896 [1020] tab 'tab_rare' avg R=230 G=207 B=177 green_px=0/2400 → TAN(deselected)
+2026-05-09 17:06:14,393 [INFO] 16896 [1020] tab 'tab_epic' avg R=90 G=88 B=43 green_px=425/2400 → GREEN(selected)
+2026-05-09 17:06:14,393 [INFO] 16896 [1020] Deselecting tab 'Epic'.
+2026-05-09 17:06:16,635 [WARNING] 16896 [1020] OCR missed 'Epic' — coord fallback 'tab_epic'
+2026-05-09 17:06:16,646 [INFO] 16896 [1020] click 'tab_epic' → canvas(1468,361) + offset(0,43) = page(1468,404)
+2026-05-09 17:06:17,108 [INFO] 16896 [1020] tab 'tab_arenas' avg R=174 G=160 B=74 green_px=37/2400 → TAN(deselected)
+2026-05-09 17:06:17,127 [INFO] 16896 [1020] tab 'tab_others' avg R=145 G=148 B=101 green_px=1106/2400 → GREEN(selected)
+2026-05-09 17:06:17,127 [INFO] 16896 [1020] Deselecting tab 'Others'.
+2026-05-09 17:06:21,663 [WARNING] 16896 [1020] OCR missed 'Others' — coord fallback 'tab_others'
+2026-05-09 17:06:21,689 [INFO] 16896 [1020] click 'tab_others' → canvas(1193,406) + offset(0,43) = page(1193,449)
+2026-05-09 17:06:22,157 [INFO] 16896 [1020] Dragging left slider handle → (1404, 461).
+2026-05-09 17:06:24,017 [INFO] 16896 [1020] Dragging right slider handle → (1521, 463).
+2026-05-09 17:06:30,531 [WARNING] 16896 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-09 17:06:30,542 [INFO] 16896 [1020] click 'second_result_go' → canvas(1588,699) + offset(0,43) = page(1588,742)
+2026-05-09 17:06:33,610 [INFO] 16896 [1020] click 'crypt_location' → canvas(1301,611) + offset(0,43) = page(1301,654)
+2026-05-09 17:06:38,093 [WARNING] 16896 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-09 17:06:38,099 [INFO] 16896 [1020] click 'crypt_popup_explore' → canvas(1537,939) + offset(0,43) = page(1537,982)
+2026-05-09 17:06:39,662 [INFO] 16896 [1020] Waiting for March (Carter) bar to appear...
+2026-05-09 17:06:45,878 [INFO] 16896 [1020] March (Carter) bar detected — opening speedup.
+2026-05-09 17:06:45,879 [INFO] 16896 [1020] Clicking Speed up button.
+2026-05-09 17:06:45,884 [INFO] 16896 [1020] click 'march_speedup_btn' → canvas(1789,56) + offset(0,43) = page(1789,99)
+2026-05-09 17:06:47,121 [INFO] 16896 [1020] Speedup click 1/5.
+2026-05-09 17:06:47,128 [INFO] 16896 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 17:06:47,847 [INFO] 16896 [1020] Speedup click 2/5.
+2026-05-09 17:06:47,862 [INFO] 16896 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 17:06:48,576 [INFO] 16896 [1020] Speedup click 3/5.
+2026-05-09 17:06:48,581 [INFO] 16896 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 17:06:49,318 [INFO] 16896 [1020] Speedup click 4/5.
+2026-05-09 17:06:49,338 [INFO] 16896 [1020] click 'speedup_use_btn' → canvas(1632,567) + offset(0,43) = page(1632,610)
+2026-05-09 17:06:49,656 [INFO] 16896 [1020] Interrupted by user.
+2026-05-09 17:07:49,443 [ERROR] 16896 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 17:07:49,570 [ERROR] 16896 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 17:07:51,916 [INFO] 6876 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 17:07:53,672 [INFO] 6876 [1020] Navigating to https://totalbattle.com
+2026-05-09 17:07:57,319 [INFO] 6876 [1020] Map already loaded — no login required.
+2026-05-09 17:07:57,340 [INFO] 6876 [1020] Waiting for game loading screen to finish...
+2026-05-09 17:08:11,408 [INFO] 6876 [1020] Waiting for map canvas...
+2026-05-09 17:08:15,032 [INFO] 6876 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 17:08:16,008 [INFO] 6876 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 17:08:16,813 [INFO] 6876 [1020] Map ready.
+2026-05-09 17:08:16,813 [INFO] 6876 [1020] Crypt loop started.
+2026-05-09 17:08:16,829 [INFO] 6876 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 17:08:26,699 [INFO] 6876 [1020] Loading OCR model — first run may download models…
+2026-05-09 17:08:30,141 [INFO] 6876 [1020] OCR model ready.
+2026-05-09 17:08:31,965 [WARNING] 6876 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 17:08:31,977 [INFO] 6876 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 17:08:36,231 [INFO] 6876 [1020] Tab debug screenshot saved to templates\_debug_tabs.png
+2026-05-09 17:08:36,279 [INFO] 6876 [1020] tab 'tab_common' avg R=240 G=216 B=178 green_px=0/2400 → TAN(deselected)
+2026-05-09 17:08:36,280 [INFO] 6876 [1020] Selecting tab 'Common'.
+2026-05-09 17:08:39,236 [WARNING] 6876 [1020] OCR missed 'Common' — coord fallback 'tab_common'
+2026-05-09 17:08:39,245 [INFO] 6876 [1020] click 'tab_common' → canvas(1134,363) + offset(0,43) = page(1134,406)
+2026-05-09 17:08:39,677 [INFO] 6876 [1020] tab 'tab_rare' avg R=229 G=207 B=176 green_px=0/2400 → TAN(deselected)
+2026-05-09 17:08:39,682 [INFO] 6876 [1020] tab 'tab_epic' avg R=153 G=118 B=104 green_px=0/2400 → TAN(deselected)
+2026-05-09 17:08:39,696 [INFO] 6876 [1020] tab 'tab_arenas' avg R=178 G=174 B=121 green_px=8/2400 → TAN(deselected)
+2026-05-09 17:08:39,713 [INFO] 6876 [1020] tab 'tab_others' avg R=145 G=148 B=101 green_px=1106/2400 → GREEN(selected)
+2026-05-09 17:08:39,713 [INFO] 6876 [1020] Deselecting tab 'Others'.
+2026-05-09 17:08:42,243 [WARNING] 6876 [1020] OCR missed 'Others' — coord fallback 'tab_others'
+2026-05-09 17:08:42,247 [INFO] 6876 [1020] click 'tab_others' → canvas(1193,406) + offset(0,43) = page(1193,449)
+2026-05-09 17:08:42,681 [INFO] 6876 [1020] Dragging left slider handle → (1404, 461).
+2026-05-09 17:08:43,394 [INFO] 6876 [1020] Dragging right slider handle → (1521, 463).
+2026-05-09 17:08:47,980 [WARNING] 6876 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-09 17:08:47,994 [INFO] 6876 [1020] click 'second_result_go' → canvas(1588,699) + offset(0,43) = page(1588,742)
+2026-05-09 17:08:51,095 [INFO] 6876 [1020] click 'crypt_location' → canvas(1301,611) + offset(0,43) = page(1301,654)
+2026-05-09 17:08:54,372 [WARNING] 6876 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-09 17:08:54,378 [INFO] 6876 [1020] click 'crypt_popup_explore' → canvas(1537,939) + offset(0,43) = page(1537,982)
+2026-05-09 17:08:55,914 [INFO] 6876 [1020] Waiting for March (Carter) bar to appear...
+2026-05-09 17:08:58,489 [INFO] 6876 [1020] March (Carter) bar detected — opening speedup.
+2026-05-09 17:08:58,489 [INFO] 6876 [1020] Clicking Speed up button.
+2026-05-09 17:08:58,494 [INFO] 6876 [1020] click 'march_speedup_btn' → canvas(1677,58) + offset(0,43) = page(1677,101)
+2026-05-09 17:08:59,713 [INFO] 6876 [1020] Speedup click 1/5.
+2026-05-09 17:08:59,724 [INFO] 6876 [1020] click 'speedup_use_btn' → canvas(1652,65) + offset(0,43) = page(1652,108)
+2026-05-09 17:09:00,445 [INFO] 6876 [1020] Speedup click 2/5.
+2026-05-09 17:09:00,450 [INFO] 6876 [1020] click 'speedup_use_btn' → canvas(1652,65) + offset(0,43) = page(1652,108)
+2026-05-09 17:09:01,191 [INFO] 6876 [1020] Speedup click 3/5.
+2026-05-09 17:09:01,195 [INFO] 6876 [1020] click 'speedup_use_btn' → canvas(1652,65) + offset(0,43) = page(1652,108)
+2026-05-09 17:09:01,920 [INFO] 6876 [1020] Speedup click 4/5.
+2026-05-09 17:09:01,926 [INFO] 6876 [1020] click 'speedup_use_btn' → canvas(1652,65) + offset(0,43) = page(1652,108)
+2026-05-09 17:09:02,652 [INFO] 6876 [1020] Speedup click 5/5.
+2026-05-09 17:09:02,659 [INFO] 6876 [1020] click 'speedup_use_btn' → canvas(1652,65) + offset(0,43) = page(1652,108)
+2026-05-09 17:09:03,381 [INFO] 6876 [1020] Closing speedup popup.
+2026-05-09 17:09:04,110 [INFO] 6876 [1020] Waiting for March (Carter) to finish...
+2026-05-09 17:09:06,784 [INFO] 6876 [1020] Still marching (Carter visible) — 597s until timeout.
+2026-05-09 17:09:09,575 [INFO] 6876 [1020] Interrupted by user.
+2026-05-09 17:10:17,367 [ERROR] 6876 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 17:10:17,593 [ERROR] 6876 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-09 17:10:22,220 [INFO] 16948 [1020] Navigating to https://totalbattle.com
+2026-05-09 17:10:25,692 [INFO] 16948 [1020] Map already loaded — no login required.
+2026-05-09 17:10:25,697 [INFO] 16948 [1020] Waiting for game loading screen to finish...
+2026-05-09 17:10:48,500 [INFO] 16948 [1020] Waiting for map canvas...
+2026-05-09 17:10:52,028 [INFO] 16948 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 17:10:52,942 [INFO] 16948 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 17:10:53,753 [INFO] 16948 [1020] Map ready.
+2026-05-09 22:45:23,329 [ERROR] 26504 Task was destroyed but it is pending!
+task: <Task pending name='Task-4' coro=<BrowserType.launch_persistent_context() done, defined at C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_browser_type.py:108> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[SyncBase._sync.<locals>.<lambda>() at C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_sync_base.py:111, ProtocolCallback.__init__.<locals>.cb() at C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py:230]>
+2026-05-09 22:45:26,200 [INFO] 9888 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 22:45:27,975 [INFO] 9888 [1020] Navigating to https://totalbattle.com
+2026-05-09 22:45:33,506 [INFO] 9888 [1020] Map already loaded — no login required.
+2026-05-09 22:45:33,508 [INFO] 9888 [1020] Waiting for game loading screen to finish...
+2026-05-09 22:45:47,755 [INFO] 9888 [1020] Waiting for map canvas...
+2026-05-09 22:45:51,382 [INFO] 9888 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 22:45:52,366 [INFO] 9888 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 22:45:53,176 [INFO] 9888 [1020] Map ready.
+2026-05-09 22:45:53,176 [INFO] 9888 [1020] Crypt loop started.
+2026-05-09 22:45:53,193 [INFO] 9888 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 22:46:02,718 [INFO] 9888 [1020] Loading OCR model — first run may download models…
+2026-05-09 22:46:06,037 [INFO] 9888 [1020] OCR model ready.
+2026-05-09 22:46:07,806 [WARNING] 9888 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 22:46:07,813 [INFO] 9888 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 22:46:11,339 [INFO] 9888 [1020] Tab debug screenshot saved to templates\_debug_tabs.png
+2026-05-09 22:46:11,344 [INFO] 9888 [1020] tab 'tab_common' avg R=240 G=216 B=178 green_px=0/2400 → TAN(deselected)
+2026-05-09 22:46:11,345 [INFO] 9888 [1020] Selecting tab 'Common'.
+2026-05-09 22:46:13,835 [WARNING] 9888 [1020] OCR missed 'Common' — coord fallback 'tab_common'
+2026-05-09 22:46:13,842 [INFO] 9888 [1020] click 'tab_common' → canvas(1134,363) + offset(0,43) = page(1134,406)
+2026-05-09 22:46:14,265 [INFO] 9888 [1020] tab 'tab_rare' avg R=231 G=208 B=177 green_px=0/2400 → TAN(deselected)
+2026-05-09 22:46:14,276 [INFO] 9888 [1020] tab 'tab_epic' avg R=153 G=118 B=104 green_px=0/2400 → TAN(deselected)
+2026-05-09 22:46:14,281 [INFO] 9888 [1020] tab 'tab_arenas' avg R=178 G=174 B=121 green_px=8/2400 → TAN(deselected)
+2026-05-09 22:46:14,294 [INFO] 9888 [1020] tab 'tab_others' avg R=145 G=148 B=101 green_px=1106/2400 → GREEN(selected)
+2026-05-09 22:46:14,294 [INFO] 9888 [1020] Deselecting tab 'Others'.
+2026-05-09 22:46:16,622 [WARNING] 9888 [1020] OCR missed 'Others' — coord fallback 'tab_others'
+2026-05-09 22:46:16,627 [INFO] 9888 [1020] click 'tab_others' → canvas(1193,406) + offset(0,43) = page(1193,449)
+2026-05-09 22:46:17,060 [INFO] 9888 [1020] Dragging left slider handle → (1404, 461).
+2026-05-09 22:46:17,806 [INFO] 9888 [1020] Dragging right slider handle → (1521, 463).
+2026-05-09 22:46:22,248 [WARNING] 9888 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-09 22:46:22,259 [INFO] 9888 [1020] click 'second_result_go' → canvas(1588,699) + offset(0,43) = page(1588,742)
+2026-05-09 22:46:25,360 [INFO] 9888 [1020] click 'crypt_location' → canvas(1301,611) + offset(0,43) = page(1301,654)
+2026-05-09 22:46:28,981 [WARNING] 9888 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-09 22:46:28,992 [INFO] 9888 [1020] click 'crypt_popup_explore' → canvas(1537,939) + offset(0,43) = page(1537,982)
+2026-05-09 22:46:30,533 [INFO] 9888 [1020] Waiting for March (Carter) bar to appear...
+2026-05-09 22:46:33,044 [INFO] 9888 [1020] March (Carter) detected at page(1029,74).
+2026-05-09 22:46:33,045 [INFO] 9888 [1020] Looking for Speed up button near Carter...
+2026-05-09 22:46:34,381 [INFO] 9888 [1020] Clicking 'Speed up' at page(1239,80).
+2026-05-09 22:46:35,601 [INFO] 9888 [1020] Looking for 50% speedup row in popup...
+2026-05-09 22:46:55,782 [WARNING] 9888 [1020] Could not find 'Use' button via OCR — coord fallback.
+2026-05-09 22:46:55,813 [INFO] 9888 [1020] Speedup click 1/5 at page(1652,108).
+2026-05-09 22:46:56,545 [INFO] 9888 [1020] Speedup click 2/5 at page(1652,108).
+2026-05-09 22:46:57,261 [INFO] 9888 [1020] Speedup click 3/5 at page(1652,108).
+2026-05-09 22:46:57,974 [INFO] 9888 [1020] Speedup click 4/5 at page(1652,108).
+2026-05-09 22:46:58,688 [INFO] 9888 [1020] Speedup click 5/5 at page(1652,108).
+2026-05-09 22:46:59,401 [INFO] 9888 [1020] Closing speedup popup.
+2026-05-09 22:47:00,118 [INFO] 9888 [1020] Waiting for March (Carter) to finish...
+2026-05-09 22:47:03,531 [INFO] 9888 [1020] Still marching (Carter visible) — 596s until timeout.
+2026-05-09 22:47:11,292 [INFO] 9888 [1020] Still marching (Carter visible) — 588s until timeout.
+2026-05-09 22:47:21,698 [INFO] 9888 [1020] Still marching (Carter visible) — 578s until timeout.
+2026-05-09 22:47:30,472 [INFO] 9888 [1020] Still marching (Carter visible) — 569s until timeout.
+2026-05-09 22:47:38,210 [INFO] 9888 [1020] March (Carter) gone — ready for next cycle.
+2026-05-09 22:47:38,210 [INFO] 9888 [1020] Cycle #1 complete.
+2026-05-09 22:47:38,248 [INFO] 9888 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 22:47:41,398 [WARNING] 9888 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 22:47:41,410 [INFO] 9888 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 22:47:45,281 [INFO] 9888 [1020] Tab debug screenshot saved to templates\_debug_tabs.png
+2026-05-09 22:47:45,294 [INFO] 9888 [1020] tab 'tab_common' avg R=240 G=216 B=178 green_px=0/2400 → TAN(deselected)
+2026-05-09 22:47:45,294 [INFO] 9888 [1020] Selecting tab 'Common'.
+2026-05-09 22:47:51,124 [WARNING] 9888 [1020] OCR missed 'Common' — coord fallback 'tab_common'
+2026-05-09 22:47:51,130 [INFO] 9888 [1020] click 'tab_common' → canvas(1134,363) + offset(0,43) = page(1134,406)
+2026-05-09 22:47:51,582 [INFO] 9888 [1020] tab 'tab_rare' avg R=231 G=208 B=177 green_px=0/2400 → TAN(deselected)
+2026-05-09 22:47:51,615 [INFO] 9888 [1020] tab 'tab_epic' avg R=172 G=156 B=78 green_px=209/2400 → TAN(deselected)
+2026-05-09 22:47:51,628 [INFO] 9888 [1020] tab 'tab_arenas' avg R=122 G=115 B=61 green_px=604/2400 → GREEN(selected)
+2026-05-09 22:47:51,628 [INFO] 9888 [1020] Deselecting tab 'Arenas'.
+2026-05-09 22:47:55,311 [WARNING] 9888 [1020] OCR missed 'Arenas' — coord fallback 'tab_arenas'
+2026-05-09 22:47:55,317 [INFO] 9888 [1020] click 'tab_arenas' → canvas(1613,361) + offset(0,43) = page(1613,404)
+2026-05-09 22:47:55,803 [INFO] 9888 [1020] tab 'tab_others' avg R=145 G=148 B=101 green_px=1106/2400 → GREEN(selected)
+2026-05-09 22:47:55,881 [INFO] 9888 [1020] Deselecting tab 'Others'.
+2026-05-09 22:47:59,379 [WARNING] 9888 [1020] OCR missed 'Others' — coord fallback 'tab_others'
+2026-05-09 22:47:59,387 [INFO] 9888 [1020] click 'tab_others' → canvas(1193,406) + offset(0,43) = page(1193,449)
+2026-05-09 22:47:59,826 [INFO] 9888 [1020] Dragging left slider handle → (1404, 461).
+2026-05-09 22:48:00,529 [INFO] 9888 [1020] Dragging right slider handle → (1521, 463).
+2026-05-09 22:48:09,374 [WARNING] 9888 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-09 22:48:09,402 [INFO] 9888 [1020] click 'second_result_go' → canvas(1588,699) + offset(0,43) = page(1588,742)
+2026-05-09 22:48:12,464 [INFO] 9888 [1020] click 'crypt_location' → canvas(1301,611) + offset(0,43) = page(1301,654)
+2026-05-09 22:48:15,969 [WARNING] 9888 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-09 22:48:15,980 [INFO] 9888 [1020] click 'crypt_popup_explore' → canvas(1537,939) + offset(0,43) = page(1537,982)
+2026-05-09 22:48:17,511 [INFO] 9888 [1020] Waiting for March (Carter) bar to appear...
+2026-05-09 22:48:20,418 [INFO] 9888 [1020] March (Carter) detected at page(1058,72).
+2026-05-09 22:48:20,419 [INFO] 9888 [1020] Looking for Speed up button near Carter...
+2026-05-09 22:48:23,165 [INFO] 9888 [1020] Clicking 'Speed up' at page(1240,80).
+2026-05-09 22:48:24,407 [INFO] 9888 [1020] Looking for 50% speedup row in popup...
+2026-05-09 22:48:42,304 [INFO] 9888 [1020] Interrupted by user.
+2026-05-09 22:50:15,378 [INFO] 25760 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 22:50:17,184 [INFO] 25760 [1020] Navigating to https://totalbattle.com
+2026-05-09 22:50:22,898 [INFO] 25760 [1020] Map already loaded — no login required.
+2026-05-09 22:50:22,902 [INFO] 25760 [1020] Waiting for game loading screen to finish...
+2026-05-09 22:50:36,791 [INFO] 25760 [1020] Waiting for map canvas...
+2026-05-09 22:50:40,397 [INFO] 25760 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 22:50:41,354 [INFO] 25760 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 22:50:42,170 [INFO] 25760 [1020] Map ready.
+2026-05-09 22:50:42,170 [INFO] 25760 [1020] Crypt loop started.
+2026-05-09 22:50:42,181 [INFO] 25760 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 22:50:51,338 [INFO] 25760 [1020] Loading OCR model — first run may download models…
+2026-05-09 22:50:54,543 [INFO] 25760 [1020] OCR model ready.
+2026-05-09 22:50:56,079 [WARNING] 25760 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 22:50:56,093 [INFO] 25760 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 22:51:00,646 [INFO] 25760 [1020] Tab debug screenshot saved to templates\_debug_tabs.png
+2026-05-09 22:51:00,677 [INFO] 25760 [1020] tab 'tab_common' avg R=240 G=216 B=178 green_px=0/2400 → TAN(deselected)
+2026-05-09 22:51:00,680 [INFO] 25760 [1020] Selecting tab 'Common'.
+2026-05-09 22:51:03,360 [WARNING] 25760 [1020] OCR missed 'Common' — coord fallback 'tab_common'
+2026-05-09 22:51:03,364 [INFO] 25760 [1020] click 'tab_common' → canvas(1134,363) + offset(0,43) = page(1134,406)
+2026-05-09 22:51:03,797 [INFO] 25760 [1020] tab 'tab_rare' avg R=230 G=207 B=176 green_px=0/2400 → TAN(deselected)
+2026-05-09 22:51:03,810 [INFO] 25760 [1020] tab 'tab_epic' avg R=153 G=118 B=104 green_px=0/2400 → TAN(deselected)
+2026-05-09 22:51:03,816 [INFO] 25760 [1020] tab 'tab_arenas' avg R=178 G=174 B=121 green_px=8/2400 → TAN(deselected)
+2026-05-09 22:51:03,828 [INFO] 25760 [1020] tab 'tab_others' avg R=145 G=148 B=101 green_px=1106/2400 → GREEN(selected)
+2026-05-09 22:51:03,828 [INFO] 25760 [1020] Deselecting tab 'Others'.
+2026-05-09 22:51:06,369 [WARNING] 25760 [1020] OCR missed 'Others' — coord fallback 'tab_others'
+2026-05-09 22:51:06,375 [INFO] 25760 [1020] click 'tab_others' → canvas(1193,406) + offset(0,43) = page(1193,449)
+2026-05-09 22:51:06,809 [INFO] 25760 [1020] Dragging left slider handle → (1404, 461).
+2026-05-09 22:51:07,501 [INFO] 25760 [1020] Dragging right slider handle → (1521, 463).
+2026-05-09 22:51:12,065 [WARNING] 25760 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-09 22:51:12,075 [INFO] 25760 [1020] click 'second_result_go' → canvas(1588,699) + offset(0,43) = page(1588,742)
+2026-05-09 22:51:15,192 [INFO] 25760 [1020] click 'crypt_location' → canvas(1301,611) + offset(0,43) = page(1301,654)
+2026-05-09 22:51:19,090 [WARNING] 25760 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-09 22:51:19,094 [INFO] 25760 [1020] click 'crypt_popup_explore' → canvas(1537,939) + offset(0,43) = page(1537,982)
+2026-05-09 22:51:20,635 [INFO] 25760 [1020] Waiting for March (Carter) bar to appear...
+2026-05-09 22:51:22,435 [INFO] 25760 [1020] March (Carter) detected at page(1029,75).
+2026-05-09 22:51:22,436 [INFO] 25760 [1020] Looking for Speed up button near Carter...
+2026-05-09 22:51:23,737 [INFO] 25760 [1020] Clicking 'Speed up' at page(1239,80).
+2026-05-09 22:51:24,962 [INFO] 25760 [1020] Looking for 50% speedup row in popup...
+2026-05-09 22:51:28,451 [INFO] 25760 [1020] Interrupted by user.
+2026-05-09 22:51:37,635 [INFO] 21024 [1020] Navigating to https://totalbattle.com
+2026-05-09 22:51:43,509 [INFO] 21024 [1020] Map already loaded — no login required.
+2026-05-09 22:51:43,514 [INFO] 21024 [1020] Waiting for game loading screen to finish...
+2026-05-09 22:51:59,065 [INFO] 21024 [1020] Waiting for map canvas...
+2026-05-09 22:52:02,709 [INFO] 21024 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 22:52:03,726 [INFO] 21024 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 22:52:04,544 [INFO] 21024 [1020] Map ready.
+2026-05-09 22:59:31,681 [INFO] 18744 [1020] Navigating to https://totalbattle.com
+2026-05-09 22:59:34,894 [ERROR] 18744 Task was destroyed but it is pending!
+task: <Task pending name='Task-6' coro=<Page.goto() done, defined at C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_page.py:545> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[SyncBase._sync.<locals>.<lambda>() at C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_sync_base.py:111, ProtocolCallback.__init__.<locals>.cb() at C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py:230]>
+2026-05-09 22:59:38,711 [INFO] 23368 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 22:59:40,326 [INFO] 23368 [1020] Navigating to https://totalbattle.com
+2026-05-09 22:59:45,552 [INFO] 23368 [1020] Map already loaded — no login required.
+2026-05-09 22:59:45,552 [INFO] 23368 [1020] Waiting for game loading screen to finish...
+2026-05-09 22:59:59,455 [INFO] 23368 [1020] Waiting for map canvas...
+2026-05-09 23:00:03,093 [INFO] 23368 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 23:00:04,088 [INFO] 23368 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 23:00:04,902 [INFO] 23368 [1020] Map ready.
+2026-05-09 23:00:04,903 [INFO] 23368 [1020] Crypt loop started.
+2026-05-09 23:00:04,913 [INFO] 23368 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 23:00:15,377 [INFO] 23368 [1020] Loading OCR model — first run may download models…
+2026-05-09 23:00:18,915 [INFO] 23368 [1020] OCR model ready.
+2026-05-09 23:00:20,455 [WARNING] 23368 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 23:00:20,462 [INFO] 23368 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 23:00:22,105 [INFO] 23368 [1020] Selecting tab 'Common'.
+2026-05-09 23:00:24,520 [WARNING] 23368 [1020] OCR missed 'Common' — coord fallback 'tab_common'
+2026-05-09 23:00:24,525 [INFO] 23368 [1020] click 'tab_common' → canvas(1134,363) + offset(0,43) = page(1134,406)
+2026-05-09 23:00:25,054 [INFO] 23368 [1020] Deselecting tab 'Rare'.
+2026-05-09 23:00:26,963 [WARNING] 23368 [1020] OCR missed 'Rare' — coord fallback 'tab_rare'
+2026-05-09 23:00:26,975 [INFO] 23368 [1020] click 'tab_rare' → canvas(1276,361) + offset(0,43) = page(1276,404)
+2026-05-09 23:00:27,506 [INFO] 23368 [1020] Deselecting tab 'Epic'.
+2026-05-09 23:00:30,313 [WARNING] 23368 [1020] OCR missed 'Epic' — coord fallback 'tab_epic'
+2026-05-09 23:00:30,324 [INFO] 23368 [1020] click 'tab_epic' → canvas(1468,361) + offset(0,43) = page(1468,404)
+2026-05-09 23:00:30,847 [INFO] 23368 [1020] Deselecting tab 'Arenas'.
+2026-05-09 23:00:33,411 [WARNING] 23368 [1020] OCR missed 'Arenas' — coord fallback 'tab_arenas'
+2026-05-09 23:00:33,418 [INFO] 23368 [1020] click 'tab_arenas' → canvas(1613,361) + offset(0,43) = page(1613,404)
+2026-05-09 23:00:33,937 [INFO] 23368 [1020] Tab 'Others' already in correct state — skipping.
+2026-05-09 23:00:33,961 [INFO] 23368 [1020] Dragging left slider handle → (1404, 461).
+2026-05-09 23:00:34,652 [INFO] 23368 [1020] Dragging right slider handle → (1521, 463).
+2026-05-09 23:00:39,187 [WARNING] 23368 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-09 23:00:39,192 [INFO] 23368 [1020] click 'second_result_go' → canvas(1588,699) + offset(0,43) = page(1588,742)
+2026-05-09 23:00:42,291 [INFO] 23368 [1020] click 'crypt_location' → canvas(1301,611) + offset(0,43) = page(1301,654)
+2026-05-09 23:00:45,843 [WARNING] 23368 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-09 23:00:45,848 [INFO] 23368 [1020] click 'crypt_popup_explore' → canvas(1537,939) + offset(0,43) = page(1537,982)
+2026-05-09 23:00:47,395 [INFO] 23368 [1020] Waiting for March (Carter) bar to appear...
+2026-05-09 23:00:49,167 [INFO] 23368 [1020] March (Carter) detected at page(1029,75).
+2026-05-09 23:00:49,168 [INFO] 23368 [1020] Looking for Speed up button near Carter...
+2026-05-09 23:00:50,353 [INFO] 23368 [1020] Clicking 'Speed up' at page(1239,80).
+2026-05-09 23:00:51,568 [INFO] 23368 [1020] Looking for 50% speedup row in popup...
+2026-05-09 23:00:56,837 [INFO] 23368 [1020] Interrupted by user.
+2026-05-09 23:05:06,774 [INFO] 23548 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-09 23:05:08,703 [INFO] 23548 [1020] Navigating to https://totalbattle.com
+2026-05-09 23:05:14,279 [INFO] 23548 [1020] Map already loaded — no login required.
+2026-05-09 23:05:14,292 [INFO] 23548 [1020] Waiting for game loading screen to finish...
+2026-05-09 23:05:28,505 [INFO] 23548 [1020] Waiting for map canvas...
+2026-05-09 23:05:32,122 [INFO] 23548 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-09 23:05:33,067 [INFO] 23548 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-09 23:05:33,881 [INFO] 23548 [1020] Map ready.
+2026-05-09 23:05:33,881 [INFO] 23548 [1020] Crypt loop started.
+2026-05-09 23:05:33,892 [INFO] 23548 [1020] click 'watchtower_btn' → canvas(926,1083) + offset(0,43) = page(926,1126)
+2026-05-09 23:05:43,305 [INFO] 23548 [1020] Loading OCR model — first run may download models…
+2026-05-09 23:05:46,431 [INFO] 23548 [1020] OCR model ready.
+2026-05-09 23:05:47,960 [WARNING] 23548 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-09 23:05:47,965 [INFO] 23548 [1020] click 'crypts_and_arenas' → canvas(996,506) + offset(0,43) = page(996,549)
+2026-05-09 23:05:50,428 [INFO] 23548 [1020] tab 'tab_common' avg R=240 G=216 B=178 green_px=0/2400 → TAN(deselected)
+2026-05-09 23:05:50,428 [INFO] 23548 [1020] Selecting tab 'Common' (was tan).
+2026-05-09 23:05:52,832 [WARNING] 23548 [1020] OCR missed 'Common' — coord fallback 'tab_common'
+2026-05-09 23:05:52,842 [INFO] 23548 [1020] click 'tab_common' → canvas(1134,363) + offset(0,43) = page(1134,406)
+2026-05-09 23:05:53,377 [INFO] 23548 [1020] tab 'tab_rare' avg R=230 G=207 B=176 green_px=0/2400 → TAN(deselected)
+2026-05-09 23:05:53,377 [INFO] 23548 [1020] Tab 'Rare' already in correct state — skipping.
+2026-05-09 23:05:53,382 [INFO] 23548 [1020] tab 'tab_epic' avg R=153 G=118 B=104 green_px=0/2400 → TAN(deselected)
+2026-05-09 23:05:53,383 [INFO] 23548 [1020] Tab 'Epic' already in correct state — skipping.
+2026-05-09 23:05:53,394 [INFO] 23548 [1020] tab 'tab_arenas' avg R=178 G=174 B=121 green_px=8/2400 → TAN(deselected)
+2026-05-09 23:05:53,394 [INFO] 23548 [1020] Tab 'Arenas' already in correct state — skipping.
+2026-05-09 23:05:53,411 [INFO] 23548 [1020] tab 'tab_others' avg R=145 G=148 B=101 green_px=1106/2400 → GREEN(selected)
+2026-05-09 23:05:53,411 [INFO] 23548 [1020] Deselecting tab 'Others' (was green).
+2026-05-09 23:05:55,801 [WARNING] 23548 [1020] OCR missed 'Others' — coord fallback 'tab_others'
+2026-05-09 23:05:55,807 [INFO] 23548 [1020] click 'tab_others' → canvas(1193,406) + offset(0,43) = page(1193,449)
+2026-05-09 23:05:56,330 [INFO] 23548 [1020] Dragging left slider handle → (1404, 461).
+2026-05-09 23:05:57,006 [INFO] 23548 [1020] Dragging right slider handle → (1521, 463).
+2026-05-09 23:06:01,718 [WARNING] 23548 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-09 23:06:01,723 [INFO] 23548 [1020] click 'second_result_go' → canvas(1588,699) + offset(0,43) = page(1588,742)
+2026-05-09 23:06:04,782 [INFO] 23548 [1020] click 'crypt_location' → canvas(1301,611) + offset(0,43) = page(1301,654)
+2026-05-09 23:06:08,439 [WARNING] 23548 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-09 23:06:08,444 [INFO] 23548 [1020] click 'crypt_popup_explore' → canvas(1537,939) + offset(0,43) = page(1537,982)
+2026-05-09 23:06:09,978 [INFO] 23548 [1020] Waiting for March (Carter) to register in UI...
+2026-05-09 23:06:12,225 [ERROR] 23548 [1020] Unexpected error — recovering.
+Traceback (most recent call last):
+  File "D:\New folder\CryptingAuto\bot.py", line 389, in run_loop
+    self._speedup_march(times=5)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\New folder\CryptingAuto\bot.py", line 832, in _speedup_march
+    self.page.wait_for_timeout(3_000)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\sync_api\_generated.py", line 11879, in wait_for_timeout
+    self._sync(self._impl_obj.wait_for_timeout(timeout=timeout))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_page.py", line 1113, in wait_for_timeout
+    await self._main_frame.wait_for_timeout(timeout)
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_frame.py", line 862, in wait_for_timeout
+    await self._channel.send("waitForTimeout", None, {"waitTimeout": timeout})
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-05-09 23:06:12,231 [ERROR] 23548 [1020] Fatal error in worker.
+Traceback (most recent call last):
+  File "D:\New folder\CryptingAuto\main.py", line 64, in _run_account
+    bot.run_loop()
+    ~~~~~~~~~~~~^^
+  File "D:\New folder\CryptingAuto\bot.py", line 409, in run_loop
+    self._dismiss_overlays(count=2)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\New folder\CryptingAuto\bot.py", line 875, in _dismiss_overlays
+    self.page.keyboard.press("Escape")
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\sync_api\_generated.py", line 1491, in press
+    self._sync(self._impl_obj.press(key=key, delay=delay))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_input.py", line 38, in press
+    await self._channel.send("keyboardPress", None, locals_to_params(locals()))
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Keyboard.press: Target page, context or browser has been closed

@@ -8,6 +8,7 @@ each UI element listed in SELECTORS.
 """
 
 import io
+import json
 import time
 import logging
 import math
@@ -174,6 +175,52 @@ class CryptBot:
         self.page        = None
         self.context     = None
         self._pw         = None   # playwright handle
+        self.region_overrides = self._load_region_overrides()
+
+    def _load_region_overrides(self) -> dict[str, tuple[int, int, int, int]]:
+        """
+        Load optional OCR region overrides from a JSON file.
+
+        Expected format:
+          {
+            "watchtower_crypts": [x, y, w, h],
+            "quality_tabs": [x, y, w, h],
+            ...
+          }
+        """
+        path = Path(self.settings.get("region_overrides_file", "manual_regions.json"))
+        if not path.exists():
+            return {}
+
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            logger.warning("[%s] Could not parse region override file '%s': %s",
+                           self.account["name"], path, exc)
+            return {}
+
+        out: dict[str, tuple[int, int, int, int]] = {}
+        for key, value in payload.items():
+            if not isinstance(value, list) or len(value) != 4:
+                continue
+            try:
+                x, y, w, h = [int(v) for v in value]
+            except Exception:
+                continue
+            if w > 0 and h > 0:
+                out[key] = (x, y, w, h)
+
+        if out:
+            logger.info("[%s] Loaded %d OCR region override(s) from %s",
+                        self.account["name"], len(out), path)
+        return out
+
+    def _region(self, key: str, fallback: tuple[int, int, int, int]) -> tuple[int, int, int, int]:
+        """Return an override region when available; otherwise use fallback."""
+        region = self.region_overrides.get(key, fallback)
+        if region != fallback:
+            logger.debug("[%s] Using region override '%s': %s", self.account["name"], key, region)
+        return region
 
     # ------------------------------------------------------------------
     # Lifecycle
@@ -620,9 +667,9 @@ class CryptBot:
         self.page.bring_to_front()
         self._canvas_click("watchtower_btn", wait_ms=1_200)
         logger.debug("[%s] Clicking 'Crypts and Arenas'.", self.account["name"])
-        # Sidebar is centered around page(700, 549) — crop tightly around it
+        # Sidebar is centered around page(700, 549) - crop tightly around it
         self._ocr_click("Crypts", wait_ms=800, fallback_key="crypts_and_arenas",
-                        region=(560, 460, 320, 180))
+                        region=self._region("watchtower_crypts", (560, 460, 320, 180)))
 
     def _save_tab_debug_screenshot(self, img: np.ndarray):
         """
@@ -707,7 +754,7 @@ class CryptBot:
             logger.info("[%s] %s tab '%s' (was %s).", self.account["name"], action, tab,
                         "green" if currently_selected else "tan")
             self._ocr_click(tab, wait_ms=500, fallback_key=tab_key,
-                            region=(820, 340, 900, 160))
+                            region=self._region("quality_tabs", (820, 340, 900, 160)))
 
         # Drag level-range slider handles to the target positions.
         # Coordinates are all within the filter panel — safe, won't hit the sidebar.
@@ -744,7 +791,7 @@ class CryptBot:
         # index=1 → second "Go" button in the results list
         # Results list Go buttons — page x≈1217, y≈698 for first result
         self._ocr_click("Go", wait_ms=1_000, index=1, fallback_key="second_result_go",
-                        region=(1100, 580, 300, 350))
+                        region=self._region("second_result_go", (1100, 580, 300, 350)))
         return True
 
     # ------------------------------------------------------------------
@@ -815,7 +862,7 @@ class CryptBot:
         logger.debug("[%s] Clicking Explore in crypt popup.", self.account["name"])
         # Explore button — page(1156, 880)
         self._ocr_click("Explore", wait_ms=800, fallback_key="crypt_popup_explore",
-                        region=(950, 800, 400, 150))
+                        region=self._region("crypt_popup_explore", (950, 800, 400, 150)))
 
         # Step 4 — dismiss any remaining popup
         logger.debug("[%s] Pressing Escape to clear any remaining popup.", self.account["name"])
@@ -854,7 +901,7 @@ class CryptBot:
         logger.info("[%s] Waiting for March (Carter) to finish...", self.account["name"])
         deadline = time.time() + timeout_s
         while time.time() < deadline:
-            hits = self._ocr_find_all("Carter", region=(500, 40, 700, 60))
+            hits = self._ocr_find_all("Carter", region=self._region("march_status", (500, 40, 700, 60)))
             if not hits:
                 logger.info("[%s] March (Carter) gone — ready for next cycle.", self.account["name"])
                 return

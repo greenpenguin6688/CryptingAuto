@@ -21,6 +21,7 @@ Colour calibration (print the centre-pixel RGB while a Crypt is centred):
 
 import argparse
 import copy
+import io
 import json
 import logging
 import multiprocessing
@@ -180,7 +181,14 @@ def _cmd_mark_regions(account_name: str):
             existing = saved.get(key)
             print(f"[mark] {key}: {desc}")
             if isinstance(existing, list) and len(existing) == 4:
-                print(f"       current saved: {existing}")
+                print(f"       current saved (legacy px): {existing}")
+            elif isinstance(existing, dict):
+                px = existing.get("px")
+                norm = existing.get("norm")
+                if isinstance(px, list) and len(px) == 4:
+                    print(f"       current saved px: {px}")
+                if isinstance(norm, list) and len(norm) == 4:
+                    print(f"       current saved norm: {norm}")
             else:
                 print(f"       default fallback: {list(fallback)}")
 
@@ -206,8 +214,21 @@ def _cmd_mark_regions(account_name: str):
                 print("       no region selected, unchanged")
                 continue
 
-            saved[key] = [x, y, w, h]
-            print(f"       saved: {saved[key]}")
+            fh, fw = frame.shape[:2]
+            nx = round(x / fw, 6)
+            ny = round(y / fh, 6)
+            nw = round(w / fw, 6)
+            nh = round(h / fh, 6)
+            saved[key] = {
+                "px": [x, y, w, h],
+                "norm": [nx, ny, nw, nh],
+            }
+            saved["_meta"] = {
+                "format": "normalized-v1",
+                "viewport": [fw, fh],
+            }
+            print(f"       saved px: {saved[key]['px']}")
+            print(f"       saved norm: {saved[key]['norm']}")
 
     except KeyboardInterrupt:
         print("\n[mark] Interrupted, saving what was captured...")
@@ -218,6 +239,60 @@ def _cmd_mark_regions(account_name: str):
     region_file.write_text(json.dumps(saved, indent=2), encoding="utf-8")
     print(f"\n[mark] Saved {len(saved)} region override(s) to {region_file}.")
     print("       Run the bot normally and it will use these regions automatically.\n")
+
+
+def _cmd_show_regions(account_name: str):
+    """
+    Generate a visual preview of effective OCR regions.
+
+    This uses the currently loaded region overrides (including normalized
+    auto-scaling) and draws all crop boxes onto a fresh screenshot.
+    """
+    from PIL import Image, ImageDraw
+
+    account = next((a for a in ACCOUNTS if a["name"] == account_name), None)
+    if account is None:
+        print(f"Unknown account '{account_name}'. Check ACCOUNTS in config.py.")
+        sys.exit(1)
+
+    settings = copy.deepcopy(SETTINGS)
+    settings["headless"] = False
+
+    targets = [
+        ("watchtower_crypts", "Sidebar area containing 'Crypts and Arenas'", (560, 460, 320, 180)),
+        ("quality_tabs", "Top tab strip (Common/Rare/Epic/Arenas/Others)", (820, 340, 900, 160)),
+        ("second_result_go", "Results list area where second 'Go' appears", (1100, 580, 300, 350)),
+        ("crypt_popup_explore", "Popup area where 'Explore' button appears", (950, 800, 400, 150)),
+        ("march_status", "Top bar where 'Carter' march status text appears", (500, 40, 700, 60)),
+    ]
+
+    bot = CryptBot(account, settings)
+    bot.start()
+
+    out_path = Path("./templates/_regions_preview.png")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    try:
+        png = bot.page.screenshot()
+        img = Image.open(io.BytesIO(png)).convert("RGB")
+        draw = ImageDraw.Draw(img)
+
+        print("\n[show] Effective OCR regions:")
+        for key, _, fallback in targets:
+            x, y, w, h = bot._region(key, fallback)
+            overridden = (x, y, w, h) != fallback
+            color = (255, 80, 80) if overridden else (255, 200, 60)
+
+            draw.rectangle([x, y, x + w, y + h], outline=color, width=3)
+            draw.text((x + 4, max(0, y - 14)), key, fill=color)
+
+            status = "override" if overridden else "fallback"
+            print(f"  - {key}: [{x}, {y}, {w}, {h}] ({status})")
+
+        img.save(out_path)
+        print(f"\n[show] Preview image saved to {out_path}\n")
+    finally:
+        bot.stop()
 
 
 # ---------------------------------------------------------------------------
@@ -242,6 +317,10 @@ def main():
     group.add_argument(
         "--mark-regions", metavar="KINGDOM",
         help="Interactive OCR-region mode: draw exact read areas and save them.",
+    )
+    group.add_argument(
+        "--show-regions", metavar="KINGDOM",
+        help="Save a screenshot with currently effective OCR regions drawn on top.",
     )
     parser.add_argument(
         "--headless", action="store_true",
@@ -281,6 +360,11 @@ def main():
     # ── Manual OCR-region calibration ──────────────────────────────────
     if args.mark_regions:
         _cmd_mark_regions(args.mark_regions)
+        return
+
+    # ── OCR-region preview ─────────────────────────────────────────────
+    if args.show_regions:
+        _cmd_show_regions(args.show_regions)
         return
 
     # ── Build per-process task list ──────────────────────────────────────

@@ -181,12 +181,17 @@ class CryptBot:
         """
         Load optional OCR region overrides from a JSON file.
 
-        Expected format:
-          {
-            "watchtower_crypts": [x, y, w, h],
-            "quality_tabs": [x, y, w, h],
-            ...
-          }
+                Supports both legacy and normalized formats.
+
+                Legacy format:
+                    {"watchtower_crypts": [x, y, w, h], ...}
+
+                Normalized format:
+                    {
+                        "_meta": {"format": "normalized-v1", "viewport": [w, h]},
+                        "watchtower_crypts": {"px": [x, y, w, h], "norm": [nx, ny, nw, nh]},
+                        ...
+                    }
         """
         path = Path(self.settings.get("region_overrides_file", "manual_regions.json"))
         if not path.exists():
@@ -199,25 +204,100 @@ class CryptBot:
                            self.account["name"], path, exc)
             return {}
 
-        out: dict[str, tuple[int, int, int, int]] = {}
+        out: dict[str, object] = {}
         for key, value in payload.items():
-            if not isinstance(value, list) or len(value) != 4:
+            if key.startswith("_"):
                 continue
-            try:
-                x, y, w, h = [int(v) for v in value]
-            except Exception:
+
+            # Legacy [x, y, w, h]
+            if isinstance(value, list) and len(value) == 4:
+                try:
+                    x, y, w, h = [int(v) for v in value]
+                except Exception:
+                    continue
+                if w > 0 and h > 0:
+                    out[key] = (x, y, w, h)
                 continue
-            if w > 0 and h > 0:
-                out[key] = (x, y, w, h)
+
+            # New dict format with optional px and norm
+            if isinstance(value, dict):
+                entry: dict[str, object] = {}
+
+                px = value.get("px")
+                if isinstance(px, list) and len(px) == 4:
+                    try:
+                        x, y, w, h = [int(v) for v in px]
+                        if w > 0 and h > 0:
+                            entry["px"] = (x, y, w, h)
+                    except Exception:
+                        pass
+
+                norm = value.get("norm")
+                if isinstance(norm, list) and len(norm) == 4:
+                    try:
+                        nx, ny, nw, nh = [float(v) for v in norm]
+                        if nw > 0 and nh > 0:
+                            entry["norm"] = (nx, ny, nw, nh)
+                    except Exception:
+                        pass
+
+                if entry:
+                    out[key] = entry
 
         if out:
             logger.info("[%s] Loaded %d OCR region override(s) from %s",
                         self.account["name"], len(out), path)
         return out
 
+    def _viewport_size(self) -> tuple[int, int]:
+        """Return current viewport size, with config fallback before page is ready."""
+        if self.page:
+            try:
+                dims = self.page.evaluate("() => ({w: window.innerWidth, h: window.innerHeight})")
+                w = int(dims.get("w", 0))
+                h = int(dims.get("h", 0))
+                if w > 0 and h > 0:
+                    return w, h
+            except Exception:
+                pass
+        return int(self.settings.get("window_width", 1280)), int(self.settings.get("window_height", 720))
+
     def _region(self, key: str, fallback: tuple[int, int, int, int]) -> tuple[int, int, int, int]:
         """Return an override region when available; otherwise use fallback."""
-        region = self.region_overrides.get(key, fallback)
+        entry = self.region_overrides.get(key)
+        if entry is None:
+            return fallback
+
+        if isinstance(entry, tuple) and len(entry) == 4:
+            region = entry
+        elif isinstance(entry, dict):
+            region = None
+            norm = entry.get("norm")
+            if isinstance(norm, tuple) and len(norm) == 4:
+                vw, vh = self._viewport_size()
+                nx, ny, nw, nh = norm
+                region = (
+                    int(round(nx * vw)),
+                    int(round(ny * vh)),
+                    max(1, int(round(nw * vw))),
+                    max(1, int(round(nh * vh))),
+                )
+            elif isinstance(entry.get("px"), tuple) and len(entry["px"]) == 4:
+                region = entry["px"]
+            else:
+                return fallback
+        else:
+            return fallback
+
+        try:
+            x, y, w, h = [int(v) for v in region]
+            region = (x, y, w, h)
+        except Exception:
+            return fallback
+
+        if region[2] <= 0 or region[3] <= 0:
+            return fallback
+
         if region != fallback:
             logger.debug("[%s] Using region override '%s': %s", self.account["name"], key, region)
         return region

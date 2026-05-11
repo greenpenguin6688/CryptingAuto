@@ -165,6 +165,10 @@ def _cmd_mark_regions(account_name: str):
         ("second_result_go", "Results list area where second 'Go' appears", (1100, 580, 300, 350)),
         ("crypt_popup_explore", "Popup area where 'Explore' button appears", (950, 800, 400, 150)),
         ("march_status", "Top bar where 'Carter' march status text appears", (500, 40, 700, 60)),
+        # Click-target regions — centre of drawn box is used as click coordinate
+        ("watchtower_btn", "Watchtower HUD button (bottom-right bar)", (876, 1033, 100, 100)),
+        ("march_speedup_btn", "Speed-up button beside the march slot (top bar)", (1558, 4, 100, 100)),
+        ("speedup_use_btn", "'Use' button in the speedup popup (first entry)", (1502, 445, 100, 100)),
     ]
 
     bot = CryptBot(account, settings)
@@ -205,11 +209,28 @@ def _cmd_mark_regions(account_name: str):
                 print("       could not decode screenshot, skipping")
                 continue
 
-            label = f"Draw ROI for {key} - ENTER accept, C cancel"
-            roi = cv2.selectROI(label, frame, fromCenter=False, showCrosshair=True)
-            cv2.destroyWindow(label)
+            # Scale down so the ROI window fits on screen
+            fh, fw = frame.shape[:2]
+            MAX_W, MAX_H = 1280, 720
+            scale = min(MAX_W / fw, MAX_H / fh, 1.0)
+            if scale < 1.0:
+                display = cv2.resize(frame, (int(fw * scale), int(fh * scale)))
+                print(f"       screenshot {fw}x{fh} → displayed at {int(fw*scale)}x{int(fh*scale)} (scale={scale:.2f})")
+            else:
+                display = frame
 
-            x, y, w, h = [int(v) for v in roi]
+            label = f"Draw ROI for {key} - ENTER accept, C cancel"
+            roi = cv2.selectROI(label, display, fromCenter=False, showCrosshair=True)
+            cv2.destroyWindow(label)
+            cv2.waitKey(1)
+
+            # Flush any keypresses (Enter/Space) that leaked into stdin from the OpenCV window
+            import msvcrt
+            while msvcrt.kbhit():
+                msvcrt.getch()
+
+            # Scale selection back to original pixel coordinates
+            x, y, w, h = (int(v / scale) for v in roi)
             if w <= 0 or h <= 0:
                 print("       no region selected, unchanged")
                 continue
@@ -264,6 +285,10 @@ def _cmd_show_regions(account_name: str):
         ("second_result_go", "Results list area where second 'Go' appears", (1100, 580, 300, 350)),
         ("crypt_popup_explore", "Popup area where 'Explore' button appears", (950, 800, 400, 150)),
         ("march_status", "Top bar where 'Carter' march status text appears", (500, 40, 700, 60)),
+        # Click-target regions — centre of drawn box is used as click coordinate
+        ("watchtower_btn", "Watchtower HUD button (bottom-right bar)", (876, 1033, 100, 100)),
+        ("march_speedup_btn", "Speed-up button beside the march slot (top bar)", (1558, 4, 100, 100)),
+        ("speedup_use_btn", "'Use' button in the speedup popup (first entry)", (1502, 445, 100, 100)),
     ]
 
     bot = CryptBot(account, settings)

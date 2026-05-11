@@ -731,8 +731,24 @@ class CryptBot:
         return int(rect["left"]), int(rect["top"])
 
     def _canvas_click(self, coord_key: str, wait_ms: int = 600):
-        """Convert canvas-relative coords to viewport coords and click."""
-        cx, cy = CANVAS_COORDS[coord_key]
+        """Convert canvas-relative coords to viewport coords and click.
+
+        If a region override exists for this key in manual_regions.json,
+        the centre of that region is used as the canvas click point instead
+        of the hardcoded CANVAS_COORDS entry.
+        """
+        entry = self.region_overrides.get(coord_key)
+        if entry is not None:
+            # Resolve the pixel region (with optional normalized scaling)
+            fallback = CANVAS_COORDS.get(coord_key, (0, 0))
+            fallback_region = (fallback[0] - 50, fallback[1] - 50, 100, 100)
+            rx, ry, rw, rh = self._region(coord_key, fallback_region)
+            cx, cy = rx + rw // 2, ry + rh // 2
+            logger.info("[%s] click '%s' → region centre canvas(%d,%d)",
+                        self.account["name"], coord_key, cx, cy)
+        else:
+            cx, cy = CANVAS_COORDS[coord_key]
+
         ox, oy = self._canvas_offset()
         x, y = cx + ox, cy + oy
         logger.info("[%s] click '%s' → canvas(%d,%d) + offset(%d,%d) = page(%d,%d)",

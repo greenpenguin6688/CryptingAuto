@@ -47,10 +47,10 @@ SELECTORS = {
 # ---------------------------------------------------------------------------
 CANVAS_COORDS = {
     # HUD button that opens the Watchtower window
-    "watchtower_btn":     (926, 1083),
+    "watchtower_btn":     (698, 815),
 
     # Left sidebar inside the Watchtower window
-    "crypts_and_arenas":  (996, 506),
+    "crypts_and_arenas":  (715, 397),
 
     # Quality filter tab buttons (top of the Crypts panel).
     # *** These are estimated — calibrate by hovering over each tab ***
@@ -62,18 +62,18 @@ CANVAS_COORDS = {
 
     # Level range slider — measured with DevTools undocked.
     # Drag start: current handle positions. Drag end: desired target positions.
-    "slider_track_left":   (1166, 454),   # left handle current position
-    "slider_track_right":  (1694, 453),   # right handle current position
-    "slider_left_target":  (1404, 461),   # where to drag left handle to
-    "slider_right_target": (1521, 463),   # where to drag right handle to
+    "slider_track_left":   (867, 339),   # left handle current position
+    "slider_track_right":  (1276, 341),   # right handle current position
+    "slider_left_target":  (877, 340),   # where to drag left handle to
+    "slider_right_target": (877, 340),   # where to drag right handle to
 
     # "Go" button next to the SECOND result in the filtered list
-    "second_result_go":    (1588, 699),
+    "second_result_go":    (1190, 523),
 
     # March speedup controls in the top HUD bar
-    "march_speedup_btn":   (1608, 54),    # "Speed up" button beside March (Carter)
+    "march_speedup_btn":   (1210, 42),    # "Speed up" button beside March (Carter)
     # "Use" button for the 50% speedup (first entry in the Speedups popup)
-    "speedup_use_btn":     (1552, 495),
+    "speedup_use_btn":     (1156, 390),
 
     
     "crypt_location": (1301, 611),
@@ -734,25 +734,27 @@ class CryptBot:
         """Convert canvas-relative coords to viewport coords and click.
 
         If a region override exists for this key in manual_regions.json,
-        the centre of that region is used as the canvas click point instead
+        the centre of that region is used as the absolute click point instead
         of the hardcoded CANVAS_COORDS entry.
         """
+        ox, oy = self._canvas_offset()
+        
         entry = self.region_overrides.get(coord_key)
         if entry is not None:
             # Resolve the pixel region (with optional normalized scaling)
             fallback = CANVAS_COORDS.get(coord_key, (0, 0))
             fallback_region = (fallback[0] - 50, fallback[1] - 50, 100, 100)
             rx, ry, rw, rh = self._region(coord_key, fallback_region)
-            cx, cy = rx + rw // 2, ry + rh // 2
-            logger.info("[%s] click '%s' → region centre canvas(%d,%d)",
-                        self.account["name"], coord_key, cx, cy)
+            # The region from manual_regions is already an absolute page coordinate!
+            x, y = rx + rw // 2, ry + rh // 2
+            logger.info("[%s] click '%s' → region centre absolute page(%d,%d)",
+                        self.account["name"], coord_key, x, y)
         else:
             cx, cy = CANVAS_COORDS[coord_key]
-
-        ox, oy = self._canvas_offset()
-        x, y = cx + ox, cy + oy
-        logger.info("[%s] click '%s' → canvas(%d,%d) + offset(%d,%d) = page(%d,%d)",
-                    self.account["name"], coord_key, cx, cy, ox, oy, x, y)
+            x, y = cx + ox, cy + oy
+            logger.info("[%s] click '%s' → canvas(%d,%d) + offset(%d,%d) = page(%d,%d)",
+                        self.account["name"], coord_key, cx, cy, ox, oy, x, y)
+            
         self.page.mouse.click(x, y)
         if wait_ms:
             self.page.wait_for_timeout(wait_ms)
@@ -788,91 +790,168 @@ class CryptBot:
         pil.save(str(out))
         logger.info("[%s] Tab debug screenshot saved to %s", self.account["name"], out)
 
-    def _is_tab_green(self, tab_key: str, img: np.ndarray) -> bool:
+    def _is_tab_green(self, tab: str, img: np.ndarray, search_region: tuple[int, int, int, int]) -> bool:
         """
-        Return True if the tab is green (selected).
-        Accepts a pre-captured screenshot so all tabs share one screenshot.
-        Scans a 60×40 px region.  A tab is green if >10% of its pixels have
-        G − R > 15 (the game’s selected-tab green vs tan hue).
+        Uses OCR to find the tab text, then checks the pixel colors inside its
+        bounding box to see if the button is green (selected).
         """
-        cx, cy = CANVAS_COORDS[tab_key]
-        ox, oy = self._canvas_offset()
-        px, py = cx + ox, cy + oy
+        reader = self._get_ocr_reader()
+        rx, ry, rw, rh = search_region
+        crop = img[ry:ry+rh, rx:rx+rw]
+        results = reader.readtext(crop, detail=1)
 
-        h, w = img.shape[:2]
-        y1, y2 = max(0, py - 20), min(h, py + 20)
-        x1, x2 = max(0, px - 30), min(w, px + 30)
-        patch = img[y1:y2, x1:x2]
-
-        r_ch = patch[:, :, 0].astype(float)
-        g_ch = patch[:, :, 1].astype(float)
-        b_ch = patch[:, :, 2].astype(float)
-
-        green_pixels = int(((g_ch - r_ch) > 15).sum())
-        total_pixels = patch.shape[0] * patch.shape[1]
-        avg_r = float(r_ch.mean())
-        avg_g = float(g_ch.mean())
-        avg_b = float(b_ch.mean())
-        is_green = green_pixels > (total_pixels * 0.10)
-        logger.info("[%s] tab '%s' avg R=%.0f G=%.0f B=%.0f green_px=%d/%d → %s",
-                    self.account["name"], tab_key,
-                    avg_r, avg_g, avg_b,
-                    green_pixels, total_pixels,
-                    "GREEN(selected)" if is_green else "TAN(deselected)")
-        return is_green
+        for (bbox, text, conf) in results:
+            if tab.lower() in text.lower():
+                # bbox is [[x1, y1], [x2, y1], [x2, y2], [x1, y2]]
+                xs = [int(p[0]) for p in bbox]
+                ys = [int(p[1]) for p in bbox]
+                x1, x2 = min(xs), max(xs)
+                y1, y2 = min(ys), max(ys)
+                
+                # Expand box slightly to catch the button background, not just text
+                x1 = max(0, x1 - 10)
+                y1 = max(0, y1 - 10)
+                x2 = min(rw, x2 + 10)
+                y2 = min(rh, y2 + 10)
+                
+                patch = crop[y1:y2, x1:x2]
+                r_ch = patch[:, :, 0].astype(float)
+                g_ch = patch[:, :, 1].astype(float)
+                
+                green_pixels = int(((g_ch - r_ch) > 15).sum())
+                total_pixels = patch.shape[0] * patch.shape[1]
+                is_green = green_pixels > (total_pixels * 0.05)  # 5% green is enough
+                
+                logger.info("[%s] Tab '%s' OCR color check: %d/%d green px → %s", 
+                            self.account["name"], tab, green_pixels, total_pixels, "GREEN" if is_green else "TAN")
+                return is_green
+                
+        # Fallback if OCR can't find the tab text
+        logger.warning("[%s] OCR could not find tab '%s' to check color! Assuming default.", self.account["name"], tab)
+        return tab in {"Rare", "Epic", "Arenas"}
 
     def _apply_filters(self):
         """
         Set each quality tab to match settings['crypt_types'].
-
-        The game remembers UI state persistently: if a tab was green in your last
-        session, it stays green.
-
-        We MUST click tabs to toggle them to the right state. Since the state
-        is unknown, we read the pixels to check if it's currently green.
+        
+        Uses OCR to find the tab's location, then checks the pixel colors 
+        around that text to confirm if it is currently selected (green).
         """
         logger.debug("[%s] Applying search filters.", self.account["name"])
         self.page.wait_for_timeout(800)
 
         wanted = {t.capitalize() for t in self.settings["crypt_types"]}
         img = self._ocr_screenshot()
+        
+        # Use your custom manual region from JSON if available
+        tab_region = self._region("quality_tabs", (700, 200, 700, 200))
 
         for tab in ALL_QUALITY_TABS:
             tab_key = f"tab_{tab.lower()}"
             should_be_selected = tab in wanted
-            currently_selected = self._is_tab_green(tab_key, img)
+            currently_selected = self._is_tab_green(tab, img, tab_region)
 
             if should_be_selected == currently_selected:
-                logger.info("[%s] Tab '%s' already in correct state — skipping.", self.account["name"], tab)
+                logger.info("[%s] Tab '%s' state is correct — skipping.", self.account["name"], tab)
                 continue
 
             action = "Selecting" if should_be_selected else "Deselecting"
-            logger.info("[%s] %s tab '%s' (was %s).", self.account["name"], action, tab,
-                        "green" if currently_selected else "tan")
+            logger.info("[%s] %s tab '%s'.", self.account["name"], action, tab)
+            
             self._ocr_click(tab, wait_ms=500, fallback_key=tab_key,
-                            region=self._region("quality_tabs", (820, 340, 900, 160)))
+                            region=tab_region)
 
-        # Drag level-range slider handles to the target positions.
-        # Coordinates are all within the filter panel — safe, won't hit the sidebar.
+        # Dynamically drag both sliders until the number 25 is read
+        self._drag_slider_to_level("left", CANVAS_COORDS["slider_track_left"], "25")
+        self._drag_slider_to_level("right", CANVAS_COORDS["slider_track_right"], "25")
+
+    def _drag_slider_to_level(self, side: str, start_coord: tuple[int, int], target_level: str):
+        """
+        Dynamically finds the current slider handle position by reading the numbers
+        above the track within `slider_levels`, then sweeps horizontally until the
+        target_level is met.
+        """
+        logger.info("[%s] Dragging %s slider to level %s...", self.account["name"], side, target_level)
         ox, oy = self._canvas_offset()
-
-        lhx, lhy = CANVAS_COORDS["slider_track_left"]
-        tx, ty   = CANVAS_COORDS["slider_left_target"]
-        logger.info("[%s] Dragging left slider handle → (%d, %d).", self.account["name"], tx, ty)
-        self.page.mouse.move(lhx + ox, lhy + oy)
+        cx, cy = start_coord
+        y = cy + oy
+        
+        # Pull dynamic scanning region from overrides if set
+        scan_region = self._region("slider_levels", (700, cy - 35, 700, 40))
+        rx, ry, rw, rh = scan_region
+        
+        reader = self._get_ocr_reader()
+        img = self._ocr_screenshot()
+        crop = img[ry:ry+rh, rx:rx+rw]
+        
+        # Parse current numbers and target X coordinates
+        results = reader.readtext(crop, detail=1)
+        parsed_handles = []
+        for bbox, text, conf in results:
+            num_str = ''.join(filter(str.isdigit, text))
+            if num_str and conf >= 0.2:
+                xs = [p[0] for p in bbox]
+                cx_local = int(sum(xs) / len(xs))
+                cx_viewport = cx_local + rx
+                parsed_handles.append((int(num_str), cx_viewport))
+                
+        parsed_handles.sort(key=lambda item: item[1]) # Sort left-to-right by X coord
+        
+        if not parsed_handles:
+            logger.warning("[%s] Could not read any numbers in slider_levels. Falling back to defaults.", self.account["name"])
+            current_x = cx + ox
+            current_val = -1
+        else:
+            if side == "left":
+                current_val, current_x = parsed_handles[0]
+            else:
+                current_val, current_x = parsed_handles[-1]
+                
+            logger.info("[%s] %s slider currently at level %d (x: %d).", self.account["name"], side, current_val, current_x)
+            
+            if str(current_val) == str(target_level):
+                logger.info("[%s] Slider already at %s, no dragging needed.", self.account["name"], target_level)
+                return
+        
+        target_int = int(target_level)
+        self.page.mouse.move(current_x, y)
         self.page.mouse.down()
-        self.page.mouse.move(tx + ox, ty + oy, steps=20)
+        
+        # Determine sweep direction
+        if current_val != -1:
+            direction = 1 if target_int > current_val else -1
+            # Scale sweeping steps a bit smaller if we're scanning dynamically
+            step_pixels = 12 * direction
+        else:
+            direction = 1 if side == "left" else -1
+            step_pixels = 25 * direction
+            
+        found = False
+        # Sweep track max ~25 times to find the right number
+        for _ in range(25):
+            current_x += step_pixels
+            self.page.mouse.move(current_x, y, steps=3)
+            self.page.wait_for_timeout(350)  # Wait for UI number to update
+            
+            img2 = self._ocr_screenshot()
+            crop2 = img2[ry:ry+rh, rx:rx+rw]
+            results2 = reader.readtext(crop2, detail=0)
+            
+            # check if target number has appeared in the text box
+            texts_digits = [''.join(filter(str.isdigit, t)) for t in results2]
+            
+            logger.debug("Slider %s at %d OCR: %s", side, current_x, " ".join(texts_digits))
+            
+            if str(target_level) in texts_digits:
+                logger.info("[%s] Found level %s at x=%d!", self.account["name"], target_level, current_x)
+                found = True
+                break
+                
         self.page.mouse.up()
         self.page.wait_for_timeout(300)
-
-        rhx, rhy = CANVAS_COORDS["slider_track_right"]
-        tx2, ty2 = CANVAS_COORDS["slider_right_target"]
-        logger.info("[%s] Dragging right slider handle → (%d, %d).", self.account["name"], tx2, ty2)
-        self.page.mouse.move(rhx + ox, rhy + oy)
-        self.page.mouse.down()
-        self.page.mouse.move(tx2 + ox, ty2 + oy, steps=20)
-        self.page.mouse.up()
-        self.page.wait_for_timeout(400)
+        
+        if not found:
+            logger.warning("[%s] Failed to find level %s via OCR drag.", self.account["name"], target_level)
 
     def _pick_second_result(self) -> bool:
         """
@@ -967,16 +1046,33 @@ class CryptBot:
 
     def _speedup_march(self, times: int = 5):
         """
-        Open the Speed up popup for March (Carter) and click 'Use' on the
-        50% speedup `times` times, then close the popup.
+        Scan `march_status` for 'Carter', determine which line he's on,
+        then click the speedup button on that line, and then click 'Use' `times` times.
         """
         # Wait for the march to register and UI to show Carter
         logger.info("[%s] Waiting for March (Carter) to register in UI...", self.account["name"])
         self.page.wait_for_timeout(3_000)
 
-        # Click the Speed up button in the top HUD bar directly using coordinates
-        logger.info("[%s] Clicking Speed up button.", self.account["name"])
-        self._canvas_click("march_speedup_btn", wait_ms=1_500)
+        # Look for Carter in the user-defined march_status region to find the correct Y coordinate vertically
+        region = self._region("march_status", (500, 40, 700, 60))
+        hits = self._ocr_find_all("Carter", region=region)
+        
+        if hits:
+            # First hit's Y coordinate tells us Carter's row
+            cx, cy = hits[0]
+            logger.info("[%s] Found 'Carter' on row Y=%d. Clicking speedup here.", self.account["name"], cy)
+            
+            canvas_ox, canvas_oy = self._canvas_offset()
+            btn_x, btn_y = CANVAS_COORDS["march_speedup_btn"]
+            
+            target_x = btn_x + canvas_ox
+            target_y = cy
+            
+            self.page.mouse.click(target_x, target_y)
+            self.page.wait_for_timeout(1_500)
+        else:
+            logger.warning("[%s] Could not locate 'Carter' in march_status! Resorting to default button.", self.account["name"])
+            self._canvas_click("march_speedup_btn", wait_ms=1_500)
 
         # Click Use (50% speedup, first entry) the requested number of times
         for i in range(times):

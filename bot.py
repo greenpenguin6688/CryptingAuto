@@ -870,94 +870,172 @@ class CryptBot:
             self.page.mouse.click(cx, cy)
             self.page.wait_for_timeout(500)
 
-        # Dynamically drag both sliders until the number 25 is read
-        self._drag_slider_to_level("left", CANVAS_COORDS["slider_track_left"], "25")
-        self._drag_slider_to_level("right", CANVAS_COORDS["slider_track_right"], "25")
+        # Read the target level range from settings, clamped to slider hard limits (1–35)
+        target_left  = str(max(1,  min(35, int(self.settings.get("crypt_min_level", 25)))))
+        target_right = str(max(1,  min(35, int(self.settings.get("crypt_max_level", 25)))))
+
+        # Read current slider positions to decide the safe drag order.
+        # Rule: the left handle can NEVER exceed the right handle.
+        #   - If right target > current right → expand right first, then move left.
+        #   - Otherwise → move left first (shrink floor), then right.
+        left_val, right_val = self._read_current_slider_values()
+        logger.info("[%s] Slider state before drag: left=%s right=%s → targets: left=%s right=%s",
+                    self.account["name"], left_val, right_val, target_left, target_right)
+
+        if right_val is not None and int(target_right) > right_val:
+            # Right ceiling needs to rise first so left can follow
+            self._drag_slider_to_level("right", CANVAS_COORDS["slider_track_right"], target_right)
+            self._drag_slider_to_level("left",  CANVAS_COORDS["slider_track_left"],  target_left)
+        else:
+            # Left floor moves down first so right can follow
+            self._drag_slider_to_level("left",  CANVAS_COORDS["slider_track_left"],  target_left)
+            self._drag_slider_to_level("right", CANVAS_COORDS["slider_track_right"], target_right)
+
+    def _read_current_slider_values(self) -> tuple[int | None, int | None]:
+        """
+        Snapshot the slider_levels region and return (left_val, right_val).
+        Returns None for a side if OCR fails to read it.
+        """
+        import cv2
+        scan_region = self._region("slider_levels", (700, 300, 700, 40))
+        rx, ry, rw, rh = scan_region
+        if rh < 50:
+            pad = (50 - rh) // 2
+            ry = max(0, ry - pad)
+            rh = rh + pad * 2
+        img = self._ocr_screenshot()
+        crop = img[ry:ry+rh, rx:rx+rw]
+        crop_up = cv2.resize(crop, (crop.shape[1] * 4, crop.shape[0] * 4), interpolation=cv2.INTER_LANCZOS4)
+        gray = cv2.cvtColor(crop_up, cv2.COLOR_RGB2GRAY)
+        _, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+        crop_ocr = cv2.cvtColor(thresh, cv2.COLOR_GRAY2RGB)
+        reader = self._get_ocr_reader()
+        results = reader.readtext(crop_ocr, detail=1)
+        parsed = []
+        for bbox, text, conf in results:
+            num_str = ''.join(filter(str.isdigit, text))
+            if num_str and conf >= 0.2:
+                xs = [p[0] / 4 for p in bbox]
+                cx_local = int(sum(xs) / len(xs))
+                parsed.append((int(num_str), cx_local))
+        parsed.sort(key=lambda item: item[1])
+        # Left handle = leftmost number in the strip; right handle = rightmost
+        left_val  = parsed[0][0]  if len(parsed) >= 1 else None
+        right_val = parsed[-1][0] if len(parsed) >= 1 else None
+        return left_val, right_val
 
     def _drag_slider_to_level(self, side: str, start_coord: tuple[int, int], target_level: str):
         """
-        Dynamically finds the current slider handle position by reading the numbers
-        above the track within `slider_levels`, then sweeps horizontally until the
-        target_level is met.
+        Drags a slider handle to the target level.
+
+        The mouse is ALWAYS placed on start_coord (the calibrated handle position)
+        before dragging.  OCR is used only to read the current displayed value so
+        we can decide which direction to sweep — never to locate which handle to grab.
+        This prevents left/right mix-ups when both handles show the same number.
         """
         logger.info("[%s] Dragging %s slider to level %s...", self.account["name"], side, target_level)
         ox, oy = self._canvas_offset()
         cx, cy = start_coord
-        y = cy + oy
-        
+
+        # Always grab the handle at the calibrated coordinate — never trust OCR for position
+        grab_x = cx + ox
+        y      = cy + oy
+
         # Pull dynamic scanning region from overrides if set
         scan_region = self._region("slider_levels", (700, cy - 35, 700, 40))
         rx, ry, rw, rh = scan_region
-        
+
+        # Always pad the region height to at least 50px to give OCR enough room
+        if rh < 50:
+            pad = (50 - rh) // 2
+            ry = max(0, ry - pad)
+            rh = rh + pad * 2
+
         reader = self._get_ocr_reader()
-        img = self._ocr_screenshot()
-        crop = img[ry:ry+rh, rx:rx+rw]
-        
-        # Parse current numbers and target X coordinates
-        results = reader.readtext(crop, detail=1)
-        parsed_handles = []
-        for bbox, text, conf in results:
-            num_str = ''.join(filter(str.isdigit, text))
-            if num_str and conf >= 0.2:
-                xs = [p[0] for p in bbox]
-                cx_local = int(sum(xs) / len(xs))
-                cx_viewport = cx_local + rx
-                parsed_handles.append((int(num_str), cx_viewport))
-                
-        parsed_handles.sort(key=lambda item: item[1]) # Sort left-to-right by X coord
-        
-        if not parsed_handles:
+        import cv2
+
+        def _read_value() -> int | None:
+            """
+            Snapshot the slider strip and return the value for this side:
+              left  → the number with the smallest X (leftmost handle)
+              right → the number with the largest  X (rightmost handle)
+            This is unambiguous even when both handles show the same number.
+            """
+            img = self._ocr_screenshot()
+            crop = img[ry:ry+rh, rx:rx+rw]
+            crop_up = cv2.resize(crop, (crop.shape[1] * 4, crop.shape[0] * 4),
+                                 interpolation=cv2.INTER_LANCZOS4)
+            gray = cv2.cvtColor(crop_up, cv2.COLOR_RGB2GRAY)
+            _, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+            crop_ocr = cv2.cvtColor(thresh, cv2.COLOR_GRAY2RGB)
+            results = reader.readtext(crop_ocr, detail=1)
+            candidates = []
+            for bbox, text, conf in results:
+                num_str = ''.join(filter(str.isdigit, text))
+                if num_str and conf >= 0.2:
+                    xs = [p[0] / 4 for p in bbox]
+                    cx_local = int(sum(xs) / len(xs))   # relative to region
+                    candidates.append((cx_local, int(num_str)))
+            if not candidates:
+                return None
+            # Left handle = leftmost number; right handle = rightmost number
+            candidates.sort(key=lambda item: item[0])
+            return candidates[0][1] if side == "left" else candidates[-1][1]
+
+        # Save debug image once for inspection
+        try:
+            img0 = self._ocr_screenshot()
+            crop0 = img0[ry:ry+rh, rx:rx+rw]
+            crop0_up = cv2.resize(crop0, (crop0.shape[1] * 4, crop0.shape[0] * 4),
+                                  interpolation=cv2.INTER_LANCZOS4)
+            gray0 = cv2.cvtColor(crop0_up, cv2.COLOR_RGB2GRAY)
+            _, thresh0 = cv2.threshold(gray0, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+            cv2.imwrite(str(self._TEMPLATES_DIR / "_debug_slider.png"),
+                        cv2.cvtColor(thresh0, cv2.COLOR_GRAY2RGB))
+        except Exception:
+            pass
+
+        current_val = _read_value()
+        if current_val is None:
             logger.warning("[%s] Could not read any numbers in slider_levels. Falling back to defaults.", self.account["name"])
-            current_x = cx + ox
             current_val = -1
         else:
-            if side == "left":
-                current_val, current_x = parsed_handles[0]
-            else:
-                current_val, current_x = parsed_handles[-1]
-                
-            logger.info("[%s] %s slider currently at level %d (x: %d).", self.account["name"], side, current_val, current_x)
-            
+            logger.info("[%s] %s slider currently at level %d.", self.account["name"], side, current_val)
             if str(current_val) == str(target_level):
                 logger.info("[%s] Slider already at %s, no dragging needed.", self.account["name"], target_level)
                 return
-        
+
         target_int = int(target_level)
-        self.page.mouse.move(current_x, y)
+
+        # Always start from the calibrated grab position
+        self.page.mouse.move(grab_x, y)
         self.page.mouse.down()
-        
+
         # Determine sweep direction
         if current_val != -1:
-            direction = 1 if target_int > current_val else -1
-            # Scale sweeping steps a bit smaller if we're scanning dynamically
+            direction   = 1 if target_int > current_val else -1
             step_pixels = 12 * direction
         else:
-            direction = 1 if side == "left" else -1
+            direction   = 1 if side == "right" else -1
             step_pixels = 25 * direction
-            
+
+        current_x = grab_x
         found = False
-        # Sweep track max ~25 times to find the right number
         try:
-            for _ in range(25):
+            for _ in range(50):
                 current_x += step_pixels
-                
+
                 # Constrain to not accidentally drag off the slider window
                 if current_x < rx: current_x = rx
                 if current_x > (rx + rw): current_x = rx + rw
-                
+
                 self.page.mouse.move(current_x, y, steps=3)
                 self.page.wait_for_timeout(350)  # Wait for UI number to update
-                
-                img2 = self._ocr_screenshot()
-                crop2 = img2[ry:ry+rh, rx:rx+rw]
-                results2 = reader.readtext(crop2, detail=0)
-                
-                # check if target number has appeared in the text box
-                texts_digits = [''.join(filter(str.isdigit, t)) for t in results2]
-                
-                logger.debug("Slider %s at %d OCR: %s", side, current_x, " ".join(texts_digits))
-                
-                if str(target_level) in texts_digits:
+
+                val = _read_value()
+                logger.debug("Slider %s at x=%d → OCR value: %s", side, current_x, val)
+
+                if val is not None and str(val) == str(target_level):
                     logger.info("[%s] Found level %s at x=%d!", self.account["name"], target_level, current_x)
                     found = True
                     break

@@ -20721,3 +20721,513 @@ Traceback (most recent call last):
   File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
     raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
 playwright._impl._errors.TargetClosedError: Keyboard.press: Target page, context or browser has been closed
+2026-05-11 22:50:58,920 [INFO] 17832 [1020] Loaded 16 OCR region override(s) from manual_regions.json
+2026-05-11 22:51:01,539 [INFO] 17832 [1020] Navigating to https://totalbattle.com
+2026-05-11 22:51:04,976 [INFO] 17832 [1020] Map already loaded — no login required.
+2026-05-11 22:51:04,977 [INFO] 17832 [1020] Waiting for game loading screen to finish...
+2026-05-11 22:51:18,807 [INFO] 17832 [1020] Waiting for map canvas...
+2026-05-11 22:51:22,432 [INFO] 17832 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-11 22:51:23,383 [INFO] 17832 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-11 22:51:24,190 [INFO] 17832 [1020] Map ready.
+2026-05-11 22:53:53,653 [INFO] 13176 [1020] Loaded 16 OCR region override(s) from manual_regions.json
+2026-05-11 22:53:55,832 [INFO] 13176 [1020] Navigating to https://totalbattle.com
+2026-05-11 22:53:59,516 [INFO] 13176 [1020] Map already loaded — no login required.
+2026-05-11 22:53:59,517 [INFO] 13176 [1020] Waiting for game loading screen to finish...
+2026-05-11 22:54:13,694 [INFO] 13176 [1020] Waiting for map canvas...
+2026-05-11 22:54:17,308 [INFO] 13176 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-11 22:54:18,267 [INFO] 13176 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-11 22:54:19,075 [INFO] 13176 [1020] Map ready.
+2026-05-11 22:56:32,514 [INFO] 24008 [1020] Loaded 16 OCR region override(s) from manual_regions.json
+2026-05-11 22:56:34,182 [INFO] 24008 [1020] Navigating to https://totalbattle.com
+2026-05-11 22:56:38,122 [INFO] 24008 [1020] Map already loaded — no login required.
+2026-05-11 22:56:38,124 [INFO] 24008 [1020] Waiting for game loading screen to finish...
+2026-05-11 22:56:53,739 [INFO] 24008 [1020] Waiting for map canvas...
+2026-05-11 22:56:57,389 [INFO] 24008 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-11 22:56:58,990 [INFO] 24008 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-11 22:56:59,841 [INFO] 24008 [1020] Map ready.
+2026-05-11 23:00:14,810 [INFO] 1392 [1020] Loaded 16 OCR region override(s) from manual_regions.json
+2026-05-11 23:00:16,737 [INFO] 1392 [1020] Navigating to https://totalbattle.com
+2026-05-11 23:00:20,082 [INFO] 1392 [1020] Map already loaded — no login required.
+2026-05-11 23:00:20,087 [INFO] 1392 [1020] Waiting for game loading screen to finish...
+2026-05-11 23:00:34,031 [INFO] 1392 [1020] Waiting for map canvas...
+2026-05-11 23:00:37,672 [INFO] 1392 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-11 23:00:38,667 [INFO] 1392 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-11 23:00:39,471 [INFO] 1392 [1020] Map ready.
+2026-05-11 23:01:36,101 [INFO] 7652 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-11 23:01:36,109 [INFO] 7652 [1020] Loaded 16 OCR region override(s) from manual_regions.json
+2026-05-11 23:01:37,955 [INFO] 7652 [1020] Navigating to https://totalbattle.com
+2026-05-11 23:01:41,539 [INFO] 7652 [1020] Map already loaded — no login required.
+2026-05-11 23:01:41,539 [INFO] 7652 [1020] Waiting for game loading screen to finish...
+2026-05-11 23:01:55,305 [INFO] 7652 [1020] Waiting for map canvas...
+2026-05-11 23:01:58,949 [INFO] 7652 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-11 23:01:59,915 [INFO] 7652 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-11 23:02:00,721 [INFO] 7652 [1020] Map ready.
+2026-05-11 23:02:00,721 [INFO] 7652 [1020] Crypt loop started.
+2026-05-11 23:02:07,599 [INFO] 7652 [1020] Loading OCR model — first run may download models…
+2026-05-11 23:02:10,568 [INFO] 7652 [1020] OCR model ready.
+2026-05-11 23:02:11,853 [INFO] 7652 [1020] click 'watchtower_btn' → region centre absolute page(692,839)
+2026-05-11 23:02:14,849 [INFO] 7652 [1020] OCR click 'Crypts'[0] → (683, 425)
+2026-05-11 23:02:17,261 [INFO] 7652 [1020] Tab 'Common' color check: 1686/2337 green px → GREEN
+2026-05-11 23:02:17,262 [INFO] 7652 [1020] Tab 'Common' state is correct — skipping.
+2026-05-11 23:02:17,271 [INFO] 7652 [1020] Tab 'Rare' color check: 0/2124 green px → TAN
+2026-05-11 23:02:17,271 [INFO] 7652 [1020] Tab 'Rare' state is correct — skipping.
+2026-05-11 23:02:17,276 [INFO] 7652 [1020] Tab 'Epic' color check: 0/2124 green px → TAN
+2026-05-11 23:02:17,277 [INFO] 7652 [1020] Tab 'Epic' state is correct — skipping.
+2026-05-11 23:02:17,289 [INFO] 7652 [1020] Tab 'Arenas' color check: 0/2574 green px → TAN
+2026-05-11 23:02:17,290 [INFO] 7652 [1020] Tab 'Arenas' state is correct — skipping.
+2026-05-11 23:02:17,296 [INFO] 7652 [1020] Tab 'Others' color check: 0/2070 green px → TAN
+2026-05-11 23:02:17,296 [INFO] 7652 [1020] Tab 'Others' state is correct — skipping.
+2026-05-11 23:02:17,297 [INFO] 7652 [1020] Dragging left slider to level 25...
+2026-05-11 23:02:21,371 [INFO] 7652 [1020] left slider currently at level 19 (x: 1072).
+2026-05-11 23:04:03,418 [ERROR] 7652 [1020] Unexpected error — recovering.
+Traceback (most recent call last):
+  File "D:\New folder\CryptingAuto\bot.py", line 510, in run_loop
+    self._apply_filters()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "D:\New folder\CryptingAuto\bot.py", line 874, in _apply_filters
+    self._drag_slider_to_level("left", CANVAS_COORDS["slider_track_left"], "25")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\New folder\CryptingAuto\bot.py", line 990, in _drag_slider_to_level
+    self.page.mouse.up()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\sync_api\_generated.py", line 1561, in up
+    self._sync(self._impl_obj.up(button=button, clickCount=click_count))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_input.py", line 62, in up
+    await self._channel.send("mouseUp", None, locals_to_params(locals()))
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Mouse.up: Target page, context or browser has been closed
+2026-05-11 23:04:03,440 [ERROR] 7652 [1020] Fatal error in worker.
+Traceback (most recent call last):
+  File "D:\New folder\CryptingAuto\main.py", line 67, in _run_account
+    bot.run_loop()
+    ~~~~~~~~~~~~^^
+  File "D:\New folder\CryptingAuto\bot.py", line 537, in run_loop
+    self._dismiss_overlays(count=2)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\New folder\CryptingAuto\bot.py", line 1186, in _dismiss_overlays
+    self.page.keyboard.press("Escape")
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\sync_api\_generated.py", line 1491, in press
+    self._sync(self._impl_obj.press(key=key, delay=delay))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_input.py", line 38, in press
+    await self._channel.send("keyboardPress", None, locals_to_params(locals()))
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Keyboard.press: Target page, context or browser has been closed
+2026-05-11 23:05:30,082 [INFO] 5420 Starting 1 bot process(es).  headless=False  stagger=30s
+2026-05-11 23:05:30,083 [INFO] 5420 [1020] Loaded 16 OCR region override(s) from manual_regions.json
+2026-05-11 23:05:31,982 [INFO] 5420 [1020] Navigating to https://totalbattle.com
+2026-05-11 23:05:35,465 [INFO] 5420 [1020] Map already loaded — no login required.
+2026-05-11 23:05:35,477 [INFO] 5420 [1020] Waiting for game loading screen to finish...
+2026-05-11 23:05:49,432 [INFO] 5420 [1020] Waiting for map canvas...
+2026-05-11 23:05:53,065 [INFO] 5420 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-11 23:05:54,043 [INFO] 5420 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-11 23:05:54,859 [INFO] 5420 [1020] Map ready.
+2026-05-11 23:05:54,862 [INFO] 5420 [1020] Crypt loop started.
+2026-05-11 23:06:01,472 [INFO] 5420 [1020] Loading OCR model — first run may download models…
+2026-05-11 23:06:04,380 [INFO] 5420 [1020] OCR model ready.
+2026-05-11 23:06:05,635 [INFO] 5420 [1020] click 'watchtower_btn' → region centre absolute page(692,839)
+2026-05-11 23:06:08,630 [INFO] 5420 [1020] OCR click 'Crypts'[0] → (683, 425)
+2026-05-11 23:06:11,023 [INFO] 5420 [1020] Tab 'Common' color check: 1686/2337 green px → GREEN
+2026-05-11 23:06:11,023 [INFO] 5420 [1020] Tab 'Common' state is correct — skipping.
+2026-05-11 23:06:11,028 [INFO] 5420 [1020] Tab 'Rare' color check: 0/2124 green px → TAN
+2026-05-11 23:06:11,028 [INFO] 5420 [1020] Tab 'Rare' state is correct — skipping.
+2026-05-11 23:06:11,039 [INFO] 5420 [1020] Tab 'Epic' color check: 0/2124 green px → TAN
+2026-05-11 23:06:11,039 [INFO] 5420 [1020] Tab 'Epic' state is correct — skipping.
+2026-05-11 23:06:11,045 [INFO] 5420 [1020] Tab 'Arenas' color check: 0/2574 green px → TAN
+2026-05-11 23:06:11,046 [INFO] 5420 [1020] Tab 'Arenas' state is correct — skipping.
+2026-05-11 23:06:11,056 [INFO] 5420 [1020] Tab 'Others' color check: 0/2070 green px → TAN
+2026-05-11 23:06:11,057 [INFO] 5420 [1020] Tab 'Others' state is correct — skipping.
+2026-05-11 23:06:14,950 [INFO] 5420 [1020] Slider state before drag: left=21 right=27 → targets: left=0 right=30
+2026-05-11 23:06:14,951 [INFO] 5420 [1020] Dragging right slider to level 30...
+2026-05-11 23:06:18,625 [INFO] 5420 [1020] right slider currently at level 27 (x: 1191).
+2026-05-11 23:06:31,645 [INFO] 5420 [1020] Found level 30 at x=1227!
+2026-05-11 23:06:31,963 [INFO] 5420 [1020] Dragging left slider to level 0...
+2026-05-11 23:06:36,001 [INFO] 5420 [1020] left slider currently at level 21 (x: 1093).
+2026-05-11 23:08:38,866 [WARNING] 5420 [1020] Failed to find level 0 via OCR drag.
+2026-05-11 23:08:42,666 [WARNING] 5420 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-11 23:08:42,676 [INFO] 5420 [1020] click 'second_result_go' → region centre absolute page(1219,560)
+2026-05-11 23:08:47,873 [WARNING] 5420 [1020] Template '_temp_crypt_target.png' not matched (best=-0.05 < 0.55 scale=0.8) — debug crop saved to templates\_debug__temp_crypt_target.png
+2026-05-11 23:08:47,874 [WARNING] 5420 [1020] Could not find crypt image match! Falling back to center of crypt_location.
+2026-05-11 23:08:50,833 [INFO] 5420 [1020] OCR click 'Explore'[0] → (1142, 737)
+2026-05-11 23:08:52,423 [INFO] 5420 [1020] Waiting for March (Carter) to register in UI...
+2026-05-11 23:08:57,457 [INFO] 5420 [1020] Found 'Carter' on row Y=86. Clicking speedup here.
+2026-05-11 23:08:58,988 [INFO] 5420 [1020] Speedup click 1/5.
+2026-05-11 23:08:59,004 [INFO] 5420 [1020] click 'speedup_use_btn' → region centre absolute page(1128,416)
+2026-05-11 23:08:59,730 [INFO] 5420 [1020] Speedup click 2/5.
+2026-05-11 23:08:59,741 [INFO] 5420 [1020] click 'speedup_use_btn' → region centre absolute page(1128,416)
+2026-05-11 23:09:00,473 [INFO] 5420 [1020] Speedup click 3/5.
+2026-05-11 23:09:00,504 [INFO] 5420 [1020] click 'speedup_use_btn' → region centre absolute page(1128,416)
+2026-05-11 23:09:01,219 [INFO] 5420 [1020] Speedup click 4/5.
+2026-05-11 23:09:01,237 [INFO] 5420 [1020] click 'speedup_use_btn' → region centre absolute page(1128,416)
+2026-05-11 23:09:01,963 [INFO] 5420 [1020] Speedup click 5/5.
+2026-05-11 23:09:02,008 [INFO] 5420 [1020] click 'speedup_use_btn' → region centre absolute page(1128,416)
+2026-05-11 23:09:02,799 [INFO] 5420 [1020] Closing speedup popup.
+2026-05-11 23:09:03,770 [INFO] 5420 [1020] Waiting for March (Carter) to finish...
+2026-05-11 23:09:06,258 [INFO] 5420 [1020] Still marching (Carter visible) — 597s until timeout.
+2026-05-11 23:09:12,725 [INFO] 5420 [1020] Still marching (Carter visible) — 591s until timeout.
+2026-05-11 23:09:19,141 [INFO] 5420 [1020] Still marching (Carter visible) — 584s until timeout.
+2026-05-11 23:09:25,654 [INFO] 5420 [1020] Still marching (Carter visible) — 578s until timeout.
+2026-05-11 23:09:32,041 [INFO] 5420 [1020] Still marching (Carter visible) — 571s until timeout.
+2026-05-11 23:09:38,516 [INFO] 5420 [1020] Still marching (Carter visible) — 565s until timeout.
+2026-05-11 23:09:45,053 [INFO] 5420 [1020] Still marching (Carter visible) — 558s until timeout.
+2026-05-11 23:09:51,230 [INFO] 5420 [1020] March (Carter) gone — ready for next cycle.
+2026-05-11 23:09:51,231 [INFO] 5420 [1020] Cycle #1 complete.
+2026-05-11 23:09:52,572 [INFO] 5420 [1020] click 'watchtower_btn' → region centre absolute page(692,839)
+2026-05-11 23:09:55,528 [INFO] 5420 [1020] OCR click 'Crypts'[0] → (683, 425)
+2026-05-11 23:09:56,351 [INFO] 5420 [1020] Filters already set — skipping.
+2026-05-11 23:09:58,940 [WARNING] 5420 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-11 23:09:58,957 [INFO] 5420 [1020] click 'second_result_go' → region centre absolute page(1219,560)
+2026-05-11 23:10:01,641 [INFO] 5420 [1020] Interrupted by user.
+2026-05-11 23:10:04,707 [ERROR] 5420 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-11 23:10:04,848 [ERROR] 5420 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-11 23:17:32,028 [INFO] 2440 Wizard complete — launching 1 bot(s). types=['Common'] levels=25–25
+2026-05-11 23:17:32,029 [INFO] 2440 [1020] Loaded 16 OCR region override(s) from manual_regions.json
+2026-05-11 23:17:33,974 [INFO] 2440 [1020] Navigating to https://totalbattle.com
+2026-05-11 23:17:37,786 [INFO] 2440 [1020] Map already loaded — no login required.
+2026-05-11 23:17:37,802 [INFO] 2440 [1020] Waiting for game loading screen to finish...
+2026-05-11 23:17:51,409 [INFO] 2440 [1020] Waiting for map canvas...
+2026-05-11 23:17:55,039 [INFO] 2440 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-11 23:17:56,015 [INFO] 2440 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-11 23:17:56,828 [INFO] 2440 [1020] Map ready.
+2026-05-11 23:17:56,829 [INFO] 2440 [1020] Crypt loop started.
+2026-05-11 23:18:03,914 [INFO] 2440 [1020] Loading OCR model — first run may download models…
+2026-05-11 23:18:06,891 [INFO] 2440 [1020] OCR model ready.
+2026-05-11 23:18:08,223 [INFO] 2440 [1020] click 'watchtower_btn' → region centre absolute page(692,839)
+2026-05-11 23:18:11,176 [INFO] 2440 [1020] OCR click 'Crypts'[0] → (683, 425)
+2026-05-11 23:18:13,608 [INFO] 2440 [1020] Tab 'Common' color check: 1686/2337 green px → GREEN
+2026-05-11 23:18:13,608 [INFO] 2440 [1020] Tab 'Common' state is correct — skipping.
+2026-05-11 23:18:13,622 [INFO] 2440 [1020] Tab 'Rare' color check: 0/2124 green px → TAN
+2026-05-11 23:18:13,622 [INFO] 2440 [1020] Tab 'Rare' state is correct — skipping.
+2026-05-11 23:18:13,629 [INFO] 2440 [1020] Tab 'Epic' color check: 0/2124 green px → TAN
+2026-05-11 23:18:13,629 [INFO] 2440 [1020] Tab 'Epic' state is correct — skipping.
+2026-05-11 23:18:13,638 [INFO] 2440 [1020] Tab 'Arenas' color check: 0/2574 green px → TAN
+2026-05-11 23:18:13,638 [INFO] 2440 [1020] Tab 'Arenas' state is correct — skipping.
+2026-05-11 23:18:13,645 [INFO] 2440 [1020] Tab 'Others' color check: 0/2070 green px → TAN
+2026-05-11 23:18:13,645 [INFO] 2440 [1020] Tab 'Others' state is correct — skipping.
+2026-05-11 23:18:17,287 [INFO] 2440 [1020] Slider state before drag: left=30 right=30 → targets: left=25 right=25
+2026-05-11 23:18:17,288 [INFO] 2440 [1020] Dragging left slider to level 25...
+2026-05-11 23:18:20,748 [INFO] 2440 [1020] left slider currently at level 30 (x: 1224).
+2026-05-11 23:18:41,690 [INFO] 2440 [1020] Found level 25 at x=1164!
+2026-05-11 23:18:42,028 [INFO] 2440 [1020] Dragging right slider to level 25...
+2026-05-11 23:18:45,876 [INFO] 2440 [1020] right slider currently at level 25 (x: 1172).
+2026-05-11 23:18:45,877 [INFO] 2440 [1020] Slider already at 25, no dragging needed.
+2026-05-11 23:18:48,650 [WARNING] 2440 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-11 23:18:48,659 [INFO] 2440 [1020] click 'second_result_go' → region centre absolute page(1219,560)
+2026-05-11 23:18:53,508 [WARNING] 2440 [1020] Template '_temp_crypt_target.png' not matched (best=0.04 < 0.55 scale=0.8) — debug crop saved to templates\_debug__temp_crypt_target.png
+2026-05-11 23:18:53,508 [WARNING] 2440 [1020] Could not find crypt image match! Falling back to center of crypt_location.
+2026-05-11 23:18:54,135 [INFO] 2440 [1020] Interrupted by user.
+2026-05-11 23:30:38,700 [ERROR] 2440 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-11 23:30:38,812 [ERROR] 2440 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-11 23:30:54,965 [INFO] 24584 Wizard complete — launching 1 bot(s). types=['Common'] levels=25–25
+2026-05-11 23:30:54,966 [INFO] 24584 [1020] Loaded 16 OCR region override(s) from manual_regions.json
+2026-05-11 23:30:56,839 [INFO] 24584 [1020] Navigating to https://totalbattle.com
+2026-05-11 23:31:00,601 [INFO] 24584 [1020] Map already loaded — no login required.
+2026-05-11 23:31:00,619 [INFO] 24584 [1020] Waiting for game loading screen to finish...
+2026-05-11 23:31:14,983 [INFO] 24584 [1020] Waiting for map canvas...
+2026-05-11 23:31:18,610 [INFO] 24584 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-11 23:31:19,631 [INFO] 24584 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-11 23:31:20,439 [INFO] 24584 [1020] Map ready.
+2026-05-11 23:31:20,441 [INFO] 24584 [1020] Crypt loop started.
+2026-05-11 23:31:30,870 [INFO] 24584 [1020] Loading OCR model — first run may download models…
+2026-05-11 23:31:34,274 [INFO] 24584 [1020] OCR model ready.
+2026-05-11 23:31:37,111 [INFO] 24584 [1020] click 'watchtower_btn' → region centre absolute page(692,839)
+2026-05-11 23:31:40,975 [INFO] 24584 [1020] OCR click 'Crypts'[0] → (683, 425)
+2026-05-11 23:31:44,547 [INFO] 24584 [1020] Tab 'Common' color check: 1686/2337 green px → GREEN
+2026-05-11 23:31:44,549 [INFO] 24584 [1020] Tab 'Common' state is correct — skipping.
+2026-05-11 23:31:44,564 [INFO] 24584 [1020] Tab 'Rare' color check: 0/2124 green px → TAN
+2026-05-11 23:31:44,566 [INFO] 24584 [1020] Tab 'Rare' state is correct — skipping.
+2026-05-11 23:31:44,573 [INFO] 24584 [1020] Tab 'Epic' color check: 0/2124 green px → TAN
+2026-05-11 23:31:44,574 [INFO] 24584 [1020] Tab 'Epic' state is correct — skipping.
+2026-05-11 23:31:44,590 [INFO] 24584 [1020] Tab 'Arenas' color check: 0/2574 green px → TAN
+2026-05-11 23:31:44,590 [INFO] 24584 [1020] Tab 'Arenas' state is correct — skipping.
+2026-05-11 23:31:44,606 [INFO] 24584 [1020] Tab 'Others' color check: 0/2070 green px → TAN
+2026-05-11 23:31:44,608 [INFO] 24584 [1020] Tab 'Others' state is correct — skipping.
+2026-05-11 23:31:53,370 [INFO] 24584 [1020] Slider state before drag: left=25 right=25 → targets: left=25 right=25
+2026-05-11 23:31:53,371 [INFO] 24584 [1020] Dragging left slider to level 25...
+2026-05-11 23:32:01,170 [INFO] 24584 [1020] left slider currently at level 25.
+2026-05-11 23:32:01,171 [INFO] 24584 [1020] Slider already at 25, no dragging needed.
+2026-05-11 23:32:01,171 [INFO] 24584 [1020] Dragging right slider to level 25...
+2026-05-11 23:32:05,948 [INFO] 24584 [1020] right slider currently at level 25.
+2026-05-11 23:32:05,948 [INFO] 24584 [1020] Slider already at 25, no dragging needed.
+2026-05-11 23:32:08,801 [WARNING] 24584 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-11 23:32:08,821 [INFO] 24584 [1020] click 'second_result_go' → region centre absolute page(1219,560)
+2026-05-11 23:32:10,236 [INFO] 24584 [1020] Interrupted by user.
+2026-05-11 23:33:40,193 [ERROR] 24584 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-11 23:33:40,312 [ERROR] 24584 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-11 23:33:50,686 [INFO] 16600 Wizard complete — launching 1 bot(s). types=['Common'] levels=25–25
+2026-05-11 23:33:50,687 [INFO] 16600 [1020] Loaded 16 OCR region override(s) from manual_regions.json
+2026-05-11 23:33:52,825 [INFO] 16600 [1020] Navigating to https://totalbattle.com
+2026-05-11 23:33:56,329 [INFO] 16600 [1020] Map already loaded — no login required.
+2026-05-11 23:33:56,330 [INFO] 16600 [1020] Waiting for game loading screen to finish...
+2026-05-11 23:34:10,421 [INFO] 16600 [1020] Waiting for map canvas...
+2026-05-11 23:34:14,060 [INFO] 16600 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-11 23:34:15,015 [INFO] 16600 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-11 23:34:15,827 [INFO] 16600 [1020] Map ready.
+2026-05-11 23:34:15,829 [INFO] 16600 [1020] Crypt loop started.
+2026-05-11 23:34:22,663 [INFO] 16600 [1020] Loading OCR model — first run may download models…
+2026-05-11 23:34:25,549 [INFO] 16600 [1020] OCR model ready.
+2026-05-11 23:34:26,835 [INFO] 16600 [1020] click 'watchtower_btn' → region centre absolute page(692,839)
+2026-05-11 23:34:29,729 [INFO] 16600 [1020] OCR click 'Crypts'[0] → (683, 425)
+2026-05-11 23:34:32,177 [INFO] 16600 [1020] Tab 'Common' color check: 1686/2337 green px → GREEN
+2026-05-11 23:34:32,178 [INFO] 16600 [1020] Tab 'Common' state is correct — skipping.
+2026-05-11 23:34:32,189 [INFO] 16600 [1020] Tab 'Rare' color check: 0/2124 green px → TAN
+2026-05-11 23:34:32,191 [INFO] 16600 [1020] Tab 'Rare' state is correct — skipping.
+2026-05-11 23:34:32,206 [INFO] 16600 [1020] Tab 'Epic' color check: 0/2124 green px → TAN
+2026-05-11 23:34:32,207 [INFO] 16600 [1020] Tab 'Epic' state is correct — skipping.
+2026-05-11 23:34:32,222 [INFO] 16600 [1020] Tab 'Arenas' color check: 0/2574 green px → TAN
+2026-05-11 23:34:32,225 [INFO] 16600 [1020] Tab 'Arenas' state is correct — skipping.
+2026-05-11 23:34:32,239 [INFO] 16600 [1020] Tab 'Others' color check: 0/2070 green px → TAN
+2026-05-11 23:34:32,241 [INFO] 16600 [1020] Tab 'Others' state is correct — skipping.
+2026-05-11 23:34:35,921 [INFO] 16600 [1020] Slider state before drag: left=25 right=25 → targets: left=25 right=25
+2026-05-11 23:34:35,921 [INFO] 16600 [1020] Dragging left slider to level 25...
+2026-05-11 23:34:40,883 [INFO] 16600 [1020] left slider currently at level 25.
+2026-05-11 23:34:40,884 [INFO] 16600 [1020] Slider already at 25, no dragging needed.
+2026-05-11 23:34:40,884 [INFO] 16600 [1020] Dragging right slider to level 25...
+2026-05-11 23:34:45,017 [INFO] 16600 [1020] right slider currently at level 25.
+2026-05-11 23:34:45,019 [INFO] 16600 [1020] Slider already at 25, no dragging needed.
+2026-05-11 23:34:47,628 [WARNING] 16600 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-11 23:34:47,644 [INFO] 16600 [1020] click 'second_result_go' → region centre absolute page(1219,560)
+2026-05-11 23:34:52,562 [WARNING] 16600 [1020] Template '_temp_crypt_target.png' not matched (best=0.18 < 0.55 scale=0.8) — debug crop saved to templates\_debug__temp_crypt_target.png
+2026-05-11 23:34:52,562 [WARNING] 16600 [1020] Could not find crypt image match! Falling back to center of crypt_location.
+2026-05-11 23:34:54,923 [WARNING] 16600 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-11 23:34:54,939 [INFO] 16600 [1020] click 'crypt_popup_explore' → region centre absolute page(1136,732)
+2026-05-11 23:34:56,481 [INFO] 16600 [1020] Waiting for March (Carter) to register in UI...
+2026-05-11 23:35:00,702 [WARNING] 16600 [1020] Could not locate 'Carter' in march_status! Resorting to default button.
+2026-05-11 23:35:00,716 [INFO] 16600 [1020] click 'march_speedup_btn' → region centre absolute page(1241,149)
+2026-05-11 23:35:02,241 [INFO] 16600 [1020] Speedup click 1/5.
+2026-05-11 23:35:02,254 [INFO] 16600 [1020] click 'speedup_use_btn' → region centre absolute page(1128,416)
+2026-05-11 23:35:02,967 [INFO] 16600 [1020] Speedup click 2/5.
+2026-05-11 23:35:02,976 [INFO] 16600 [1020] click 'speedup_use_btn' → region centre absolute page(1128,416)
+2026-05-11 23:35:03,701 [INFO] 16600 [1020] Speedup click 3/5.
+2026-05-11 23:35:03,723 [INFO] 16600 [1020] click 'speedup_use_btn' → region centre absolute page(1128,416)
+2026-05-11 23:35:04,455 [INFO] 16600 [1020] Speedup click 4/5.
+2026-05-11 23:35:04,477 [INFO] 16600 [1020] click 'speedup_use_btn' → region centre absolute page(1128,416)
+2026-05-11 23:35:05,205 [INFO] 16600 [1020] Speedup click 5/5.
+2026-05-11 23:35:05,239 [INFO] 16600 [1020] click 'speedup_use_btn' → region centre absolute page(1128,416)
+2026-05-11 23:35:05,978 [INFO] 16600 [1020] Closing speedup popup.
+2026-05-11 23:35:06,695 [INFO] 16600 [1020] Waiting for March (Carter) to finish...
+2026-05-11 23:35:07,949 [INFO] 16600 [1020] March (Carter) gone — ready for next cycle.
+2026-05-11 23:35:07,949 [INFO] 16600 [1020] Cycle #1 complete.
+2026-05-11 23:35:09,171 [INFO] 16600 [1020] click 'watchtower_btn' → region centre absolute page(692,839)
+2026-05-11 23:35:11,796 [INFO] 16600 [1020] OCR click 'Crypts'[0] → (683, 425)
+2026-05-11 23:35:12,621 [INFO] 16600 [1020] Filters already set — skipping.
+2026-05-11 23:35:15,032 [WARNING] 16600 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-11 23:35:15,045 [INFO] 16600 [1020] click 'second_result_go' → region centre absolute page(1219,560)
+2026-05-11 23:35:19,846 [WARNING] 16600 [1020] Template '_temp_crypt_target.png' not matched (best=0.35 < 0.55 scale=0.8) — debug crop saved to templates\_debug__temp_crypt_target.png
+2026-05-11 23:35:19,847 [WARNING] 16600 [1020] Could not find crypt image match! Falling back to center of crypt_location.
+2026-05-11 23:35:22,007 [WARNING] 16600 [1020] OCR missed 'Explore' — coord fallback 'crypt_popup_explore'
+2026-05-11 23:35:22,023 [INFO] 16600 [1020] click 'crypt_popup_explore' → region centre absolute page(1136,732)
+2026-05-11 23:35:22,802 [INFO] 16600 [1020] Interrupted by user.
+2026-05-11 23:35:29,619 [ERROR] 16600 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-11 23:35:29,738 [ERROR] 16600 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-11 23:35:35,380 [INFO] 6192 [1020] Loaded 16 OCR region override(s) from manual_regions.json
+2026-05-11 23:35:37,086 [INFO] 6192 [1020] Navigating to https://totalbattle.com
+2026-05-11 23:35:40,446 [INFO] 6192 [1020] Map already loaded — no login required.
+2026-05-11 23:35:40,477 [INFO] 6192 [1020] Waiting for game loading screen to finish...
+2026-05-11 23:35:54,483 [INFO] 6192 [1020] Waiting for map canvas...
+2026-05-11 23:35:58,096 [INFO] 6192 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-11 23:35:59,065 [INFO] 6192 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-11 23:35:59,874 [INFO] 6192 [1020] Map ready.
+2026-05-11 23:41:34,981 [INFO] 23572 Wizard complete — launching 1 bot(s). types=['Common'] levels=25–25
+2026-05-11 23:41:34,990 [INFO] 23572 [1020] Loaded 16 OCR region override(s) from manual_regions.json
+2026-05-11 23:41:36,906 [INFO] 23572 [1020] Navigating to https://totalbattle.com
+2026-05-11 23:41:40,601 [INFO] 23572 [1020] Map already loaded — no login required.
+2026-05-11 23:41:40,602 [INFO] 23572 [1020] Waiting for game loading screen to finish...
+2026-05-11 23:42:07,520 [INFO] 23572 [1020] Waiting for map canvas...
+2026-05-11 23:42:11,359 [INFO] 23572 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-11 23:42:12,249 [INFO] 23572 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-11 23:42:13,058 [INFO] 23572 [1020] Map ready.
+2026-05-11 23:42:13,062 [INFO] 23572 [1020] Crypt loop started.
+2026-05-11 23:42:21,241 [INFO] 23572 [1020] Loading OCR model — first run may download models…
+2026-05-11 23:42:24,334 [INFO] 23572 [1020] OCR model ready.
+2026-05-11 23:42:25,969 [INFO] 23572 [1020] click 'watchtower_btn' → region centre absolute page(693,838)
+2026-05-11 23:42:29,097 [WARNING] 23572 [1020] OCR missed 'Crypts' — coord fallback 'crypts_and_arenas'
+2026-05-11 23:42:29,105 [INFO] 23572 [1020] click 'crypts_and_arenas' → canvas(715,397) + offset(0,43) = page(715,440)
+2026-05-11 23:42:31,585 [INFO] 23572 [1020] Tab 'Common' color check: 1985/2541 green px → GREEN
+2026-05-11 23:42:31,586 [INFO] 23572 [1020] Tab 'Common' state is correct — skipping.
+2026-05-11 23:42:31,590 [INFO] 23572 [1020] Tab 'Rare' color check: 363/2478 green px → GREEN
+2026-05-11 23:42:31,590 [INFO] 23572 [1020] Deselecting tab 'Rare'.
+2026-05-11 23:42:32,119 [INFO] 23572 [1020] Tab 'Epic' color check: 55/2640 green px → TAN
+2026-05-11 23:42:32,119 [INFO] 23572 [1020] Tab 'Epic' state is correct — skipping.
+2026-05-11 23:42:32,124 [INFO] 23572 [1020] Tab 'Arenas' color check: 0/2124 green px → TAN
+2026-05-11 23:42:32,124 [INFO] 23572 [1020] Tab 'Arenas' state is correct — skipping.
+2026-05-11 23:42:32,134 [INFO] 23572 [1020] Tab 'Others' color check: 2251/2640 green px → GREEN
+2026-05-11 23:42:32,136 [INFO] 23572 [1020] Deselecting tab 'Others'.
+2026-05-11 23:42:37,494 [INFO] 23572 [1020] Slider state before drag: left=32 right=32 → targets: left=25 right=25
+2026-05-11 23:42:37,494 [INFO] 23572 [1020] Dragging left slider to level 25...
+2026-05-11 23:42:42,504 [INFO] 23572 [1020] left slider currently at level 20.
+2026-05-11 23:45:25,051 [ERROR] 23572 [1020] Unexpected error — recovering.
+Traceback (most recent call last):
+  File "D:\New folder\CryptingAuto\bot.py", line 510, in run_loop
+    self._apply_filters()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "D:\New folder\CryptingAuto\bot.py", line 891, in _apply_filters
+    self._drag_slider_to_level("left",  CANVAS_COORDS["slider_track_left"],  target_left)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\New folder\CryptingAuto\bot.py", line 1044, in _drag_slider_to_level
+    self.page.mouse.up()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\sync_api\_generated.py", line 1561, in up
+    self._sync(self._impl_obj.up(button=button, clickCount=click_count))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_input.py", line 62, in up
+    await self._channel.send("mouseUp", None, locals_to_params(locals()))
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Mouse.up: Target page, context or browser has been closed
+2026-05-11 23:45:25,103 [ERROR] 23572 [1020] Fatal error in worker.
+Traceback (most recent call last):
+  File "D:\New folder\CryptingAuto\main.py", line 67, in _run_account
+    bot.run_loop()
+    ~~~~~~~~~~~~^^
+  File "D:\New folder\CryptingAuto\bot.py", line 537, in run_loop
+    self._dismiss_overlays(count=2)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\New folder\CryptingAuto\bot.py", line 1240, in _dismiss_overlays
+    self.page.keyboard.press("Escape")
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\sync_api\_generated.py", line 1491, in press
+    self._sync(self._impl_obj.press(key=key, delay=delay))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_input.py", line 38, in press
+    await self._channel.send("keyboardPress", None, locals_to_params(locals()))
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Keyboard.press: Target page, context or browser has been closed
+2026-05-11 23:45:31,577 [INFO] 22052 [1020] Loaded 16 OCR region override(s) from manual_regions.json
+2026-05-11 23:45:33,324 [INFO] 22052 [1020] Navigating to https://totalbattle.com
+2026-05-11 23:45:36,782 [INFO] 22052 [1020] Map already loaded — no login required.
+2026-05-11 23:45:36,783 [INFO] 22052 [1020] Waiting for game loading screen to finish...
+2026-05-11 23:45:51,312 [INFO] 22052 [1020] Waiting for map canvas...
+2026-05-11 23:45:54,948 [INFO] 22052 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-11 23:45:56,273 [INFO] 22052 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-11 23:45:57,089 [INFO] 22052 [1020] Map ready.
+2026-05-11 23:46:53,068 [INFO] 19552 [1020] Loaded 16 OCR region override(s) from manual_regions.json
+2026-05-11 23:46:54,836 [INFO] 19552 [1020] Navigating to https://totalbattle.com
+2026-05-11 23:46:58,215 [INFO] 19552 [1020] Map already loaded — no login required.
+2026-05-11 23:46:58,218 [INFO] 19552 [1020] Waiting for game loading screen to finish...
+2026-05-11 23:47:14,101 [INFO] 19552 [1020] Waiting for map canvas...
+2026-05-11 23:47:17,837 [INFO] 19552 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-11 23:47:18,814 [INFO] 19552 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-11 23:47:19,616 [INFO] 19552 [1020] Map ready.
+2026-05-11 23:48:16,150 [INFO] 17572 [1020] Loaded 16 OCR region override(s) from manual_regions.json
+2026-05-11 23:48:17,831 [INFO] 17572 [1020] Navigating to https://totalbattle.com
+2026-05-11 23:48:21,171 [INFO] 17572 [1020] Map already loaded — no login required.
+2026-05-11 23:48:21,174 [INFO] 17572 [1020] Waiting for game loading screen to finish...
+2026-05-11 23:48:37,741 [INFO] 17572 [1020] Waiting for map canvas...
+2026-05-11 23:48:41,382 [INFO] 17572 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-11 23:48:42,504 [INFO] 17572 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-11 23:48:43,312 [INFO] 17572 [1020] Map ready.
+2026-05-11 23:51:21,547 [INFO] 15880 Wizard complete — launching 1 bot(s). types=['Common'] levels=25–25
+2026-05-11 23:51:21,557 [INFO] 15880 [1020] Loaded 16 OCR region override(s) from manual_regions.json
+2026-05-11 23:51:23,556 [INFO] 15880 [1020] Navigating to https://totalbattle.com
+2026-05-11 23:51:27,059 [INFO] 15880 [1020] Map already loaded — no login required.
+2026-05-11 23:51:27,063 [INFO] 15880 [1020] Waiting for game loading screen to finish...
+2026-05-11 23:51:41,549 [INFO] 15880 [1020] Waiting for map canvas...
+2026-05-11 23:51:45,176 [INFO] 15880 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-11 23:51:46,141 [INFO] 15880 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-11 23:51:46,946 [INFO] 15880 [1020] Map ready.
+2026-05-11 23:51:46,947 [INFO] 15880 [1020] Crypt loop started.
+2026-05-11 23:51:53,788 [INFO] 15880 [1020] Loading OCR model — first run may download models…
+2026-05-11 23:51:56,762 [INFO] 15880 [1020] OCR model ready.
+2026-05-11 23:51:58,189 [INFO] 15880 [1020] click 'watchtower_btn' → region centre absolute page(693,838)
+2026-05-11 23:52:01,840 [INFO] 15880 [1020] OCR click 'Crypts'[0] → (683, 425)
+2026-05-11 23:52:04,356 [INFO] 15880 [1020] Tab 'Common' color check: 1908/2541 green px → GREEN
+2026-05-11 23:52:04,356 [INFO] 15880 [1020] Tab 'Common' state is correct — skipping.
+2026-05-11 23:52:04,370 [INFO] 15880 [1020] Tab 'Rare' color check: 0/2478 green px → TAN
+2026-05-11 23:52:04,370 [INFO] 15880 [1020] Tab 'Rare' state is correct — skipping.
+2026-05-11 23:52:04,375 [INFO] 15880 [1020] Tab 'Epic' color check: 0/2640 green px → TAN
+2026-05-11 23:52:04,376 [INFO] 15880 [1020] Tab 'Epic' state is correct — skipping.
+2026-05-11 23:52:04,387 [INFO] 15880 [1020] Tab 'Arenas' color check: 0/2124 green px → TAN
+2026-05-11 23:52:04,388 [INFO] 15880 [1020] Tab 'Arenas' state is correct — skipping.
+2026-05-11 23:52:04,403 [INFO] 15880 [1020] Tab 'Others' color check: 0/2640 green px → TAN
+2026-05-11 23:52:04,403 [INFO] 15880 [1020] Tab 'Others' state is correct — skipping.
+2026-05-11 23:52:08,631 [INFO] 15880 [1020] Slider state before drag: left=20 right=25 → targets: left=25 right=25
+2026-05-11 23:52:08,631 [INFO] 15880 [1020] Dragging left slider to level 25...
+2026-05-11 23:52:14,602 [INFO] 15880 [1020] left slider currently at level 20.
+2026-05-11 23:53:01,026 [INFO] 15880 [1020] Found level 25 at x=987!
+2026-05-11 23:53:01,344 [INFO] 15880 [1020] Dragging right slider to level 25...
+2026-05-11 23:53:06,405 [INFO] 15880 [1020] right slider currently at level 25.
+2026-05-11 23:53:06,405 [INFO] 15880 [1020] Slider already at 25, no dragging needed.
+2026-05-11 23:53:08,814 [WARNING] 15880 [1020] OCR missed 'Go' — coord fallback 'second_result_go'
+2026-05-11 23:53:08,822 [INFO] 15880 [1020] click 'second_result_go' → region centre absolute page(1220,561)
+2026-05-11 23:53:13,626 [WARNING] 15880 [1020] Template '_temp_crypt_target.png' not matched (best=-1.00 < 0.55 scale=1.0) — debug crop saved to templates\_debug__temp_crypt_target.png
+2026-05-11 23:53:13,630 [WARNING] 15880 [1020] Could not find crypt image match! Falling back to center of crypt_location.
+2026-05-11 23:53:15,950 [INFO] 15880 [1020] OCR click 'Explore'[0] → (1143, 737)
+2026-05-11 23:53:17,506 [INFO] 15880 [1020] Waiting for March (Carter) to register in UI...
+2026-05-11 23:53:21,967 [INFO] 15880 [1020] Found 'Carter' on row Y=85. Clicking speedup here.
+2026-05-11 23:53:23,484 [INFO] 15880 [1020] Speedup click 1/5.
+2026-05-11 23:53:23,493 [INFO] 15880 [1020] click 'speedup_use_btn' → region centre absolute page(1126,416)
+2026-05-11 23:53:24,211 [INFO] 15880 [1020] Speedup click 2/5.
+2026-05-11 23:53:24,221 [INFO] 15880 [1020] click 'speedup_use_btn' → region centre absolute page(1126,416)
+2026-05-11 23:53:24,951 [INFO] 15880 [1020] Speedup click 3/5.
+2026-05-11 23:53:24,967 [INFO] 15880 [1020] click 'speedup_use_btn' → region centre absolute page(1126,416)
+2026-05-11 23:53:25,694 [INFO] 15880 [1020] Speedup click 4/5.
+2026-05-11 23:53:25,704 [INFO] 15880 [1020] click 'speedup_use_btn' → region centre absolute page(1126,416)
+2026-05-11 23:53:26,424 [INFO] 15880 [1020] Speedup click 5/5.
+2026-05-11 23:53:26,439 [INFO] 15880 [1020] click 'speedup_use_btn' → region centre absolute page(1126,416)
+2026-05-11 23:53:27,168 [INFO] 15880 [1020] Closing speedup popup.
+2026-05-11 23:53:27,883 [INFO] 15880 [1020] Waiting for March (Carter) to finish...
+2026-05-11 23:53:28,482 [INFO] 15880 [1020] Interrupted by user.
+2026-05-11 23:53:42,387 [ERROR] 15880 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-05-11 23:53:42,511 [ERROR] 15880 Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed

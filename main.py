@@ -161,7 +161,11 @@ def _cmd_mark_regions(account_name: str):
 
     targets = [
         ("watchtower_crypts", "Sidebar area containing 'Crypts and Arenas'", (560, 460, 320, 180)),
-        ("quality_tabs", "Top tab strip (Common/Rare/Epic/Arenas/Others)", (820, 340, 900, 160)),
+        ("tab_common", "Area of the Common tab", (770, 310, 80, 40)),
+        ("tab_rare", "Area of the Rare tab", (860, 310, 80, 40)),
+        ("tab_epic", "Area of the Epic tab", (950, 310, 80, 40)),
+        ("tab_arenas", "Area of the Arenas tab", (1040, 310, 80, 40)),
+        ("tab_others", "Area of the Others tab", (1130, 310, 80, 40)),
         ("second_result_go", "Results list area where second 'Go' appears", (1100, 580, 300, 350)),
         ("slider_levels", "Text area spanning above level limits slider", (700, 280, 700, 40)),
         ("crypt_popup_explore", "Popup area where 'Explore' button appears", (950, 800, 400, 150)),
@@ -170,7 +174,8 @@ def _cmd_mark_regions(account_name: str):
         ("watchtower_btn", "Watchtower HUD button (bottom-right bar)", (876, 1033, 100, 100)),
         ("march_speedup_btn", "Speed-up button beside the march slot (top bar)", (1558, 4, 100, 100)),
         ("speedup_use_btn", "'Use' button in the speedup popup (first entry)", (1502, 445, 100, 100)),
-        ("crypt_location", "The crypt on the map (click-target)", (1301, 611, 100, 100)),
+        ("crypt_location", "Box around where map crypts appear (search area)", (900, 400, 300, 200)),
+        ("crypt_popup_icon", "Image/Icon of the crypt in the purchase/info popup", (600, 400, 150, 150)),
     ]
 
     bot = CryptBot(account, settings)
@@ -283,7 +288,11 @@ def _cmd_show_regions(account_name: str):
 
     targets = [
         ("watchtower_crypts", "Sidebar area containing 'Crypts and Arenas'", (560, 460, 320, 180)),
-        ("quality_tabs", "Top tab strip (Common/Rare/Epic/Arenas/Others)", (820, 340, 900, 160)),
+        ("tab_common", "Area of the Common tab", (770, 310, 80, 40)),
+        ("tab_rare", "Area of the Rare tab", (860, 310, 80, 40)),
+        ("tab_epic", "Area of the Epic tab", (950, 310, 80, 40)),
+        ("tab_arenas", "Area of the Arenas tab", (1040, 310, 80, 40)),
+        ("tab_others", "Area of the Others tab", (1130, 310, 80, 40)),
         ("second_result_go", "Results list area where second 'Go' appears", (1100, 580, 300, 350)),
         ("slider_levels", "Text area spanning above level limits slider", (700, 280, 700, 40)),
         ("crypt_popup_explore", "Popup area where 'Explore' button appears", (950, 800, 400, 150)),
@@ -292,7 +301,8 @@ def _cmd_show_regions(account_name: str):
         ("watchtower_btn", "Watchtower HUD button (bottom-right bar)", (876, 1033, 100, 100)),
         ("march_speedup_btn", "Speed-up button beside the march slot (top bar)", (1558, 4, 100, 100)),
         ("speedup_use_btn", "'Use' button in the speedup popup (first entry)", (1502, 445, 100, 100)),
-        ("crypt_location", "The crypt on the map (click-target)", (1301, 611, 100, 100)),
+        ("crypt_location", "Box around where map crypts appear (search area)", (900, 400, 300, 200)),
+        ("crypt_popup_icon", "Image/Icon of the crypt in the purchase/info popup", (600, 400, 150, 150)),
     ]
 
     bot = CryptBot(account, settings)
@@ -434,5 +444,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
 
 

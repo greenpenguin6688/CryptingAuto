@@ -524,7 +524,8 @@ class CryptBot:
                     logger.info("[%s] Reloading page (WebGL cache flush).", self.account["name"])
                     self.page.reload(timeout=90_000)
                     self._wait_for_map()
-                    filters_applied = False  # re-apply after reload
+                    # We do NOT reset filters_applied to False here anymore.
+                    # The game saves Watchtower filter settings permanently across reloads!
 
             except PlaywrightTimeoutError as exc:
                 logger.error("[%s] Timeout: %s — recovering.", self.account["name"], exc)
@@ -688,9 +689,19 @@ class CryptBot:
 
         results = reader.readtext(img, detail=1)
         needle  = text.strip().lower()
+        
+        # OCR typo allowances for this engine based on in-game font
+        aliases = {
+            "arenas": ["arena", "arema"],
+            "others": ["other", "occher", "xcher", "@xcher"],
+            "epic": ["epic", "eme", "eplc"]
+        }
+        valid_needles = aliases.get(needle, [needle])
+        
         hits    = []
         for (bbox, detected, conf) in results:
-            if conf >= 0.25 and needle in detected.strip().lower():
+            detected_lower = detected.strip().lower()
+            if conf >= 0.15 and any(n in detected_lower for n in valid_needles):
                 xs = [p[0] for p in bbox]
                 ys = [p[1] for p in bbox]
                 hits.append((int(sum(xs) / len(xs)) + ox,
@@ -761,13 +772,22 @@ class CryptBot:
 
     def _open_watchtower(self):
         """Click the Watchtower HUD icon then select 'Crypts and Arenas'."""
-        logger.debug("[%s] Opening Watchtower.", self.account["name"])
         self.page.bring_to_front()
-        self._canvas_click("watchtower_btn", wait_ms=1_200)
+        
+        # Check if the Watchtower popup is already open by looking for the "Crypts" tab
+        region = self._region("watchtower_crypts", (560, 460, 320, 180))
+        hits = self._ocr_find_all("Crypts", region=region)
+        
+        if hits:
+            logger.debug("[%s] Watchtower already seems open.", self.account["name"])
+        else:
+            logger.debug("[%s] Opening Watchtower.", self.account["name"])
+            self._canvas_click("watchtower_btn", wait_ms=1_200)
+
         logger.debug("[%s] Clicking 'Crypts and Arenas'.", self.account["name"])
         # Sidebar is centered around page(700, 549) - crop tightly around it
         self._ocr_click("Crypts", wait_ms=800, fallback_key="crypts_and_arenas",
-                        region=self._region("watchtower_crypts", (560, 460, 320, 180)))
+                        region=region)
 
     def _save_tab_debug_screenshot(self, img: np.ndarray):
         """
@@ -792,43 +812,25 @@ class CryptBot:
 
     def _is_tab_green(self, tab: str, img: np.ndarray, search_region: tuple[int, int, int, int]) -> bool:
         """
-        Uses OCR to find the tab text, then checks the pixel colors inside its
-        bounding box to see if the button is green (selected).
+        Takes the direct bounding box for the tab, extracts it, and calculates
+        the green pixel ratio. No OCR required.
         """
-        reader = self._get_ocr_reader()
         rx, ry, rw, rh = search_region
-        crop = img[ry:ry+rh, rx:rx+rw]
-        results = reader.readtext(crop, detail=1)
-
-        for (bbox, text, conf) in results:
-            if tab.lower() in text.lower():
-                # bbox is [[x1, y1], [x2, y1], [x2, y2], [x1, y2]]
-                xs = [int(p[0]) for p in bbox]
-                ys = [int(p[1]) for p in bbox]
-                x1, x2 = min(xs), max(xs)
-                y1, y2 = min(ys), max(ys)
-                
-                # Expand box slightly to catch the button background, not just text
-                x1 = max(0, x1 - 10)
-                y1 = max(0, y1 - 10)
-                x2 = min(rw, x2 + 10)
-                y2 = min(rh, y2 + 10)
-                
-                patch = crop[y1:y2, x1:x2]
-                r_ch = patch[:, :, 0].astype(float)
-                g_ch = patch[:, :, 1].astype(float)
-                
-                green_pixels = int(((g_ch - r_ch) > 15).sum())
-                total_pixels = patch.shape[0] * patch.shape[1]
-                is_green = green_pixels > (total_pixels * 0.05)  # 5% green is enough
-                
-                logger.info("[%s] Tab '%s' OCR color check: %d/%d green px → %s", 
-                            self.account["name"], tab, green_pixels, total_pixels, "GREEN" if is_green else "TAN")
-                return is_green
-                
-        # Fallback if OCR can't find the tab text
-        logger.warning("[%s] OCR could not find tab '%s' to check color! Assuming default.", self.account["name"], tab)
-        return tab in {"Rare", "Epic", "Arenas"}
+        patch = img[ry:ry+rh, rx:rx+rw]
+        
+        r_ch = patch[:, :, 0].astype(float)
+        g_ch = patch[:, :, 1].astype(float)
+        
+        # Calculate how many pixels are distinctively green
+        green_pixels = int(((g_ch - r_ch) > 15).sum())
+        total_pixels = patch.shape[0] * patch.shape[1]
+        
+        # Require more than 5% green in the bounding box to be considered selected
+        is_green = green_pixels > (total_pixels * 0.05)
+        
+        logger.info("[%s] Tab '%s' color check: %d/%d green px → %s", 
+                    self.account["name"], tab, green_pixels, total_pixels, "GREEN" if is_green else "TAN")
+        return is_green
 
     def _apply_filters(self):
         """
@@ -843,12 +845,15 @@ class CryptBot:
         wanted = {t.capitalize() for t in self.settings["crypt_types"]}
         img = self._ocr_screenshot()
         
-        # Use your custom manual region from JSON if available
-        tab_region = self._region("quality_tabs", (700, 200, 700, 200))
-
         for tab in ALL_QUALITY_TABS:
             tab_key = f"tab_{tab.lower()}"
             should_be_selected = tab in wanted
+            
+            # Fetch the specific boundary box for this exact tab
+            # Default bounds provided here match a typical 1080p screen
+            fallback_x = 770 + (["Common", "Rare", "Epic", "Arenas", "Others"].index(tab) * 90)
+            tab_region = self._region(tab_key, (fallback_x, 310, 80, 40))
+            
             currently_selected = self._is_tab_green(tab, img, tab_region)
 
             if should_be_selected == currently_selected:
@@ -858,8 +863,12 @@ class CryptBot:
             action = "Selecting" if should_be_selected else "Deselecting"
             logger.info("[%s] %s tab '%s'.", self.account["name"], action, tab)
             
-            self._ocr_click(tab, wait_ms=500, fallback_key=tab_key,
-                            region=tab_region)
+            # Click exactly in the center of the bounding box mapped by the user
+            rx, ry, rw, rh = tab_region
+            cx = rx + (rw // 2)
+            cy = ry + (rh // 2)
+            self.page.mouse.click(cx, cy)
+            self.page.wait_for_timeout(500)
 
         # Dynamically drag both sliders until the number 25 is read
         self._drag_slider_to_level("left", CANVAS_COORDS["slider_track_left"], "25")
@@ -928,27 +937,34 @@ class CryptBot:
             
         found = False
         # Sweep track max ~25 times to find the right number
-        for _ in range(25):
-            current_x += step_pixels
-            self.page.mouse.move(current_x, y, steps=3)
-            self.page.wait_for_timeout(350)  # Wait for UI number to update
-            
-            img2 = self._ocr_screenshot()
-            crop2 = img2[ry:ry+rh, rx:rx+rw]
-            results2 = reader.readtext(crop2, detail=0)
-            
-            # check if target number has appeared in the text box
-            texts_digits = [''.join(filter(str.isdigit, t)) for t in results2]
-            
-            logger.debug("Slider %s at %d OCR: %s", side, current_x, " ".join(texts_digits))
-            
-            if str(target_level) in texts_digits:
-                logger.info("[%s] Found level %s at x=%d!", self.account["name"], target_level, current_x)
-                found = True
-                break
+        try:
+            for _ in range(25):
+                current_x += step_pixels
                 
-        self.page.mouse.up()
-        self.page.wait_for_timeout(300)
+                # Constrain to not accidentally drag off the slider window
+                if current_x < rx: current_x = rx
+                if current_x > (rx + rw): current_x = rx + rw
+                
+                self.page.mouse.move(current_x, y, steps=3)
+                self.page.wait_for_timeout(350)  # Wait for UI number to update
+                
+                img2 = self._ocr_screenshot()
+                crop2 = img2[ry:ry+rh, rx:rx+rw]
+                results2 = reader.readtext(crop2, detail=0)
+                
+                # check if target number has appeared in the text box
+                texts_digits = [''.join(filter(str.isdigit, t)) for t in results2]
+                
+                logger.debug("Slider %s at %d OCR: %s", side, current_x, " ".join(texts_digits))
+                
+                if str(target_level) in texts_digits:
+                    logger.info("[%s] Found level %s at x=%d!", self.account["name"], target_level, current_x)
+                    found = True
+                    break
+        finally:
+            # Guarantee the mouse is released even if OCR crashes or the loop logic breaks
+            self.page.mouse.up()
+            self.page.wait_for_timeout(300)
         
         if not found:
             logger.warning("[%s] Failed to find level %s via OCR drag.", self.account["name"], target_level)
@@ -1017,21 +1033,53 @@ class CryptBot:
     def _explore_crypt(self):
         """
         After clicking 'Go' on a crypt result:
-          1. Press Escape to dismiss the purchase/info overlay.
-          2. Click the crypt on the map to open the detail popup.
-          3. Wait for the popup to appear, then click Explore.
-          4. Press Escape once more to clear any remaining popup.
+          1. Extract the image of the crypt from the purchase/info overlay.
+          2. Press Escape to dismiss the purchase/info overlay.
+          3. Search the map region for the extracted crypt image and click it.
+          4. Wait for the mapping popup to appear, then click Explore.
+          5. Press Escape once more to clear any remaining popup.
         """
-        # Step 1 — dismiss purchase/info overlay that appears after clicking Go.
-        # Wait a moment for it to fully render before pressing Escape.
-        self.page.wait_for_timeout(800)
+        import math
+        import cv2
+
+        # Step 1 — Capture Crypt Icon from Popup
+        self.page.wait_for_timeout(1_000)  # Wait for popup to render
+        logger.debug("[%s] Grabbing Crypt visual template from popup...", self.account["name"])
+        
+        # User draws this box tightly around the crypt sprite sitting in the middle of the popup
+        icon_region = self._region("crypt_popup_icon", (600, 400, 150, 150))
+        rx, ry, rw, rh = icon_region
+        
+        popup_img = self._ocr_screenshot()
+        crypt_icon_crop = popup_img[ry:ry+rh, rx:rx+rw]
+        
+        # Save it to disk so _image_find can use it
+        temp_img_path = self._TEMPLATES_DIR / "_temp_crypt_target.png"
+        cv2.imwrite(str(temp_img_path), cv2.cvtColor(crypt_icon_crop, cv2.COLOR_RGB2BGR))
+        
+        # Step 2 — dismiss purchase/info overlay
         logger.debug("[%s] Pressing Escape to dismiss purchase overlay.", self.account["name"])
         self.page.keyboard.press("Escape")
         self.page.wait_for_timeout(1_200)
 
-        # Step 2 — click the crypt on the map to open the detail popup
-        logger.debug("[%s] Clicking crypt on map.", self.account["name"])
-        self._canvas_click("crypt_location", wait_ms=1_200)
+        # Step 3 — click the newly matched crypt on the map to open the detail popup
+        map_region = self._region("crypt_location", (1250, 560, 200, 200))
+        logger.debug("[%s] Searching map for the captured crypt image...", self.account["name"])
+        
+        # Match using the dynamic template we just captured
+        match_loc = self._image_find("_temp_crypt_target.png", threshold=0.55, region=map_region)
+        
+        if match_loc:
+            cx, cy = match_loc
+            logger.info("[%s] Found visual crypt match. Clicking map at (%d, %d).", self.account["name"], cx, cy)
+            self.page.mouse.click(cx, cy)
+        else:
+            logger.warning("[%s] Could not find crypt image match! Falling back to center of crypt_location.", self.account["name"])
+            cx = map_region[0] + (map_region[2] // 2)
+            cy = map_region[1] + (map_region[3] // 2)
+            self.page.mouse.click(cx, cy)
+            
+        self.page.wait_for_timeout(1_200)
 
         # Step 3 — click Explore in the crypt detail popup
         logger.debug("[%s] Clicking Explore in crypt popup.", self.account["name"])

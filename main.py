@@ -167,7 +167,8 @@ def _cmd_mark_regions(account_name: str):
         ("tab_arenas", "Area of the Arenas tab", (1040, 310, 80, 40)),
         ("tab_others", "Area of the Others tab", (1130, 310, 80, 40)),
         ("second_result_go", "Results list area where second 'Go' appears", (1100, 580, 300, 350)),
-        ("slider_levels", "Text area spanning above level limits slider", (700, 280, 700, 40)),
+        ("slider_levels", "Level NUMBERS region — draw a wide box covering BOTH level numbers above the slider", (700, 280, 700, 40)),
+        ("slider_track", "Full slider BAR — draw a wide box covering the ENTIRE horizontal track (both handle knobs must be inside)", (820, 318, 500, 36)),
         ("crypt_popup_explore", "Popup area where 'Explore' button appears", (950, 800, 400, 150)),
         ("march_status", "Top bar where 'Carter' march status text appears", (500, 40, 700, 60)),
         # Click-target regions — centre of drawn box is used as click coordinate
@@ -294,7 +295,8 @@ def _cmd_show_regions(account_name: str):
         ("tab_arenas", "Area of the Arenas tab", (1040, 310, 80, 40)),
         ("tab_others", "Area of the Others tab", (1130, 310, 80, 40)),
         ("second_result_go", "Results list area where second 'Go' appears", (1100, 580, 300, 350)),
-        ("slider_levels", "Text area spanning above level limits slider", (700, 280, 700, 40)),
+        ("slider_levels", "Level NUMBERS region — draw a wide box covering BOTH level numbers above the slider", (700, 280, 700, 40)),
+        ("slider_track", "Full slider BAR — draw a wide box covering the ENTIRE horizontal track (both handle knobs must be inside)", (820, 318, 500, 36)),
         ("crypt_popup_explore", "Popup area where 'Explore' button appears", (950, 800, 400, 150)),
         ("march_status", "Top bar where 'Carter' march status text appears", (500, 40, 700, 60)),
         # Click-target regions — centre of drawn box is used as click coordinate

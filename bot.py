@@ -60,12 +60,10 @@ CANVAS_COORDS = {
     "tab_arenas":   (1613, 361),
     "tab_others":   (1193, 406),
 
-    # Level range slider — measured with DevTools undocked.
-    # Drag start: current handle positions. Drag end: desired target positions.
-    "slider_track_left":   (867, 339),   # left handle current position
-    "slider_track_right":  (1276, 341),   # right handle current position
-    "slider_left_target":  (877, 340),   # where to drag left handle to
-    "slider_right_target": (877, 340),   # where to drag right handle to
+    # Level range slider.
+    # Calibrate 'slider_track' via --mark-regions: draw ONE wide box covering the
+    # ENTIRE horizontal bar from the leftmost possible handle position to the
+    # rightmost.  The bot scans this region to auto-locate each handle.
 
     # "Go" button next to the SECOND result in the filtered list
     "second_result_go":    (1190, 523),
@@ -488,7 +486,7 @@ class CryptBot:
     # Main loop
     # ------------------------------------------------------------------
 
-    def run_loop(self):
+    def run_loop(self, stop_event=None, run_limit: int = 0, on_cycle=None):
         """
         Main loop:
           1. Open Watchtower → Crypts and Arenas
@@ -499,10 +497,19 @@ class CryptBot:
           6. Speed up the march 5× with the 50% speedup
           7. Wait for March (Carter) to disappear from the HUD
           8. Repeat
+
+        Args:
+            stop_event:  threading.Event — set it to request a clean stop.
+            run_limit:   Stop automatically after this many cycles (0 = unlimited).
+            on_cycle:    Optional callable(count: int) called after each completed cycle.
         """
+        import threading
+        if stop_event is None:
+            stop_event = threading.Event()  # never set → runs forever unless run_limit hit
+
         logger.info("[%s] Crypt loop started.", self.account["name"])
         filters_applied = False
-        while True:
+        while not stop_event.is_set():
             try:
                 self._open_watchtower()
                 # Apply filters only once per session (or after a page reload).
@@ -519,6 +526,18 @@ class CryptBot:
                 self.crypt_count += 1
                 logger.info("[%s] Cycle #%d complete.", self.account["name"], self.crypt_count)
 
+                if on_cycle:
+                    try:
+                        on_cycle(self.crypt_count)
+                    except Exception:
+                        pass
+
+                # Stop if the run limit has been reached
+                if run_limit > 0 and self.crypt_count >= run_limit:
+                    logger.info("[%s] Run limit of %d reached — stopping.", self.account["name"], run_limit)
+                    stop_event.set()
+                    break
+
                 # Periodic page reload to clear WebGL memory
                 if self.crypt_count % self.settings["reload_every_n_crypts"] == 0:
                     logger.info("[%s] Reloading page (WebGL cache flush).", self.account["name"])
@@ -528,14 +547,20 @@ class CryptBot:
                     # The game saves Watchtower filter settings permanently across reloads!
 
             except PlaywrightTimeoutError as exc:
+                if stop_event.is_set():
+                    break
                 logger.error("[%s] Timeout: %s — recovering.", self.account["name"], exc)
                 self._dismiss_overlays(count=2)
                 time.sleep(5)
 
             except Exception:
+                if stop_event.is_set():
+                    break
                 logger.exception("[%s] Unexpected error — recovering.", self.account["name"])
                 self._dismiss_overlays(count=2)
                 time.sleep(10)
+
+        logger.info("[%s] Loop exited.", self.account["name"])
 
     # ------------------------------------------------------------------
     # Watchtower / search
@@ -883,13 +908,76 @@ class CryptBot:
                     self.account["name"], left_val, right_val, target_left, target_right)
 
         if right_val is not None and int(target_right) > right_val:
-            # Right ceiling needs to rise first so left can follow
-            self._drag_slider_to_level("right", CANVAS_COORDS["slider_track_right"], target_right)
-            self._drag_slider_to_level("left",  CANVAS_COORDS["slider_track_left"],  target_left)
+            # Right ceiling needs to rise first so left can follow.
+            # Re-detect handle positions fresh before each drag — the second
+            # handle moves after the first drag, so we must re-scan.
+            self._drag_slider_to_level("right", self._detect_slider_handle_pos("right"), target_right)
+            self._drag_slider_to_level("left",  self._detect_slider_handle_pos("left"),  target_left)
         else:
-            # Left floor moves down first so right can follow
-            self._drag_slider_to_level("left",  CANVAS_COORDS["slider_track_left"],  target_left)
-            self._drag_slider_to_level("right", CANVAS_COORDS["slider_track_right"], target_right)
+            # Left floor moves down first so right can follow.
+            self._drag_slider_to_level("left",  self._detect_slider_handle_pos("left"),  target_left)
+            self._drag_slider_to_level("right", self._detect_slider_handle_pos("right"), target_right)
+
+    def _detect_slider_handle_pos(self, side: str) -> tuple[int, int]:
+        """
+        Locate the current pixel position of the left or right slider handle by
+        scanning the full slider_track region for the brightest column cluster.
+
+        Strategy:
+          - Capture the full slider bar strip (one wide 'slider_track' region).
+          - Compute per-column mean brightness.
+          - "left"  → scan columns from the LEFT  edge — first bright cluster = left  handle.
+          - "right" → scan columns from the RIGHT edge — first bright cluster = right handle.
+
+        Returns (canvas_x, canvas_y) — same coordinate space that _drag_slider_to_level
+        expects (no viewport offset applied).
+        """
+        import cv2
+        import numpy as np
+
+        ox, oy = self._canvas_offset()
+
+        # Full slider bar region (page coords).  Fallback spans the whole bar width.
+        # Calibrate 'slider_track' via --mark-regions for precise detection.
+        fallback = (820 + ox, 318 + oy, 500, 36)
+        rx, ry, rw, rh = self._region("slider_track", fallback)
+
+        img = self._ocr_screenshot()
+        crop = img[ry:ry + rh, rx:rx + rw]      # shape: (rh, rw, 3)
+        gray = cv2.cvtColor(crop, cv2.COLOR_RGB2GRAY)
+
+        # Per-column mean brightness — shape: (rw,)
+        col_mean = gray.mean(axis=0).astype(float)
+
+        # Adaptive threshold: anything above mean + 0.5 * std is considered "bright".
+        # Clamped to at least 100/255 so we never trigger on an all-dark image.
+        baseline = float(col_mean.mean())
+        thresh = baseline + 0.5 * float(col_mean.std())
+        thresh = max(thresh, 100.0)
+
+        bright = np.where(col_mean >= thresh)[0]  # indices of bright columns
+
+        if len(bright) == 0:
+            logger.warning(
+                "[%s] slider_track: no bright column found for '%s' handle — "
+                "using fallback quarter-point position.",
+                self.account["name"], side,
+            )
+            local_x = rw // 4 if side == "left" else (rw * 3) // 4
+        else:
+            local_x = int(bright[0]) if side == "left" else int(bright[-1])
+
+        page_x = rx + local_x
+        page_y = ry + rh // 2
+
+        logger.info(
+            "[%s] Detected %s slider handle at page_x=%d (local_x=%d, "
+            "track region [%d,%d,%d,%d]).",
+            self.account["name"], side, page_x, local_x, rx, ry, rw, rh,
+        )
+
+        # Return canvas-space coords (offset removed) as expected by _drag_slider_to_level
+        return (page_x - ox, page_y - oy)
 
     def _read_current_slider_values(self) -> tuple[int | None, int | None]:
         """

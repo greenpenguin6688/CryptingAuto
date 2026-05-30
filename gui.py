@@ -157,9 +157,13 @@ class SetupWizard(tk.Tk):
 
     def _run_calibration(self):
         name = ACCOUNTS[0]["name"] if ACCOUNTS else "1020"
+        run_kwargs = {}
+        if sys.platform.startswith("win"):
+            run_kwargs["creationflags"] = subprocess.CREATE_NEW_CONSOLE
+
         subprocess.run(
             [sys.executable, "main.py", "--mark-regions", name],
-            creationflags=subprocess.CREATE_NEW_CONSOLE,
+            **run_kwargs,
         )
         self._show_page_2()
 

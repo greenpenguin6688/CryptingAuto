@@ -21617,3 +21617,14 @@ Traceback (most recent call last):
   File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
     raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
 playwright._impl._errors.TargetClosedError: Keyboard.press: Target page, context or browser has been closed
+2026-05-24 22:54:48,514 [INFO] 51688 [1020] Loaded 19 OCR region override(s) from manual_regions.json
+2026-05-24 22:54:51,816 [INFO] 51688 [1020] Navigating to https://totalbattle.com
+2026-05-24 22:55:00,169 [INFO] 51688 [1020] Looking for 'Log in' link by text...
+2026-05-24 22:55:00,370 [INFO] 51688 [1020] Clicked 'Log In' — waiting for email input.
+2026-05-24 22:55:03,127 [INFO] 51688 [1020] Filling login form.
+2026-05-24 22:55:05,797 [INFO] 51688 [1020] Login submitted — waiting for map to load.
+2026-05-24 22:55:08,826 [INFO] 51688 [1020] Waiting for game loading screen to finish...
+2026-05-24 22:56:02,611 [INFO] 51688 [1020] Waiting for map canvas...
+2026-05-24 22:56:07,585 [INFO] 51688 [1020] Pressing Escape to dismiss post-login popup.
+2026-05-24 22:56:08,839 [INFO] 51688 [1020] Dismissed popup via JS scan (matched: border_back_wrapper).
+2026-05-24 22:56:09,642 [INFO] 51688 [1020] Map ready.

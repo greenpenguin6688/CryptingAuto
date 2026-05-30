@@ -17,11 +17,11 @@ def _account(index: int, name: str, fallback_user: str, fallback_pass: str) -> d
         "pass": os.environ.get(f"TB_PASS_{index}", fallback_pass),
     }
 
-# ---------------------------------------------------------------------------
+# -----------------------------------------------------------------
 # Account roster  (fill in your real credentials OR set the env vars above)
 # ---------------------------------------------------------------------------
 ACCOUNTS = [
-    _account(1, "1020", "greenpenguin2005@outlook.com", "And7ewpwd")
+    
 ]
 # ---------------------------------------------------------------------------
 # Bot behaviour
